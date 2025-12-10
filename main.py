@@ -1,4 +1,6 @@
 from modules.menu import menu_utama
+from modules.about import tampilkan_tentang_kami
+
 
 def main():
     while True:
@@ -23,15 +25,7 @@ def main():
             input("\nTekan Enter untuk kembali ke menu...")
             
         elif pilihan == '4':
-            print("\n" + "="*40)
-            print("ℹ️  TENTANG APLIKASI - DISCLAIMER")
-            # Tambahin kode about disini boleh hapus yg bawah
-            print("="*40)
-            print("\nRuang Teduh adalah aplikasi skrining kesehatan mental.")
-            print("Hasil tes ini BUKAN diagnosis medis profesional.")
-            print("Jika kamu mengalami masalah serius, segera konsultasi")
-            print("dengan psikolog atau psikiater profesional.")
-            print("\n⚠️  Aplikasi ini hanya untuk awareness dan screening awal.")
+            tampilkan_tentang_kami()
             input("\nTekan Enter untuk kembali ke menu...")
             
         elif pilihan == '5':
