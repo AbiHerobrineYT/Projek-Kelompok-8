@@ -1,5 +1,6 @@
 from modules.menu import menu_utama
 from modules.about import tampilkan_tentang_kami
+from modules.questionnaire_menu import tampilkan_menu_kuisioner, get_nama_kuisioner
 
 
 def main():
@@ -7,10 +8,25 @@ def main():
         pilihan = menu_utama()
         
         if pilihan == '1':
-            print("\n🧠 Memulai Tes Kesehatan Mental...")
-            # TODO: panggil fungsi tes kesehatan mental
-            # Tambahin kode kesehatan mental disini
-            input("\nTekan Enter untuk kembali ke menu...")
+            pilihan_kuisioner = tampilkan_menu_kuisioner()
+            
+            if pilihan_kuisioner == '9':
+                continue
+            else:
+                nama_tes = get_nama_kuisioner(pilihan_kuisioner)
+                print(f"\n🧠 Memulai Tes: {nama_tes}")
+                print("="*60)
+                
+                # TODO: Panggil fungsi untuk menjalankan kuisioner sesuai pilihan
+                # Nanti akan dipanggil di sini, misalnya:
+                # if pilihan_kuisioner == '1':
+                #     hasil = tes_keluarga_hubungan()
+                # elif pilihan_kuisioner == '2':
+                #     hasil = tes_depresi()
+                # dst...
+                
+                print(f"\n[DEBUG] Tes {nama_tes} akan dimulai...")
+                input("\nTekan Enter untuk kembali ke menu...")
             
         elif pilihan == '2':
             print("\n📊 Menampilkan Riwayat Hasil...")
