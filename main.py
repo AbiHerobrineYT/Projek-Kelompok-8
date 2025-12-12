@@ -1,6 +1,7 @@
 from modules.menu import menu_utama
 from modules.about import tampilkan_tentang_kami
 from modules.questionnaire_menu import tampilkan_menu_kuisioner, get_nama_kuisioner
+from modules.questionnaire_engine import jalankan_kuisioner, tampilkan_hasil
 
 
 def main():
@@ -13,20 +14,30 @@ def main():
             if pilihan_kuisioner == '9':
                 continue
             else:
-                nama_tes = get_nama_kuisioner(pilihan_kuisioner)
-                print(f"\n🧠 Memulai Tes: {nama_tes}")
-                print("="*60)
+                # Mapping pilihan ke nama file JSON
+                mapping_tes = {
+                    '1': 'keluarga',
+                    '2': 'depresi',
+                    '3': 'kecemasan',
+                    '4': 'stress',
+                    '5': 'trauma',
+                    '6': 'burnout',
+                    '7': 'mood',
+                    '8': 'kecanduan'
+                }
                 
-                # TODO: Panggil fungsi untuk menjalankan kuisioner sesuai pilihan
-                # Nanti akan dipanggil di sini, misalnya:
-                # if pilihan_kuisioner == '1':
-                #     hasil = tes_keluarga_hubungan()
-                # elif pilihan_kuisioner == '2':
-                #     hasil = tes_depresi()
-                # dst...
+                jenis_tes = mapping_tes.get(pilihan_kuisioner)
                 
-                print(f"\n[DEBUG] Tes {nama_tes} akan dimulai...")
-                input("\nTekan Enter untuk kembali ke menu...")
+                if jenis_tes:
+                    # Jalankan kuisioner
+                    hasil = jalankan_kuisioner(jenis_tes)
+                    
+                    if hasil:
+                        # Tampilkan hasil
+                        tampilkan_hasil(hasil)
+                        
+                        # TODO: Simpan hasil ke storage/results.json
+                        # save_result(hasil)
             
         elif pilihan == '2':
             print("\n📊 Menampilkan Riwayat Hasil...")
