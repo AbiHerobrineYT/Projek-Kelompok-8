@@ -1,7 +1,9 @@
 from modules.menu import menu_utama
 from modules.about import tampilkan_tentang_kami
 from modules.questionnaire_menu import tampilkan_menu_kuisioner, get_nama_kuisioner
-from modules.questionnaire_engine import jalankan_kuisioner, tampilkan_hasil, tampilkan_solusi_lengkap
+from modules.questionnaire_engine import jalankan_kuisioner, tampilkan_hasil
+from modules.login_register import login, register
+from modules.login_register import menu_auth
 
 def main():
     while True:
@@ -13,6 +15,7 @@ def main():
             if pilihan_kuisioner == '9':
                 continue
             else:
+                # Mapping pilihan ke nama file JSON
                 mapping_tes = {
                     '1': 'keluarga',
                     '2': 'depresi',
@@ -31,25 +34,22 @@ def main():
                     hasil = jalankan_kuisioner(jenis_tes)
                     
                     if hasil:
-                        # Tampilkan hasil SKOR saja
+                        # Tampilkan hasil
                         tampilkan_hasil(hasil)
                         
-                        # Tampilkan solusi lengkap
-                        tampilkan_solusi_lengkap(
-                            hasil['jenis_tes'], 
-                            hasil['analisis']['kategori']
-                        )
-                        
-                        # TODO: Simpan hasil ke storage
-                        
-                input("\n\n👉 Tekan Enter untuk kembali ke menu utama...")
+                        # TODO: Simpan hasil ke storage/results.json
+                        # save_result(hasil)
             
         elif pilihan == '2':
             print("\n📊 Menampilkan Riwayat Hasil...")
+            # TODO: panggil fungsi lihat riwayat
+            # Tambahin kode riwayat hasil
             input("\nTekan Enter untuk kembali ke menu...")
             
         elif pilihan == '3':
             print("\n✅ To-Do List & Self Care...")
+            # TODO: panggil fungsi to-do list
+            # Tambahin kode to do list
             input("\nTekan Enter untuk kembali ke menu...")
             
         elif pilihan == '4':
@@ -62,4 +62,5 @@ def main():
             break
 
 if __name__ == "__main__":
-    main()
+    if menu_auth():
+        main()
