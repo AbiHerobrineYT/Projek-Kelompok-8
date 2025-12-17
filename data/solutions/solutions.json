@@ -1,0 +1,442 @@
+{
+  "keluarga": {
+    "kritis": {
+      "level": "Sangat Tidak Sehat",
+      "emoji": "🔴",
+      "deskripsi": "Hubungan Anda menunjukkan tanda-tanda kritis yang memerlukan intervensi segera. Ini bisa berdampak serius pada kesehatan mental dan emosional Anda. Komunikasi yang buruk, kehilangan kepercayaan, atau konflik berkepanjangan mungkin sedang terjadi.",
+      "todo": [
+        "Cari dan hubungi psikolog atau konselor profesional dalam 1-2 hari",
+        "Tuliskan perasaan dan masalah yang Anda alami di jurnal",
+        "Bicarakan dengan orang terdekat yang Anda percaya",
+        "Evaluasi keamanan emosional dan fisik dalam hubungan",
+        "Buat batasan yang jelas untuk melindungi diri sendiri"
+      ],
+      "saran": [
+        "Segera konsultasi dengan psikolog atau konselor pernikahan/hubungan",
+        "Pertimbangkan terapi pasangan jika memungkinkan",
+        "Jika ada kekerasan (fisik/verbal/emosional), hubungi hotline darurat",
+        "Evaluasi apakah hubungan ini masih sehat untuk Anda",
+        "Jangan ragu untuk meminta bantuan dari keluarga atau teman dekat",
+        "Prioritaskan keselamatan dan kesehatan mental Anda"
+      ]
+    },
+    "perlu_perhatian": {
+      "level": "Tidak Sehat",
+      "emoji": "🟠",
+      "deskripsi": "Hubungan Anda mengalami banyak tantangan yang perlu segera diatasi. Ada ketidakpuasan yang signifikan dan komunikasi yang kurang efektif. Jika tidak ditangani, kondisi ini bisa memburuk dan berdampak pada kesehatan mental Anda.",
+      "todo": [
+        "Jadwalkan waktu bicara dengan pasangan untuk membahas masalah (minimal 1x seminggu)",
+        "Buat daftar hal-hal yang mengganggu dalam hubungan",
+        "Praktikkan active listening saat berkomunikasi",
+        "Luangkan 'me time' untuk self-care minimal 30 menit/hari",
+        "Ikuti kelas atau workshop komunikasi dalam hubungan"
+      ],
+      "saran": [
+        "Komunikasi terbuka dan bantuan profesional sangat disarankan",
+        "Pertimbangkan konseling hubungan atau terapi pasangan",
+        "Belajar teknik komunikasi yang lebih efektif (assertive communication)",
+        "Identifikasi pola toxic dalam hubungan dan cari cara mengatasinya",
+        "Tetapkan ekspektasi yang realistis untuk hubungan",
+        "Jangan abaikan red flags, segera diskusikan dengan pasangan"
+      ]
+    },
+    "moderat": {
+      "level": "Cukup Sehat",
+      "emoji": "🟡",
+      "deskripsi": "Hubungan Anda dalam kondisi cukup baik namun masih ada area yang perlu ditingkatkan. Ada potensi untuk berkembang menjadi hubungan yang lebih sehat dan memuaskan dengan upaya dari kedua belah pihak.",
+      "todo": [
+        "Rencanakan quality time bersama pasangan minimal 2x seminggu",
+        "Ekspresikan apresiasi pada pasangan setiap hari",
+        "Diskusikan harapan dan kebutuhan masing-masing secara terbuka",
+        "Coba aktivitas baru bersama untuk memperkuat bonding",
+        "Evaluasi dan perbaiki pola komunikasi yang kurang efektif"
+      ],
+      "saran": [
+        "Fokus pada komunikasi dan quality time untuk meningkatkan kualitas hubungan",
+        "Tingkatkan empati dan pemahaman terhadap kebutuhan pasangan",
+        "Buat waktu khusus untuk date night atau aktivitas bersama",
+        "Belajar love language masing-masing dan aplikasikan",
+        "Jangan biarkan masalah kecil menumpuk, segera komunikasikan",
+        "Apresiasi hal-hal positif dalam hubungan"
+      ]
+    },
+    "baik": {
+      "level": "Sehat",
+      "emoji": "🟢",
+      "deskripsi": "Hubungan Anda dalam kondisi yang sehat dan positif. Komunikasi berjalan baik, saling mendukung, dan ada kepuasan dalam hubungan. Pertahankan kualitas ini dan terus kembangkan hubungan Anda.",
+      "todo": [
+        "Pertahankan rutinitas komunikasi yang sudah baik",
+        "Terus eksplorasi cara baru untuk mengekspresikan cinta dan perhatian",
+        "Dukung pertumbuhan personal masing-masing",
+        "Rayakan pencapaian kecil dan momen spesial bersama",
+        "Evaluasi hubungan secara berkala untuk memastikan tetap sehat"
+      ],
+      "saran": [
+        "Pertahankan komunikasi yang terbuka dan jujur",
+        "Terus saling mendukung dan menghargai satu sama lain",
+        "Jangan berhenti berusaha membuat pasangan merasa spesial",
+        "Tetap prioritaskan quality time meski kehidupan sibuk",
+        "Rayakan momen-momen kecil dalam hubungan",
+        "Jadilah tim yang solid dalam menghadapi tantangan hidup"
+      ]
+    }
+  },
+  "burnout": {
+    "kritis": {
+      "level": "Burnout Sangat Parah",
+      "emoji": "🔴",
+      "deskripsi": "Anda mengalami burnout tingkat sangat parah yang dapat sangat berbahaya bagi kesehatan fisik dan mental Anda. Kelelahan ekstrem, kehilangan motivasi total, dan perasaan tidak berdaya mungkin mendominasi hidup Anda. Ini adalah kondisi darurat yang memerlukan tindakan segera.",
+      "todo": [
+        "Segera konsultasi dengan psikolog atau psikiater profesional",
+        "Ajukan cuti atau istirahat medis dari pekerjaan (minimal 1-2 minggu)",
+        "Beritahu atasan atau HR tentang kondisi Anda",
+        "Batasi aktivitas hanya untuk hal-hal yang sangat esensial",
+        "Minta bantuan keluarga/teman untuk tugas sehari-hari"
+      ],
+      "saran": [
+        "SEGERA ambil cuti atau istirahat total dari pekerjaan",
+        "Konsultasi medis adalah prioritas utama - jangan ditunda!",
+        "Pertimbangkan perubahan karir atau lingkungan kerja jika perlu",
+        "Jangan paksa diri untuk produktif - fokus pada pemulihan",
+        "Hindari alkohol dan substansi lain untuk 'coping'",
+        "Hubungi support system Anda - jangan mengisolasi diri"
+      ]
+    },
+    "perlu_perhatian": {
+      "level": "Burnout Parah",
+      "emoji": "🟠",
+      "deskripsi": "Anda mengalami burnout yang parah. Kelelahan kronis, sinisme terhadap pekerjaan, dan penurunan produktivitas yang signifikan adalah tanda-tanda yang jelas. Kondisi ini memerlukan perhatian serius dan perubahan segera dalam pola kerja dan gaya hidup Anda.",
+      "todo": [
+        "Jadwalkan konsultasi dengan psikolog dalam minggu ini",
+        "Negosiasikan pengurangan beban kerja dengan atasan",
+        "Buat jadwal tidur teratur minimal 7-8 jam/malam",
+        "Blokir waktu untuk istirahat total di akhir pekan",
+        "Identifikasi dan delegasikan tugas yang bisa dikerjakan orang lain"
+      ],
+      "saran": [
+        "Pertimbangkan cuti jangka pendek untuk recovery (3-7 hari)",
+        "Bicara dengan atasan tentang workload yang tidak realistis",
+        "Tetapkan batasan kerja yang jelas (no work after hours)",
+        "Mulai terapi atau konseling untuk mengatasi burnout",
+        "Evaluasi apakah pekerjaan current masih align dengan nilai Anda",
+        "Prioritaskan self-care dan kesehatan mental di atas performa kerja"
+      ]
+    },
+    "moderat": {
+      "level": "Burnout Sedang",
+      "emoji": "🟡",
+      "deskripsi": "Anda menunjukkan tanda-tanda burnout tingkat sedang. Mungkin Anda mulai merasa lelah secara konsisten, kurang antusiasme terhadap pekerjaan, dan kadang merasa overwhelmed. Ini adalah peringatan untuk melakukan perubahan sebelum memburuk.",
+      "todo": [
+        "Terapkan work-life balance dengan strict boundaries",
+        "Ambil breaks rutin setiap 90 menit saat bekerja (5-10 menit)",
+        "Lakukan aktivitas fisik ringan 30 menit, 3x seminggu",
+        "Praktikkan teknik relaksasi (meditasi, breathing exercise) 10 menit/hari",
+        "Evaluasi dan reorganisasi prioritas kerja setiap minggu"
+      ],
+      "saran": [
+        "Mulai membangun boundaries antara pekerjaan dan kehidupan pribadi",
+        "Identifikasi stressor utama dan cari solusi praktis",
+        "Jangan skip istirahat makan siang - gunakan untuk recharge",
+        "Komunikasikan kebutuhan Anda pada atasan atau tim",
+        "Cari hobi atau aktivitas di luar pekerjaan yang menyenangkan",
+        "Consider delegasi atau kolaborasi untuk tugas yang overwhelming"
+      ]
+    },
+    "baik": {
+      "level": "Tidak Ada Burnout",
+      "emoji": "🟢",
+      "deskripsi": "Anda dalam kondisi yang baik dan tidak menunjukkan tanda-tanda burnout yang signifikan. Anda mampu mengelola stress dengan baik dan memiliki work-life balance yang sehat. Pertahankan pola ini untuk mencegah burnout di masa depan.",
+      "todo": [
+        "Pertahankan rutinitas self-care yang sudah ada",
+        "Tetap monitor tingkat stress dan energi secara berkala",
+        "Lanjutkan aktivitas fisik dan hobi yang Anda nikmati",
+        "Maintain healthy boundaries antara kerja dan personal life",
+        "Support rekan kerja yang mungkin mengalami burnout"
+      ],
+      "saran": [
+        "Pertahankan work-life balance yang sudah baik",
+        "Tetap aware terhadap tanda-tanda awal burnout",
+        "Jangan overcommit meski Anda merasa sanggup",
+        "Share strategi coping Anda dengan orang lain",
+        "Tetap prioritaskan kesehatan mental dalam jangka panjang",
+        "Celebrate wins dan appreciate progress Anda"
+      ]
+    }
+  },
+  "depresi": {
+    "kritis": {
+      "level": "depresi Sangat Parah",
+      "emoji": "🔴",
+      "deskripsi": "depresi",
+      "todo": [
+        "depresi"
+      ],
+      "saran": [
+        "depresi"
+      ]
+    },
+    "buruk": {
+      "level": "depresi Parah",
+      "emoji": "🟠",
+      "deskripsi": "depresi",
+      "todo": [
+        "depresi"
+      ],
+      "saran": [
+        "depresi"
+      ]
+    },
+    "cukup": {
+      "level": "depresi Sedang",
+      "emoji": "🟡",
+      "deskripsi": "depresi",
+      "todo": [
+        "depresi"
+      ],
+      "saran": [
+        "depresi"
+      ]
+    },
+    "baik": {
+      "level": "Tidak Ada depresi",
+      "emoji": "🟢",
+      "deskripsi": "depresi",
+      "todo": [
+        "depresi"
+      ],
+      "saran": [
+        "depresi"
+      ]
+    }
+  },
+  "kecanduan": {
+    "kritis": {
+      "level": "kecanduan Sangat Parah",
+      "emoji": "🔴",
+      "deskripsi": "kecanduan",
+      "todo": [
+        "kecanduan"
+      ],
+      "saran": [
+        "kecanduan"
+      ]
+    },
+    "buruk": {
+      "level": "kecanduan Parah",
+      "emoji": "🟠",
+      "deskripsi": "kecanduan",
+      "todo": [
+        "kecanduan"
+      ],
+      "saran": [
+        "kecanduan"
+      ]
+    },
+    "cukup": {
+      "level": "kecanduan Sedang",
+      "emoji": "🟡",
+      "deskripsi": "kecanduan",
+      "todo": [
+        "kecanduan"
+      ],
+      "saran": [
+        "kecanduan"
+      ]
+    },
+    "baik": {
+      "level": "Tidak Ada kecanduan",
+      "emoji": "🟢",
+      "deskripsi": "kecanduan",
+      "todo": [
+        "kecanduan"
+      ],
+      "saran": [
+        "kecanduan"
+      ]
+    }
+  },
+  "kecemasan": {
+    "kritis": {
+      "level": "kecemasan Sangat Parah",
+      "emoji": "🔴",
+      "deskripsi": "kecemasan",
+      "todo": [
+        "kecemasan"
+      ],
+      "saran": [
+        "kecemasan"
+      ]
+    },
+    "buruk": {
+      "level": "kecemasan Parah",
+      "emoji": "🟠",
+      "deskripsi": "kecemasan",
+      "todo": [
+        "kecemasan"
+      ],
+      "saran": [
+        "kecemasan"
+      ]
+    },
+    "cukup": {
+      "level": "kecemasan Sedang",
+      "emoji": "🟡",
+      "deskripsi": "kecemasan",
+      "todo": [
+        "kecemasan"
+      ],
+      "saran": [
+        "kecemasan"
+      ]
+    },
+    "baik": {
+      "level": "Tidak Ada kecemasan",
+      "emoji": "🟢",
+      "deskripsi": "kecemasan",
+      "todo": [
+        "kecemasan"
+      ],
+      "saran": [
+        "kecemasan"
+      ]
+    }
+  },
+  "mood": {
+    "kritis": {
+      "level": "mood Sangat Parah",
+      "emoji": "🔴",
+      "deskripsi": "mood",
+      "todo": [
+        "mood"
+      ],
+      "saran": [
+        "mood"
+      ]
+    },
+    "buruk": {
+      "level": "mood Parah",
+      "emoji": "🟠",
+      "deskripsi": "mood",
+      "todo": [
+        "mood"
+      ],
+      "saran": [
+        "mood"
+      ]
+    },
+    "cukup": {
+      "level": "mood Sedang",
+      "emoji": "🟡",
+      "deskripsi": "mood",
+      "todo": [
+        "mood"
+      ],
+      "saran": [
+        "mood"
+      ]
+    },
+    "baik": {
+      "level": "Tidak Ada mood",
+      "emoji": "🟢",
+      "deskripsi": "mood",
+      "todo": [
+        "mood"
+      ],
+      "saran": [
+        "mood"
+      ]
+    }
+  },
+  "stress": {
+    "kritis": {
+      "level": "stress Sangat Parah",
+      "emoji": "🔴",
+      "deskripsi": "stress",
+      "todo": [
+        "stress"
+      ],
+      "saran": [
+        "stress"
+      ]
+    },
+    "buruk": {
+      "level": "stress Parah",
+      "emoji": "🟠",
+      "deskripsi": "stress",
+      "todo": [
+        "stress"
+      ],
+      "saran": [
+        "stress"
+      ]
+    },
+    "cukup": {
+      "level": "stress Sedang",
+      "emoji": "🟡",
+      "deskripsi": "stress",
+      "todo": [
+        "stress"
+      ],
+      "saran": [
+        "stress"
+      ]
+    },
+    "baik": {
+      "level": "Tidak Ada stress",
+      "emoji": "🟢",
+      "deskripsi": "stress",
+      "todo": [
+        "stress"
+      ],
+      "saran": [
+        "stress"
+      ]
+    }
+  },
+  "trauma": {
+    "kritis": {
+      "level": "trauma Sangat Parah",
+      "emoji": "🔴",
+      "deskripsi": "trauma",
+      "todo": [
+        "trauma"
+      ],
+      "saran": [
+        "trauma"
+      ]
+    },
+    "buruk": {
+      "level": "trauma Parah",
+      "emoji": "🟠",
+      "deskripsi": "trauma",
+      "todo": [
+        "trauma"
+      ],
+      "saran": [
+        "trauma"
+      ]
+    },
+    "cukup": {
+      "level": "trauma Sedang",
+      "emoji": "🟡",
+      "deskripsi": "trauma",
+      "todo": [
+        "trauma"
+      ],
+      "saran": [
+        "trauma"
+      ]
+    },
+    "baik": {
+      "level": "Tidak Ada trauma",
+      "emoji": "🟢",
+      "deskripsi": "trauma",
+      "todo": [
+        "trauma"
+      ],
+      "saran": [
+        "trauma"
+      ]
+    }
+  }
+}
