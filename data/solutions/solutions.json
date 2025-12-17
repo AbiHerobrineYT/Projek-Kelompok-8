@@ -168,45 +168,29 @@
       "level": "depresi Sangat Parah",
       "emoji": "🔴",
       "deskripsi": "depresi",
-      "todo": [
-        "depresi"
-      ],
-      "saran": [
-        "depresi"
-      ]
+      "todo": ["depresi"],
+      "saran": ["depresi"]
     },
     "buruk": {
       "level": "depresi Parah",
       "emoji": "🟠",
       "deskripsi": "depresi",
-      "todo": [
-        "depresi"
-      ],
-      "saran": [
-        "depresi"
-      ]
+      "todo": ["depresi"],
+      "saran": ["depresi"]
     },
     "cukup": {
       "level": "depresi Sedang",
       "emoji": "🟡",
       "deskripsi": "depresi",
-      "todo": [
-        "depresi"
-      ],
-      "saran": [
-        "depresi"
-      ]
+      "todo": ["depresi"],
+      "saran": ["depresi"]
     },
     "baik": {
       "level": "Tidak Ada depresi",
       "emoji": "🟢",
       "deskripsi": "depresi",
-      "todo": [
-        "depresi"
-      ],
-      "saran": [
-        "depresi"
-      ]
+      "todo": ["depresi"],
+      "saran": ["depresi"]
     }
   },
   "kecanduan": {
@@ -214,45 +198,29 @@
       "level": "kecanduan Sangat Parah",
       "emoji": "🔴",
       "deskripsi": "kecanduan",
-      "todo": [
-        "kecanduan"
-      ],
-      "saran": [
-        "kecanduan"
-      ]
+      "todo": ["kecanduan"],
+      "saran": ["kecanduan"]
     },
     "buruk": {
       "level": "kecanduan Parah",
       "emoji": "🟠",
       "deskripsi": "kecanduan",
-      "todo": [
-        "kecanduan"
-      ],
-      "saran": [
-        "kecanduan"
-      ]
+      "todo": ["kecanduan"],
+      "saran": ["kecanduan"]
     },
     "cukup": {
       "level": "kecanduan Sedang",
       "emoji": "🟡",
       "deskripsi": "kecanduan",
-      "todo": [
-        "kecanduan"
-      ],
-      "saran": [
-        "kecanduan"
-      ]
+      "todo": ["kecanduan"],
+      "saran": ["kecanduan"]
     },
     "baik": {
       "level": "Tidak Ada kecanduan",
       "emoji": "🟢",
       "deskripsi": "kecanduan",
-      "todo": [
-        "kecanduan"
-      ],
-      "saran": [
-        "kecanduan"
-      ]
+      "todo": ["kecanduan"],
+      "saran": ["kecanduan"]
     }
   },
   "kecemasan": {
@@ -260,45 +228,29 @@
       "level": "kecemasan Sangat Parah",
       "emoji": "🔴",
       "deskripsi": "kecemasan",
-      "todo": [
-        "kecemasan"
-      ],
-      "saran": [
-        "kecemasan"
-      ]
+      "todo": ["kecemasan"],
+      "saran": ["kecemasan"]
     },
     "buruk": {
       "level": "kecemasan Parah",
       "emoji": "🟠",
       "deskripsi": "kecemasan",
-      "todo": [
-        "kecemasan"
-      ],
-      "saran": [
-        "kecemasan"
-      ]
+      "todo": ["kecemasan"],
+      "saran": ["kecemasan"]
     },
     "cukup": {
       "level": "kecemasan Sedang",
       "emoji": "🟡",
       "deskripsi": "kecemasan",
-      "todo": [
-        "kecemasan"
-      ],
-      "saran": [
-        "kecemasan"
-      ]
+      "todo": ["kecemasan"],
+      "saran": ["kecemasan"]
     },
     "baik": {
       "level": "Tidak Ada kecemasan",
       "emoji": "🟢",
       "deskripsi": "kecemasan",
-      "todo": [
-        "kecemasan"
-      ],
-      "saran": [
-        "kecemasan"
-      ]
+      "todo": ["kecemasan"],
+      "saran": ["kecemasan"]
     }
   },
   "mood": {
@@ -306,45 +258,29 @@
       "level": "mood Sangat Parah",
       "emoji": "🔴",
       "deskripsi": "mood",
-      "todo": [
-        "mood"
-      ],
-      "saran": [
-        "mood"
-      ]
+      "todo": ["mood"],
+      "saran": ["mood"]
     },
     "buruk": {
       "level": "mood Parah",
       "emoji": "🟠",
       "deskripsi": "mood",
-      "todo": [
-        "mood"
-      ],
-      "saran": [
-        "mood"
-      ]
+      "todo": ["mood"],
+      "saran": ["mood"]
     },
     "cukup": {
       "level": "mood Sedang",
       "emoji": "🟡",
       "deskripsi": "mood",
-      "todo": [
-        "mood"
-      ],
-      "saran": [
-        "mood"
-      ]
+      "todo": ["mood"],
+      "saran": ["mood"]
     },
     "baik": {
       "level": "Tidak Ada mood",
       "emoji": "🟢",
       "deskripsi": "mood",
-      "todo": [
-        "mood"
-      ],
-      "saran": [
-        "mood"
-      ]
+      "todo": ["mood"],
+      "saran": ["mood"]
     }
   },
   "stress": {
@@ -352,45 +288,29 @@
       "level": "stress Sangat Parah",
       "emoji": "🔴",
       "deskripsi": "stress",
-      "todo": [
-        "stress"
-      ],
-      "saran": [
-        "stress"
-      ]
+      "todo": ["stress"],
+      "saran": ["stress"]
     },
     "buruk": {
       "level": "stress Parah",
       "emoji": "🟠",
       "deskripsi": "stress",
-      "todo": [
-        "stress"
-      ],
-      "saran": [
-        "stress"
-      ]
+      "todo": ["stress"],
+      "saran": ["stress"]
     },
     "cukup": {
       "level": "stress Sedang",
       "emoji": "🟡",
       "deskripsi": "stress",
-      "todo": [
-        "stress"
-      ],
-      "saran": [
-        "stress"
-      ]
+      "todo": ["stress"],
+      "saran": ["stress"]
     },
     "baik": {
       "level": "Tidak Ada stress",
       "emoji": "🟢",
       "deskripsi": "stress",
-      "todo": [
-        "stress"
-      ],
-      "saran": [
-        "stress"
-      ]
+      "todo": ["stress"],
+      "saran": ["stress"]
     }
   },
   "trauma": {
@@ -398,45 +318,29 @@
       "level": "trauma Sangat Parah",
       "emoji": "🔴",
       "deskripsi": "trauma",
-      "todo": [
-        "trauma"
-      ],
-      "saran": [
-        "trauma"
-      ]
+      "todo": ["trauma"],
+      "saran": ["trauma"]
     },
     "buruk": {
       "level": "trauma Parah",
       "emoji": "🟠",
       "deskripsi": "trauma",
-      "todo": [
-        "trauma"
-      ],
-      "saran": [
-        "trauma"
-      ]
+      "todo": ["trauma"],
+      "saran": ["trauma"]
     },
     "cukup": {
       "level": "trauma Sedang",
       "emoji": "🟡",
       "deskripsi": "trauma",
-      "todo": [
-        "trauma"
-      ],
-      "saran": [
-        "trauma"
-      ]
+      "todo": ["trauma"],
+      "saran": ["trauma"]
     },
     "baik": {
       "level": "Tidak Ada trauma",
       "emoji": "🟢",
       "deskripsi": "trauma",
-      "todo": [
-        "trauma"
-      ],
-      "saran": [
-        "trauma"
-      ]
+      "todo": ["trauma"],
+      "saran": ["trauma"]
     }
   }
 }

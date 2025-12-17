@@ -1,6 +1,6 @@
 # modules/about.py
 
-def tampilkan_tentang_kami():
+def tentang_kami():
     print("\n" + "="*60)
     print("🌱 TENTANG RUANG TEDUH 🌱".center(60))
     print("="*60)

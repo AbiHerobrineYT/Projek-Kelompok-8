@@ -2,7 +2,7 @@ import json
 import os
 from datetime import datetime
 
-def load_questionnaire(jenis_tes):
+def import_kuisioner(jenis_tes):
     """
     Load data kuisioner dari file JSON
     """
@@ -79,7 +79,7 @@ def jalankan_kuisioner(jenis_tes):
     Menjalankan kuisioner dan mengembalikan hasil
     """
     # Load data kuisioner
-    data = load_questionnaire(jenis_tes)
+    data = import_kuisioner(jenis_tes)
     if not data:
         return None
     
@@ -93,11 +93,14 @@ def jalankan_kuisioner(jenis_tes):
     total_skor = 0
     
     # Loop untuk setiap pertanyaan
-    for i, pertanyaan in enumerate(data['pertanyaan'], 1):
+    for i in range(len(data['pertanyaan'])):
+        pertanyaan = data['pertanyaan'][i]
+
         print(f"\n{'='*70}")
-        print(f"Pertanyaan {i} dari {len(data['pertanyaan'])}")
+        print(f"Pertanyaan {i + 1} dari {len(data['pertanyaan'])}")
         print(f"{'='*70}")
         print(f"\n{pertanyaan['teks']}")
+
         
         # Tampilkan opsi jawaban
         print("\nPilihan:")

@@ -1,9 +1,10 @@
 from modules.menu import menu_utama
-from modules.about import tampilkan_tentang_kami
-from modules.questionnaire_menu import tampilkan_menu_kuisioner, get_nama_kuisioner
-from modules.questionnaire_engine import jalankan_kuisioner, tampilkan_hasil
+from modules.about import tentang_kami
+from modules.kuisioner_menu import tampilkan_menu_kuisioner, get_nama_kuisioner
+from modules.kuisioner_engine import jalankan_kuisioner, tampilkan_hasil
 from modules.login_register import login, register
 from modules.login_register import menu_auth
+
 
 def main():
     while True:
@@ -53,7 +54,7 @@ def main():
             input("\nTekan Enter untuk kembali ke menu...")
             
         elif pilihan == '4':
-            tampilkan_tentang_kami()
+            tentang_kami()
             input("\nTekan Enter untuk kembali ke menu...")
             
         elif pilihan == '5':

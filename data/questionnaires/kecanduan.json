@@ -1,0 +1,92 @@
+{
+  "id": "Kecanduan_Gadget",
+  "nama": "Tes Kecanduan Gadget & Media Sosial",
+  "deskripsi": "Penilaian tingkat ketergantungan terhadap perangkat digital dan media sosial.",
+  "instruksi": "Jawab setiap pertanyaan berdasarkan perilaku Anda dalam 1 bulan terakhir. Skala 1 = Tidak Pernah, 5 = Hampir Setiap Hari/Sangat Sering.",
+  "skala": {
+    "1": "Tidak Pernah",
+    "2": "Jarang",
+    "3": "Kadang-kadang",
+    "4": "Sering",
+    "5": "Hampir Setiap Hari"
+  },
+  "pertanyaan": [
+    {
+      "id": 1,
+      "teks": "Merasa sulit mengontrol durasi waktu saat menggunakan gadget atau media sosial.",
+      "reverse": false
+    },
+    {
+      "id": 2,
+      "teks": "Merasa gelisah, cemas, atau mudah marah jika tidak bisa mengakses gadget/internet.",
+      "reverse": false
+    },
+    {
+      "id": 3,
+      "teks": "Mengabaikan pekerjaan, tugas sekolah, atau tanggung jawab rumah demi bermain gadget.",
+      "reverse": false
+    },
+    {
+      "id": 4,
+      "teks": "Tetap menggunakan gadget meskipun tahu hal tersebut menyebabkan kurang tidur atau mata lelah.",
+      "reverse": false
+    },
+    {
+      "id": 5,
+      "teks": "Kehilangan minat pada hobi atau aktivitas nyata yang dulu Anda sukai.",
+      "reverse": false
+    },
+    {
+      "id": 6,
+      "teks": "Menggunakan gadget sebagai cara utama untuk melarikan diri dari masalah atau perasaan negatif.",
+      "reverse": false
+    },
+    {
+      "id": 7,
+      "teks": "Merasa hubungan dengan keluarga atau teman terganggu karena Anda terlalu asyik dengan dunia digital.",
+      "reverse": false
+    },
+    {
+      "id": 8,
+      "teks": "Pernah mencoba mengurangi waktu penggunaan gadget namun selalu gagal.",
+      "reverse": false
+    },
+    {
+      "id": 9,
+      "teks": "Sering berbohong kepada orang terdekat mengenai berapa lama waktu yang Anda habiskan di depan layar.",
+      "reverse": false
+    }
+  ],
+  "scoring": {
+    "ranges": [
+      {
+        "min": 9,
+        "max": 18,
+        "level": "Penggunaan Sehat",
+        "kategori": "baik",
+        "deskripsi": "Penggunaan gadget Anda masih dalam batas wajar dan terkendali. Anda memiliki keseimbangan yang baik antara dunia digital dan kehidupan nyata."
+      },
+      {
+        "min": 19,
+        "max": 27,
+        "level": "Risiko Ringan",
+        "kategori": "moderat",
+        "deskripsi": "Anda mulai menunjukkan tanda ketergantungan. Cobalah untuk membatasi notifikasi dan memperbanyak interaksi tatap muka secara sadar."
+      },
+      {
+        "min": 28,
+        "max": 36,
+        "level": "Kecanduan Moderat",
+        "kategori": "perlu_perhatian",
+        "deskripsi": "Penggunaan gadget sudah mulai mengganggu produktivitas dan pola hidup Anda. Disarankan untuk melakukan 'Digital Detox' secara berkala."
+      },
+      {
+        "min": 37,
+        "max": 45,
+        "level": "Kecanduan Berat",
+        "kategori": "kritis",
+        "deskripsi": "Ketergantungan gadget Anda berada pada level serius dan mengganggu fungsi harian. Sangat disarankan untuk membatasi akses perangkat secara ketat atau berkonsultasi dengan ahli."
+      }
+    ]
+  }
+}
