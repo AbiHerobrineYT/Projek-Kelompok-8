@@ -5,8 +5,6 @@ from datetime import datetime
 def load_questionnaire(jenis_tes):
     """
     Load data kuisioner dari file JSON
-    Args: jenis_tes (str) - nama file tanpa .json (contoh: 'keluarga', 'stress')
-    Returns: dict - data kuisioner atau None jika error
     """
     try:
         file_path = f"data/questionnaires/{jenis_tes}.json"
@@ -17,6 +15,43 @@ def load_questionnaire(jenis_tes):
         return None
     except json.JSONDecodeError:
         print(f"\n❌ Error: File kuisioner '{jenis_tes}.json' memiliki format yang salah!")
+        return None
+
+
+def load_solutions():
+    """
+    Load semua data solusi dari file JSON
+    Returns: dict - semua solusi atau None jika error
+    """
+    try:
+        file_path = "data/solutions/solutions.json"
+        with open(file_path, 'r', encoding='utf-8') as file:
+            return json.load(file)
+    except FileNotFoundError:
+        print(f"\n❌ Error: File solutions.json tidak ditemukan!")
+        return None
+    except json.JSONDecodeError:
+        print(f"\n❌ Error: File solutions.json memiliki format yang salah!")
+        return None
+
+
+def get_solution(jenis_tes, kategori):
+    """
+    Mengambil solusi spesifik berdasarkan jenis tes dan kategori
+    Args:
+        jenis_tes (str) - jenis tes (contoh: 'keluarga', 'burnout')
+        kategori (str) - kategori hasil (contoh: 'kritis', 'buruk', 'cukup', 'baik')
+    Returns: dict - data solusi atau None
+    """
+    all_solutions = load_solutions()
+    
+    if not all_solutions:
+        return None
+    
+    try:
+        return all_solutions[jenis_tes][kategori]
+    except KeyError:
+        print(f"\n❌ Solusi untuk {jenis_tes} - {kategori} tidak ditemukan!")
         return None
 
 
@@ -42,8 +77,6 @@ def tampilkan_instruksi(data_kuisioner):
 def jalankan_kuisioner(jenis_tes):
     """
     Menjalankan kuisioner dan mengembalikan hasil
-    Args: jenis_tes (str) - jenis kuisioner
-    Returns: dict - hasil kuisioner dengan skor dan jawaban
     """
     # Load data kuisioner
     data = load_questionnaire(jenis_tes)
@@ -82,9 +115,9 @@ def jalankan_kuisioner(jenis_tes):
                 
                 nilai = int(user_input)
                 
-                # Handle reverse scoring (untuk pertanyaan negatif)
+                # Handle reverse scoring
                 if pertanyaan.get('reverse', False):
-                    skor = 6 - nilai  # Reverse: 1->5, 2->4, 3->3, 4->2, 5->1
+                    skor = 6 - nilai
                 else:
                     skor = nilai
                 
@@ -123,33 +156,25 @@ def jalankan_kuisioner(jenis_tes):
 def analisis_skor(total_skor, scoring_data):
     """
     Menganalisis skor dan menentukan kategori
-    Args: 
-        total_skor (int) - total skor yang didapat
-        scoring_data (dict) - data scoring dari JSON
-    Returns: dict - hasil analisis
     """
     for range_data in scoring_data['ranges']:
         if range_data['min'] <= total_skor <= range_data['max']:
             return {
                 'skor': total_skor,
                 'level': range_data['level'],
-                'kategori': range_data['kategori'],
-                'deskripsi': range_data['deskripsi']
+                'kategori': range_data['kategori']
             }
     
-    # Jika tidak ada range yang cocok (seharusnya tidak terjadi)
     return {
         'skor': total_skor,
         'level': 'Unknown',
-        'kategori': 'unknown',
-        'deskripsi': 'Hasil tidak dapat ditentukan.'
+        'kategori': 'unknown'
     }
 
 
 def tampilkan_hasil(hasil):
     """
-    Menampilkan hasil kuisioner dengan format yang menarik
-    Args: hasil (dict) - hasil dari jalankan_kuisioner()
+    Menampilkan hasil kuisioner (HANYA SKOR DAN LEVEL)
     """
     if not hasil:
         return
@@ -168,39 +193,46 @@ def tampilkan_hasil(hasil):
     
     analisis = hasil['analisis']
     
-    # Icon berdasarkan kategori
-    icon_kategori = {
-        'kritis': '🔴',
-        'perlu_perhatian': '🟠',
-        'moderat': '🟡',
-        'baik': '🟢',
-        'sangat_baik': '💚'
-    }
+    # Load solution untuk mendapatkan emoji
+    solution = get_solution(hasil['jenis_tes'], analisis['kategori'])
     
-    icon = icon_kategori.get(analisis['kategori'], '⚪')
-    
-    print(f"\n{icon} Tingkat: {analisis['level']}")
-    print(f"\n📝 Interpretasi:")
-    print(f"   {analisis['deskripsi']}")
+    if solution:
+        print(f"\n{solution['emoji']} Tingkat: {solution['level']}")
+    else:
+        print(f"\n⚪ Tingkat: {analisis['level']}")
     
     print("\n" + "="*70)
+
+
+def tampilkan_solusi_lengkap(jenis_tes, kategori):
+    """
+    Menampilkan solusi lengkap: deskripsi, to-do, dan saran
+    Args:
+        jenis_tes (str) - jenis tes
+        kategori (str) - kategori hasil (kritis/buruk/cukup/baik)
+    """
+    solution = get_solution(jenis_tes, kategori)
     
-    # Rekomendasi berdasarkan kategori
-    # Ini masih perlu disesuaiin buat setiap jenis tes
-    if analisis['kategori'] in ['kritis', 'perlu_perhatian']:
-        print("\n⚠️  REKOMENDASI PENTING:")
-        print("   • Pertimbangkan untuk konsultasi dengan psikolog atau konselor")
-        print("   • Bicarakan dengan orang yang Anda percaya")
-        print("   • Jangan ragu mencari bantuan profesional")
-    elif analisis['kategori'] == 'moderat':
-        print("\n💡 SARAN:")
-        print("   • Tingkatkan komunikasi dengan pasangan/keluarga")
-        print("   • Luangkan quality time bersama")
-        print("   • Diskusikan harapan dan kebutuhan masing-masing")
-    else:
-        print("\n✨ TETAP JAGA KUALITAS HUBUNGAN:")
-        print("   • Pertahankan komunikasi yang terbuka")
-        print("   • Terus saling mendukung dan menghargai")
-        print("   • Rayakan momen-momen kecil bersama")
+    if not solution:
+        print("\n❌ Solusi tidak ditemukan.")
+        return
+    
+    print("\n" + "="*70)
+    print(f"{solution['emoji']} DETAIL HASIL & REKOMENDASI {solution['emoji']}".center(70))
+    print("="*70)
+    
+    # Deskripsi
+    print(f"\n📝 DESKRIPSI:")
+    print(f"   {solution['deskripsi']}")
+    
+    # To-Do List
+    print(f"\n✅ TO-DO LIST:")
+    for i, todo in enumerate(solution['todo'], 1):
+        print(f"   {i}. {todo}")
+    
+    # Saran
+    print(f"\n💡 SARAN & REKOMENDASI:")
+    for i, saran in enumerate(solution['saran'], 1):
+        print(f"   {i}. {saran}")
     
     print("\n" + "="*70)

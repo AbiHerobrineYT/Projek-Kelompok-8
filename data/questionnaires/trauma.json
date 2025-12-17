@@ -4,11 +4,11 @@
   "deskripsi": "Penilaian tingkat gejala trauma berdasarkan pengalaman traumatis yang pernah Anda alami.",
   "instruksi": "Jawab berdasarkan seberapa sering gejala ini Anda alami dalam 1 bulan terakhir. Skala 0 = Tidak Pernah, 4 = Sangat Sering.",
   "skala": {
-    "0": "Tidak Pernah",
-    "1": "Jarang",
-    "2": "Kadang-kadang",
-    "3": "Sering",
-    "4": "Sangat Sering"
+    "1": "Tidak Pernah",
+    "2": "Jarang",
+    "3": "Kadang-kadang",
+    "4": "Sering",
+    "5": "Sangat Sering"
   },
   "pertanyaan": [
     {
@@ -60,31 +60,31 @@
   "scoring": {
     "ranges": [
       {
-        "min": 0,
-        "max": 12,
+        "min": 9,
+        "max": 21,
         "level": "Sangat Rendah",
-        "kategori": "normal",
+        "kategori": "baik",
         "deskripsi": "Gejala trauma sangat minimal atau tidak signifikan."
       },
       {
-        "min": 13,
-        "max": 24,
+        "min": 22,
+        "max": 33,
         "level": "Ringan",
-        "kategori": "ringan",
+        "kategori": "moderat",
         "deskripsi": "Ada beberapa tanda trauma ringan. Pemantauan dan dukungan emosional diperlukan."
       },
       {
-        "min": 25,
-        "max": 32,
+        "min": 34,
+        "max": 41,
         "level": "Sedang",
-        "kategori": "moderat",
+        "kategori": "perlu_perhatian",
         "deskripsi": "Gejala trauma cukup terasa. Konseling atau terapi sangat direkomendasikan."
       },
       {
-        "min": 33,
-        "max": 36,
+        "min": 42,
+        "max": 45,
         "level": "Tinggi",
-        "kategori": "serius",
+        "kategori": "kritis",
         "deskripsi": "Gejala trauma cukup berat dan memengaruhi kehidupan Anda. Pertimbangkan mencari bantuan profesional."
       }
     ]

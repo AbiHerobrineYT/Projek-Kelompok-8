@@ -4,10 +4,11 @@
   "deskripsi": "Penilaian tingkat gejala depresi berdasarkan skala PHQ-9",
   "instruksi": "Jawab setiap pertanyaan berdasarkan apa yang Anda rasakan dalam 2 minggu terakhir. Skala 0 = Tidak Pernah, 3 = Hampir Setiap Hari.",
   "skala": {
-    "0": "Tidak Pernah",
-    "1": "Beberapa Hari",
-    "2": "Lebih dari Setengah Hari",
-    "3": "Hampir Setiap Hari"
+    "1": "Tidak Pernah",
+    "2": "Beberapa Hari",
+    "3": "Lebih dari Setengah Hari",
+    "4": "Hampir Setiap Hari",
+    "5": "Hampir Setiap Hari"
   },
   "pertanyaan": [
     {
@@ -59,39 +60,32 @@
   "scoring": {
     "ranges": [
       {
-        "min": 0,
-        "max": 4,
-        "level": "Minimal",
-        "kategori": "normal",
-        "deskripsi": "Gejala depresi sangat ringan atau tidak signifikan. Tetap jaga kesehatan mental Anda."
+        "min": 9,
+        "max": 18,
+        "level": "Kondisi Baik",
+        "kategori": "baik",
+        "deskripsi": "Gejala depresi sangat minimal atau tidak signifikan. Kondisi emosional relatif stabil. Pertahankan kebiasaan hidup sehat dan dukungan sosial."
       },
       {
-        "min": 5,
-        "max": 9,
-        "level": "Ringan",
-        "kategori": "ringan",
-        "deskripsi": "Ada tanda-tanda depresi ringan. Istirahat cukup, komunikasi dengan orang terdekat, dan perhatikan perubahan mood."
-      },
-      {
-        "min": 10,
-        "max": 14,
-        "level": "Sedang",
-        "kategori": "moderat",
-        "deskripsi": "Gejala depresi tingkat sedang. Pertimbangkan untuk konsultasi dengan konselor atau profesional."
-      },
-      {
-        "min": 15,
-        "max": 19,
-        "level": "Sedang Berat",
-        "kategori": "serius",
-        "deskripsi": "Gejala cukup mengganggu aktivitas sehari-hari. Konsultasi profesional sangat disarankan."
-      },
-      {
-        "min": 20,
+        "min": 19,
         "max": 27,
-        "level": "Berat",
+        "level": "Depresi Ringan",
+        "kategori": "moderat",
+        "deskripsi": "Terdapat tanda-tanda depresi ringan hingga sedang. Masih dapat dikelola, namun perlu meningkatkan perhatian pada pola tidur, aktivitas, dan emosi."
+      },
+      {
+        "min": 28,
+        "max": 36,
+        "level": "Perlu Perhatian",
+        "kategori": "perlu_perhatian",
+        "deskripsi": "Gejala depresi mulai berdampak pada aktivitas dan kenyamanan hidup. Disarankan melakukan evaluasi diri dan mempertimbangkan konsultasi dengan tenaga profesional."
+      },
+      {
+        "min": 37,
+        "max": 45,
+        "level": "Depresi Berat",
         "kategori": "kritis",
-        "deskripsi": "Tanda depresi berat. Dukungan profesional sangat dibutuhkan. Hubungi layanan kesehatan bila merasa tidak aman."
+        "deskripsi": "Gejala depresi berat dan berisiko mengganggu fungsi harian secara signifikan. Sangat disarankan mencari bantuan profesional segera."
       }
     ]
   }
