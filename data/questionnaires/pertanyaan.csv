@@ -1,0 +1,8 @@
+test_id,question_id,teks,reverse
+keluarga,1,Seberapa baik pasangan Anda memenuhi kebutuhan Anda?,false
+keluarga,2,Secara umum seberapa puas Anda dengan hubungan Anda?,false
+keluarga,3,Seberapa baik hubungan Anda dibandingkan dengan kebanyakan hubungan lainnya?,false
+keluarga,4,Seberapa sering Anda berharap tidak pernah masuk ke dalam hubungan ini?,true
+keluarga,5,Sejauh mana hubungan Anda memenuhi harapan awal Anda?,false
+keluarga,6,Seberapa besar Anda mencintai pasangan Anda?,false
+keluarga,7,Seberapa banyak masalah yang ada dalam hubungan Anda?,true

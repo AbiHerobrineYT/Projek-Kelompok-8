@@ -1,0 +1,5 @@
+test_id,min,max,level,kategori,deskripsi
+keluarga,7,14,Sangat Tidak Sehat,kritis,Hubungan menunjukkan tanda serius dan perlu perhatian segera
+keluarga,15,21,Tidak Sehat,perlu_perhatian,Banyak tantangan dalam hubungan. Disarankan komunikasi terbuka dan bantuan profesional
+keluarga,22,28,Cukup Sehat,moderat,Hubungan cukup baik namun masih dapat ditingkatkan
+keluarga,29,35,Sehat,baik,Hubungan dalam kondisi baik dan stabil

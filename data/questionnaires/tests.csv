@@ -1,0 +1,7 @@
+test_id,nama,deskripsi,instruksi
+keluarga,Tes Keluarga & Hubungan,Relationship Assessment Scale (RAS) - Evaluasi kualitas hubungan dengan pasangan/keluarga,Jawab pertanyaan berikut berdasarkan kondisi hubungan Anda saat ini. Skala 1 = Sangat Buruk/Tidak Pernah 5 = Sangat Baik/Selalu
+kecemasan,Tes Kecemasan & Kenyamanan Emosional,Penilaian tingkat kecemasan dan kenyamanan emosional dalam kondisi saat ini,Pilih seberapa sering Anda merasakan hal berikut dalam 7 hari terakhir
+stress,Tes Tingkat Stres Persepsi,Penilaian seberapa besar stres yang Anda rasakan berdasarkan pengalaman dalam 1 bulan terakhir,Jawab berdasarkan seberapa sering Anda merasakan hal ini dalam 1 bulan terakhir
+trauma,Tes Gejala Trauma (PTSD Screening),Penilaian tingkat gejala trauma berdasarkan pengalaman traumatis yang pernah Anda alami,Jawab berdasarkan seberapa sering gejala ini Anda alami dalam 1 bulan terakhir
+burnout_kerja,Tes Burnout Kerja,Penilaian tingkat burnout akibat tekanan pekerjaan,Jawab berdasarkan seberapa sering Anda merasakan hal berikut dalam 1 bulan terakhir
+depresi,Tes Gejala Depresi (PHQ-9 Adaptasi),Penilaian tingkat gejala depresi,Jawab setiap pertanyaan berdasarkan 2 minggu terakhir
