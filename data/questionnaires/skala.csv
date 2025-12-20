@@ -1,6 +1,33 @@
 test_id,value,label
-keluarga,1,Sangat Buruk / Tidak Sama Sekali
-keluarga,2,Buruk / Jarang
-keluarga,3,Cukup / Kadang-kadang
-keluarga,4,Baik / Sering
-keluarga,5,Sangat Baik / Selalu
+keluarga,1,Sangat Buruk
+keluarga,2,Buruk
+keluarga,3,Cukup
+keluarga,4,Baik
+keluarga,5,Sangat Baik
+
+depresi,0,Tidak Pernah
+depresi,1,Beberapa Hari
+depresi,2,Sering
+depresi,3,Hampir Setiap Hari
+
+kecemasan,1,Tidak Pernah
+kecemasan,2,Jarang
+kecemasan,3,Sering
+kecemasan,4,Sangat Sering
+
+stress,0,Tidak Pernah
+stress,1,Jarang
+stress,2,Sering
+stress,3,Sangat Sering
+
+trauma,0,Tidak Pernah
+trauma,1,Jarang
+trauma,2,Kadang-kadang
+trauma,3,Sering
+trauma,4,Sangat Sering
+
+burnout,0,Tidak Pernah
+burnout,1,Jarang
+burnout,2,Kadang-kadang
+burnout,3,Sering
+burnout,4,Sangat Sering

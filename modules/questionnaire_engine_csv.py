@@ -59,20 +59,36 @@ def jalankan_kuisioner(test_id):
 
     total_skor = 0
 
+    skala_keys = sorted(data["skala"].keys())
+    min_nilai = skala_keys[0]
+    max_nilai = skala_keys[-1]
+
+    # 🔥 AUTO ENUM OFFSET
+    tampil_offset = 1 if min_nilai == 0 else 0
+
     for i, p in enumerate(data["pertanyaan"], 1):
         print(f"\n{i}. {p['teks']}")
 
-        for nilai, label in data["skala"].items():
-            print(f"  [{nilai}] {label}")
+        # Mapping tampilan → nilai asli
+        pilihan_map = {}
+
+        for idx, nilai in enumerate(skala_keys, start=1):
+            tampil = idx if tampil_offset else nilai
+            pilihan_map[str(tampil)] = nilai
+            print(f"  [{tampil}] {data['skala'][nilai]}")
 
         while True:
-            jawab = input("Jawaban (1-5): ").strip()
-            if jawab in ["1", "2", "3", "4", "5"]:
-                nilai = int(jawab)
+            jawab = input(
+                f"Jawaban ({min(pilihan_map)} - {max(pilihan_map)}): "
+            ).strip()
 
-                # 🔥 FIX UTAMA: reverse = STRING
+            if jawab in pilihan_map:
+                nilai = pilihan_map[jawab]
+
                 is_reverse = str(p["reverse"]).lower() == "true"
-                skor = 6 - nilai if is_reverse else nilai
+
+                # reverse aman semua skala
+                skor = (max_nilai - nilai) if is_reverse else nilai
 
                 total_skor += skor
                 break
@@ -116,11 +132,3 @@ def tampilkan_hasil(hasil):
     print("Level      :", hasil["analisis"]["level"])
     print("Deskripsi  :", hasil["analisis"]["deskripsi"])
     print("=" * 70)
-
-
-# =========================
-# MODE TEST (OPSIONAL)
-# =========================
-if __name__ == "__main__":
-    h = jalankan_kuisioner("keluarga")
-    tampilkan_hasil(h)

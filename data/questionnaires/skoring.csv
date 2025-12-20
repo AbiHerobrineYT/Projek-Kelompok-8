@@ -1,5 +1,25 @@
 test_id,min,max,level,kategori,deskripsi
-keluarga,7,14,Sangat Tidak Sehat,kritis,Hubungan menunjukkan tanda serius dan perlu perhatian segera
-keluarga,15,21,Tidak Sehat,perlu_perhatian,Banyak tantangan dalam hubungan. Disarankan komunikasi terbuka dan bantuan profesional
-keluarga,22,28,Cukup Sehat,moderat,Hubungan cukup baik namun masih dapat ditingkatkan
-keluarga,29,35,Sehat,baik,Hubungan dalam kondisi baik dan stabil
+keluarga,7,13,Rendah,perlu_perhatian,Kualitas hubungan rendah dan perlu perhatian
+keluarga,14,20,Sedang,moderat,Kualitas hubungan cukup baik namun masih perlu ditingkatkan
+keluarga,21,28,Tinggi,baik,Kualitas hubungan baik dan sehat
+
+depresi,0,4,Minimal,normal,Gejala depresi sangat ringan
+depresi,5,9,Ringan,ringan,Gejala depresi ringan
+depresi,10,14,Sedang,moderat,Gejala depresi sedang dan perlu perhatian
+depresi,15,27,Berat,kritis,Gejala depresi berat dan disarankan bantuan profesional
+
+kecemasan,4,7,Rendah,baik,Tingkat kecemasan rendah
+kecemasan,8,11,Sedang,moderat,Tingkat kecemasan sedang
+kecemasan,12,16,Tinggi,kritis,Tingkat kecemasan tinggi
+
+stress,0,5,Rendah,baik,Tingkat stres rendah
+stress,6,10,Sedang,moderat,Tingkat stres sedang
+stress,11,16,Tinggi,kritis,Tingkat stres tinggi
+
+trauma,0,4,Rendah,baik,Gejala trauma minimal
+trauma,5,9,Sedang,moderat,Gejala trauma sedang
+trauma,10,16,Tinggi,kritis,Gejala trauma tinggi dan perlu bantuan profesional
+
+burnout,0,5,Rendah,baik,Tingkat burnout rendah
+burnout,6,10,Sedang,moderat,Tingkat burnout sedang
+burnout,11,20,Tinggi,kritis,Tingkat burnout tinggi dan perlu intervensi
