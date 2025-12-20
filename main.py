@@ -1,7 +1,7 @@
 from modules.menu import menu_utama
 from modules.about import tampilkan_tentang_kami
 from modules.questionnaire_menu import tampilkan_menu_kuisioner, get_nama_kuisioner
-from modules.questionnaire_engine import jalankan_kuisioner, tampilkan_hasil
+from modules.questionnaire_engine_csv import jalankan_kuisioner, tampilkan_hasil
 from modules.login_register import login, register
 from modules.login_register import menu_auth
 
