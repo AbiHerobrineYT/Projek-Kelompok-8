@@ -7,6 +7,10 @@ from datetime import datetime
 # =========================
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_DIR = os.path.join(BASE_DIR, "data", "questionnaires")
+HASIL_DIR = os.path.join(BASE_DIR, "data", "hasil")
+
+if not os.path.exists(HASIL_DIR):
+    os.makedirs(HASIL_DIR)
 
 
 # =========================
@@ -63,13 +67,11 @@ def jalankan_kuisioner(test_id):
     min_nilai = skala_keys[0]
     max_nilai = skala_keys[-1]
 
-    # 🔥 AUTO ENUM OFFSET
     tampil_offset = 1 if min_nilai == 0 else 0
 
     for i, p in enumerate(data["pertanyaan"], 1):
         print(f"\n{i}. {p['teks']}")
 
-        # Mapping tampilan → nilai asli
         pilihan_map = {}
 
         for idx, nilai in enumerate(skala_keys, start=1):
@@ -87,7 +89,7 @@ def jalankan_kuisioner(test_id):
 
                 is_reverse = str(p["reverse"]).lower() == "true"
 
-                # reverse aman semua skala
+                # Reverse semua skala
                 skor = (max_nilai - nilai) if is_reverse else nilai
 
                 total_skor += skor
@@ -123,12 +125,80 @@ def analisis_skor(total_skor, skoring):
 # =========================
 # TAMPILKAN HASIL
 # =========================
-def tampilkan_hasil(hasil):
-    print("\n" + "=" * 70)
-    print("HASIL TES".center(70))
-    print("=" * 70)
+
+def simpan_hasil_txt(hasil):
+    """
+    Simpan hasil tes ke file TXT
+    """
+    filename = f"{hasil['test_id']}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.txt"
+    filepath = os.path.join(HASIL_DIR, filename)
+
+    with open(filepath, "w", encoding="utf-8") as f:
+        GARIS = "=" * 60
+
+        f.write(GARIS + "\n")
+        f.write("HASIL TES".center(60) + "\n")
+        f.write(GARIS + "\n")
+
+        f.write(f"Tanggal    : {hasil['tanggal']}\n")
+        f.write(f"Test ID    : {hasil['test_id']}\n")
+        f.write(f"Total Skor : {hasil['total_skor']}\n")
+        f.write(f"Level      : {hasil['analisis']['level']}\n")
+        f.write(f"Kategori   : {hasil['analisis'].get('kategori', '-')}\n")
+        f.write("Deskripsi  :\n")
+        f.write(hasil["analisis"]["deskripsi"] + "\n")
+
+        f.write(GARIS + "\n")
+
+    return filepath
+
+
+def tampilkan_hasil(hasil, simpan=True):
+    print("\n" + "=" * 60)
+    print("HASIL TES".center(60) + '\n')
+    print("=" * 60)
     print("Tanggal    :", hasil["tanggal"])
     print("Total Skor :", hasil["total_skor"])
     print("Level      :", hasil["analisis"]["level"])
     print("Deskripsi  :", hasil["analisis"]["deskripsi"])
-    print("=" * 70)
+    print("=" * 60)
+
+    if simpan:
+        path = simpan_hasil_txt(hasil)
+        print(f"\n💾 Hasil disimpan di: {path}")
+
+def riwayat_hasil():
+    """
+    Menampilkan daftar file hasil dan mengembalikan isi file yang dipilih
+    """
+    files = sorted(
+        [f for f in os.listdir(HASIL_DIR) if f.endswith(".txt")],
+        reverse=True
+    )
+
+    if not files:
+        print("\n📭 Belum ada riwayat hasil.")
+        return None
+
+    print("\n📊 RIWAYAT HASIL TES")
+    print("=" * 50)
+
+    for i, file in enumerate(files, 1):
+        print(f"{i}. {file}")
+
+    print("0. Kembali")
+
+    while True:
+        pilih = input("\nPilih nomor hasil: ").strip()
+
+        if pilih == '0':
+            return None
+
+        if pilih.isdigit() and 1 <= int(pilih) <= len(files):
+            filepath = os.path.join(HASIL_DIR, files[int(pilih) - 1])
+            with open(filepath, "r", encoding="utf-8") as f:
+                return f.read()
+
+        print("❌ Pilihan tidak valid")
+
+    
