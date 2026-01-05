@@ -1,0 +1,90 @@
+{
+  "id": "stress",
+  "nama": "Tes Tingkat Stres Persepsi",
+  "deskripsi": "Penilaian seberapa besar stres yang Anda rasakan berdasarkan pengalaman dalam 1 bulan terakhir.",
+  "instruksi": "Jawab berdasarkan seberapa sering Anda merasakan hal ini dalam 1 bulan terakhir. Skala 0 = Tidak Pernah, 4 = Sangat Sering.",
+  "skala": {
+    "0": "Tidak Pernah",
+    "1": "Hampir Tidak Pernah",
+    "2": "Kadang-kadang",
+    "3": "Cukup Sering",
+    "4": "Sangat Sering"
+  },
+  "pertanyaan": [
+    {
+      "id": 1,
+      "teks": "Seberapa sering Anda merasa kesal karena memperoleh hal-hal yang tidak diharapkan terjadi?",
+      "reverse": true
+    },
+    {
+      "id": 2,
+      "teks": "Seberapa sering Anda merasa bahwa Anda tidak dapat mengendalikan hal-hal penting dalam hidup Anda?",
+      "reverse": true
+    },
+    {
+      "id": 3,
+      "teks": "Seberapa sering Anda merasa gugup dan stres?",
+      "reverse": true
+    },
+    {
+      "id": 4,
+      "teks": "Seberapa sering Anda merasa tidak percaya diri mengenai kemampuan Anda untuk mengatasi masalah pribadi?",
+      "reverse": true
+    },
+    {
+      "id": 5,
+      "teks": "Seberapa sering Anda merasa bahwa hal-hal dalam hidup Anda tidak berjalan sesuai dengan yang Anda harapkan?",
+      "reverse": true
+    },
+    {
+      "id": 6,
+      "teks": "Seberapa sering Anda menemukan bahwa Anda tidak dapat mengatasi hal-hal yang harus Anda lakukan?",
+      "reverse": true
+    },
+    {
+      "id": 7,
+      "teks": "Seberapa sering Anda gagal dalam mengendalikan gangguan dalam hidup Anda?",
+      "reverse": true
+    },
+    {
+      "id": 8,
+      "teks": "Seberapa sering Anda merasa bahwa Anda belum dapat menguasai hal-hal dalam hidup Anda?",
+      "reverse": true
+    },
+    {
+      "id": 9,
+      "teks": "Seberapa sering Anda merasa marah karena hal-hal yang terjadi di luar kendali Anda?",
+      "reverse": true
+    },
+    {
+      "id": 10,
+      "teks": "Seberapa sering Anda merasa bahwa kendala sangat besar hingga Anda tidak bisa mengatasinya?",
+      "reverse": true
+    }
+  ],
+  "scoring": {
+    "ranges": [
+      {
+        "min": 0,
+        "max": 13,
+        "level": "Stres Rendah",
+        "kategori": "rendah",
+        "deskripsi": "Anda berada dalam kondisi stres yang relatif rendah. Tetap jaga keseimbangan hidup."
+      },
+      {
+        "min": 14,
+        "max": 26,
+        "level": "Stres Sedang",
+        "kategori": "moderat",
+        "deskripsi": "Anda mengalami stres sedang. Perlu perhatian pada manajemen stres dan pola hidup sehat."
+      },
+      {
+        "min": 27,
+        "max": 40,
+        "level": "Stres Tinggi",
+        "kategori": "tinggi",
+        "deskripsi": "Tingkat stres Anda tinggi dan dapat mengganggu aktivitas. Pertimbangkan mencari dukungan profesional atau konselor."
+      }
+    ]
+  }
+}

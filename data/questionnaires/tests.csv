@@ -1,0 +1,7 @@
+test_id,nama,deskripsi,instruksi
+keluarga,Tes Keluarga & Hubungan,Relationship Assessment Scale (RAS),Jawab berdasarkan kondisi hubungan Anda saat ini
+depresi,Tes Gejala Depresi (PHQ-9),Penilaian tingkat gejala depresi,Jawab berdasarkan 2 minggu terakhir
+kecemasan,Tes Kecemasan & Kenyamanan Emosional,Penilaian tingkat kecemasan,Pilih berdasarkan 7 hari terakhir
+stress,Tes Tingkat Stres Persepsi,Penilaian tingkat stres,Jawab berdasarkan 1 bulan terakhir
+trauma,Tes Gejala Trauma (PTSD Screening),Penilaian gejala trauma,Jawab berdasarkan 1 bulan terakhir
+burnout,Tes Burnout,Penilaian tingkat burnout kerja,Jawab berdasarkan 1 bulan terakhir
