@@ -22,17 +22,46 @@ kecemasan,2,Saya merasa khawatir berlebihan,true
 kecemasan,3,Saya sulit untuk rileks,true
 kecemasan,4,Saya merasa takut tanpa alasan,true
 
-stress,1,Saya merasa sulit mengendalikan hal penting,true
-stress,2,Saya merasa stres,true
-stress,3,Saya merasa kewalahan,true
-stress,4,Saya merasa marah karena hal kecil,true
+stress,1,Seberapa sering Anda merasa kesal karena memperoleh hal-hal yang tidak diharapkan terjadi?,true
+stress,2,Seberapa sering Anda merasa bahwa Anda tidak dapat mengendalikan hal-hal penting dalam hidup Anda?,true
+stress,3,Seberapa sering Anda merasa gugup dan stres?,true
+stress,4,Seberapa sering Anda merasa tidak percaya diri mengenai kemampuan Anda untuk mengatasi masalah pribadi?,true
+stress,5,Seberapa sering Anda merasa bahwa hal-hal dalam hidup Anda tidak berjalan sesuai dengan yang Anda harapkan?,true
+stress,6,Seberapa sering Anda menemukan bahwa Anda tidak dapat mengatasi hal-hal yang harus Anda lakukan?,true
+stress,7,Seberapa sering Anda gagal dalam mengendalikan gangguan dalam hidup Anda?,true
+stress,8,Seberapa sering Anda merasa bahwa Anda belum dapat menguasai hal-hal dalam hidup Anda?,true
+stress,9,Seberapa sering Anda merasa marah karena hal-hal yang terjadi di luar kendali Anda?,true
+stress,10,Seberapa sering Anda merasa bahwa kendala sangat besar hingga Anda tidak bisa mengatasinya?,true
 
-trauma,1,Mimpi buruk tentang kejadian traumatis,true
-trauma,2,Menghindari pengingat trauma,true
-trauma,3,Merasa tegang atau waspada,true
-trauma,4,Mudah terkejut,true
+trauma,1,Memiliki mimpi buruk yang mengulang kembali bagian dari kejadian atau secara jelas berkaitan dengan kejadian traumatis tersebut?,true
+trauma,2,Memiliki bayangan atau ingatan kuat yang tiba-tiba muncul sehingga membuat Anda merasa kejadian traumatis tersebut terjadi lagi?,true
+trauma,3,Menghindari hal-hal internal (pikiran atau perasaan atau sensasi fisik) yang mengingatkan Anda pada kejadian traumatis tersebut?,true
+trauma,4,Menghindari hal-hal eksternal (orang atau tempat atau pembicaraan atau benda atau kegiatan atau situasi) yang mengingatkan Anda pada kejadian traumatis tersebut?,true
+trauma,5,Menjadi sangat waspada atau siaga atau berjaga-jaga?,true
+trauma,6,Merasa gelisah atau mudah terkejut?,true
+trauma,7,Gejala-gejala ini memengaruhi hubungan sosial atau kehidupan pergaulan Anda?,true
+trauma,8,Gejala-gejala ini memengaruhi pekerjaan atau kemampuan bekerja Anda?,true
+trauma,9,Gejala-gejala ini memengaruhi bagian penting lain dalam hidup Anda seperti pengasuhan anak atau sekolah/kuliah atau aktivitas penting lainnya?,true
 
-burnout,1,Saya merasa kelelahan emosional,true
-burnout,2,Saya merasa frustrasi dengan pekerjaan,true
-burnout,3,Saya merasa kehilangan motivasi,true
-burnout,4,Saya merasa pekerjaan terlalu menekan,true
+burnout,1,Saya merasakan emosi saya terkuras karena pekerjaan.,true
+burnout,2,Saya merasakan kelelahan fisik yang amat sangat di akhir hari kerja.,true
+burnout,3,Saya merasa lesu ketika bangun pagi karena harus menjalani hari di tempat kerja.,true
+burnout,4,Saya sulit memahami tindakan yang dilakukan rekan-rekan kerja saya.,true
+burnout,5,Saya merasa bahwa saya memperlakukan beberapa rekan kerja seolah-olah mereka adalah objek.,true
+burnout,6,Bekerja bersama orang lain seharian penuh membuat saya stres.,true
+burnout,7,Saya gagal mengatasi masalah orang lain.,true
+burnout,8,Saya merasa lelah (burnout) karena pekerjaan saya.,true
+burnout,9,Saya merasa bahwa saya tidak mampu mempengaruhi orang lain secara positif melalui pekerjaan saya.,true
+burnout,10,Saya menjadi lebih tidak berperasaan kepada orang-orang sejak saya mulai bekerja di tempat ini.,true
+burnout,11,Saya khawatir pekerjaan saya membuat saya lebih sulit secara emosional.,true
+burnout,12,Saya merasa tidak memiliki energi.,true
+burnout,13,Saya merasa frustrasi dengan pekerjaan saya.,true
+burnout,14,Saya merasa bahwa saya bekerja terlalu keras.,true
+burnout,15,Saya tidak terlalu tertarik dengan apa yang terjadi pada rekan-rekan saya.,true
+burnout,16,Berhubungan langsung dengan orang-orang di tempat kerja terlalu membuat saya stres.,true
+burnout,17,Saya merasa sulit untuk membangun suasana santai di lingkungan kerja saya.,true
+burnout,18,Saya merasa kehilangan energi ketika bekerja sama dengan rekan kerja saya.,true
+burnout,19,Dalam pekerjaan saya, saya belum mencapai banyak keberhasilan yang bermanfaat.,true
+burnout,20,Saya merasa seperti kehabisan akal.,true
+burnout,21,Saya tidak mampu menghadapi masalah emosional dengan santai dalam pekerjaan saya.,true
+burnout,22,Saya merasa rekan kerja saya menyalahkan saya atas beberapa masalah mereka.,true

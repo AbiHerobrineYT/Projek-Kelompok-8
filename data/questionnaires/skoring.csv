@@ -1,25 +1,25 @@
 test_id,min,max,level,kategori,deskripsi
-keluarga,7,13,Rendah,kritis,Kualitas hubungan rendah dan perlu perhatian
-keluarga,14,20,Sedang,moderat,Kualitas hubungan cukup baik namun masih perlu ditingkatkan
-keluarga,21,28,Tinggi,baik,Kualitas hubungan baik dan sehat
+keluarga,0,7,Rendah,kritis,Hubungan Anda menunjukkan tanda-tanda serius yang memerlukan perhatian segera. Pertimbangkan untuk konseling pasangan.
+keluarga,8,14,Sedang,moderat,Hubungan Anda cukup baik namun masih ada area yang bisa ditingkatkan. Fokus pada komunikasi dan quality time.
+keluarga,15,21,Tinggi,baik,Hubungan Anda dalam kondisi baik. Terus jaga komunikasi dan saling mendukung untuk mempertahankan kualitas hubungan.
 
-depresi,0,9,Ringan,baik,Gejala depresi ringan
+depresi,0,9,Rendah,baik,Gejala depresi ringan
 depresi,10,18,Sedang,moderat,Gejala depresi sedang dan perlu perhatian
 depresi,19,27,Berat,kritis,Gejala depresi berat dan disarankan bantuan profesional
 
+kecemasan,0,4,Rendah,baik,Kondisi emosional relatif stabil dan kecemasan masih dalam batas wajar
+kecemasan,5,8,Sedang,moderat,Gejala kecemasan mulai terasa dan dapat memengaruhi aktivitas sehari-hari
+kecemasan,9,12,Tinggi,kritis,Tingkat kecemasan tinggi dan berpotensi mengganggu fungsi harian disarankan segera berkonsultasi dengan tenaga kesehatan mental
 
-kecemasan,4,7,Rendah,baik,Tingkat kecemasan rendah
-kecemasan,8,11,Sedang,moderat,Tingkat kecemasan sedang
-kecemasan,12,16,Tinggi,kritis,Tingkat kecemasan tinggi
+stress,0,10,Rendah,baik,Anda berada dalam kondisi stres yang relatif rendah. Tetap jaga keseimbangan hidup.
+stress,11,20,Sedang,moderat,Anda mengalami stres sedang. Perlu perhatian pada manajemen stres dan pola hidup sehat.
+stress,21,30,Tinggi,kritis,Tingkat stres Anda tinggi dan dapat mengganggu aktivitas. Pertimbangkan mencari dukungan profesional atau konselor.
 
-stress,0,5,Rendah,baik,Tingkat stres rendah
-stress,6,10,Sedang,moderat,Tingkat stres sedang
-stress,11,16,Tinggi,kritis,Tingkat stres tinggi
+trauma,0,9,Rendah,baik,Respons terhadap pengalaman traumatis masih ringan dan belum mengganggu keseharian secara signifikan
+trauma,10,18,Sedang,moderat,Gejala trauma mulai terasa dan dapat memengaruhi emosi pikiran atau aktivitas sehari-hari
+trauma,19,27,Tinggi,kritis,Gejala trauma berat dan berisiko mengganggu fungsi harian. sangat disarankan untuk mendapatkan pendampingan dari tenaga kesehatan mental
 
-trauma,0,4,Rendah,baik,Gejala trauma minimal
-trauma,5,9,Sedang,moderat,Gejala trauma sedang
-trauma,10,16,Tinggi,kritis,Gejala trauma tinggi dan perlu bantuan profesional
+burnout,0,22,Rendah,baik,Tingkat kelelahan kerja masih terkendali dan belum berdampak signifikan pada produktivitas maupun kesejahteraan
+burnout,23,44,Sedang,moderat,Tanda-tanda kelelahan mulai muncul dan dapat memengaruhi motivasi fokus serta kinerja sehari-hari
+burnout,45,66,Tinggi,kritis,Tingkat kelelahan sangat tinggi dan berisiko berdampak serius pada kesehatan mental. disarankan segera mencari bantuan atau konsultasi dengan tenaga profesional
 
-burnout,0,5,Rendah,baik,Tingkat burnout rendah
-burnout,6,10,Sedang,moderat,Tingkat burnout sedang
-burnout,11,20,Tinggi,kritis,Tingkat burnout tinggi dan perlu intervensi
