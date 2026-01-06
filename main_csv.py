@@ -4,8 +4,7 @@ from modules.menu import menu_utama
 from modules.about import tampilkan_tentang_kami
 from modules.questionnaire_menu import tampilkan_menu_kuisioner
 from modules.questionnaire_engine_csv import jalankan_kuisioner, tampilkan_hasil, riwayat_hasil
-from modules.login_register import menu_auth
-
+from modules.login_register import menu_auth    
 
 def main():
     while True:

@@ -2,9 +2,7 @@ import pandas as pd
 import os
 from datetime import datetime
 
-# =========================
-# PATH AMAN
-# =========================
+# Bikin Folder
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_DIR = os.path.join(BASE_DIR, "data", "questionnaires")
 HASIL_DIR = os.path.join(BASE_DIR, "data", "hasil")
@@ -13,22 +11,20 @@ if not os.path.exists(HASIL_DIR):
     os.makedirs(HASIL_DIR)
 
 
-# =========================
-# LOAD DATA CSV
-# =========================
+# Load Data CSV
 def load_questionnaire(test_id):
     tests = pd.read_csv(os.path.join(DATA_DIR, "tests.csv"))
     pertanyaan = pd.read_csv(os.path.join(DATA_DIR, "pertanyaan.csv"))
     skala_df = pd.read_csv(os.path.join(DATA_DIR, "skala.csv"))
     skoring = pd.read_csv(os.path.join(DATA_DIR, "skoring.csv"))
 
-    # INFO TES
+    # Info Tes
     info = tests[tests["test_id"] == test_id]
     if info.empty:
         raise ValueError(f"Tes '{test_id}' tidak ditemukan di tests.csv")
     info = info.iloc[0]
 
-    # FILTER DATA
+    # Filtering
     pertanyaan = pertanyaan[pertanyaan["test_id"] == test_id]
     skoring = skoring[skoring["test_id"] == test_id]
     skala_df = skala_df[skala_df["test_id"] == test_id]
@@ -49,9 +45,7 @@ def load_questionnaire(test_id):
 
 
 
-# =========================
-# JALANKAN KUISIONER
-# =========================
+# Kuisoner
 def jalankan_kuisioner(test_id):
     data = load_questionnaire(test_id)
 
@@ -99,17 +93,21 @@ def jalankan_kuisioner(test_id):
 
     hasil = analisis_skor(total_skor, data["skoring"])
 
+    jumlah_pertanyaan = len(data["pertanyaan"])
+    skor_maks = jumlah_pertanyaan * max_nilai
+
+    hasil_analisis = analisis_skor(total_skor, data["skoring"])
+
     return {
         "test_id": test_id,
         "tanggal": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
         "total_skor": total_skor,
+        "skor_maks": skor_maks,
         "analisis": hasil
     }
 
 
-# =========================
-# ANALISIS SKOR
-# =========================
+# Analisis skor
 def analisis_skor(total_skor, skoring):
     for r in skoring:
         if r["min"] <= total_skor <= r["max"]:
@@ -122,10 +120,7 @@ def analisis_skor(total_skor, skoring):
     }
 
 
-# =========================
-# TAMPILKAN HASIL
-# =========================
-
+# Menampilkan dan Penyimpanan Hasil
 def simpan_hasil_txt(hasil):
     """
     Simpan hasil tes ke file TXT
@@ -137,16 +132,16 @@ def simpan_hasil_txt(hasil):
         GARIS = "=" * 60
 
         f.write(GARIS + "\n")
-        f.write("HASIL TES".center(60) + "\n")
+        f.write("HASIL TES".center(60))
         f.write(GARIS + "\n")
 
         f.write(f"Tanggal    : {hasil['tanggal']}\n")
         f.write(f"Test ID    : {hasil['test_id']}\n")
-        f.write(f"Total Skor : {hasil['total_skor']}\n")
+        f.write(f"Total Skor : {hasil['total_skor']} / {hasil['skor_maks']}\n")
         f.write(f"Level      : {hasil['analisis']['level']}\n")
         f.write(f"Kategori   : {hasil['analisis'].get('kategori', '-')}\n")
         f.write("Deskripsi  :\n")
-        f.write(hasil["analisis"]["deskripsi"] + "\n")
+        f.write(f"{hasil['analisis']['deskripsi']}\n")
 
         f.write(GARIS + "\n")
 
@@ -155,12 +150,14 @@ def simpan_hasil_txt(hasil):
 
 def tampilkan_hasil(hasil, simpan=True):
     print("\n" + "=" * 60)
-    print("HASIL TES".center(60) + '\n')
+    print("HASIL TES".center(60))
     print("=" * 60)
-    print("Tanggal    :", hasil["tanggal"])
-    print("Total Skor :", hasil["total_skor"])
-    print("Level      :", hasil["analisis"]["level"])
-    print("Deskripsi  :", hasil["analisis"]["deskripsi"])
+    print(f"Tanggal    : {hasil['tanggal']}")
+    print(f"Total Skor : {hasil['total_skor']} / {hasil['skor_maks']}")
+    print(f"Level      : {hasil['analisis']['level']}")
+    print(f"Kategori   : {hasil['analisis']['kategori']}")
+    print("Deskripsi  :")
+    print(hasil['analisis']['deskripsi'])
     print("=" * 60)
 
     if simpan:
@@ -183,22 +180,55 @@ def riwayat_hasil():
     print("\n📊 RIWAYAT HASIL TES")
     print("=" * 50)
 
-    for i, file in enumerate(files, 1):
-        print(f"{i}. {file}")
+    ringkasan_list = []
 
-    print("0. Kembali")
+    for i, file in enumerate(files, 1):
+        filepath = os.path.join(HASIL_DIR, file)
+        data = baca_ringkasan_hasil(filepath)
+
+        ringkasan_list.append(filepath)
+
+        print(f"\n[{i}] {data.get('test_id', '-')}"
+              f" | {data.get('tanggal', '-')[:16]}")
+
+        print(f"   Skor  : {data.get('total_skor', '-')}")
+        print(f"   Level : {data.get('level', '-')}")
+
+    print("\n[0] Kembali")
+    print("=" * 60)
 
     while True:
-        pilih = input("\nPilih nomor hasil: ").strip()
+        pilih = input("Pilih nomor hasil: ").strip()
 
-        if pilih == '0':
+        if pilih == "0":
             return None
 
-        if pilih.isdigit() and 1 <= int(pilih) <= len(files):
-            filepath = os.path.join(HASIL_DIR, files[int(pilih) - 1])
-            with open(filepath, "r", encoding="utf-8") as f:
+        if pilih.isdigit() and 1 <= int(pilih) <= len(ringkasan_list):
+            with open(ringkasan_list[int(pilih) - 1], "r", encoding="utf-8") as f:
                 return f.read()
 
         print("❌ Pilihan tidak valid")
 
-    
+def baca_ringkasan_hasil(filepath):
+    ringkasan = {}
+
+    with open(filepath, "r", encoding="utf-8") as f:
+        for line in f:
+            if ":" not in line:
+                continue
+
+            key, value = line.split(":", 1)
+            key = key.strip().lower()
+            value = value.strip()
+
+            if key == "tanggal":
+                ringkasan["tanggal"] = value
+            elif key == "test id":
+                ringkasan["test_id"] = value
+            elif key == "total skor":
+                ringkasan["total_skor"] = value
+            elif key == "level":
+                ringkasan["level"] = value
+
+    return ringkasan
+
