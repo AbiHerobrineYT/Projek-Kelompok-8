@@ -7,8 +7,11 @@ def menu_utama():
             print("[1] 📝 Mulai Tes Kesehatan Mental")
             print("[2] 📊 Lihat Riwayat Hasil Saya")
             print("[3] ✅ To-Do List & Self Care")
-            print("[4] ℹ️ Tentang Aplikasi (Disclaimer)")
-            print("[5] 🚪 Keluar Aplikasi")
+            print("[4] 📅 Booking Psikolog") 
+            print("[5] 📰 Artikel & Tips Mental Health")  
+            print("[6] ℹ️ Tentang Aplikasi (Disclaimer)")
+            print("[7] 🚪 Keluar Aplikasi")
+
 
             print("\n" + "-"*40)
 

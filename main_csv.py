@@ -5,6 +5,7 @@ from modules.about import tampilkan_tentang_kami
 from modules.questionnaire_menu import tampilkan_menu_kuisioner
 from modules.questionnaire_engine_csv import jalankan_kuisioner, tampilkan_hasil, riwayat_hasil
 from modules.login_register import menu_auth    
+from modules.psikolog import list_psikolog
 
 def main():
     while True:
@@ -50,10 +51,17 @@ def main():
             input("\nTekan Enter untuk kembali ke menu...")
 
         elif pilihan == '4':
+            list_psikolog()
+
+        elif pilihan == '5':
+            print("[5] 📰 Artikel & Tips Mental Health COMING SOON") 
+            input("\nTekan Enter untuk kembali ke menu...")
+
+        elif pilihan == '6':
             tampilkan_tentang_kami()
             input("\nTekan Enter untuk kembali ke menu...")
 
-        elif pilihan == '5':
+        elif pilihan == '7':
             print("\nTerima kasih telah menggunakan Ruang Teduh.")
             print("Jaga kesehatan mental Anda.")
             break
