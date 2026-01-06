@@ -121,12 +121,17 @@ def analisis_skor(total_skor, skoring):
 
 
 # Menampilkan dan Penyimpanan Hasil
-def simpan_hasil_txt(hasil):
+def simpan_hasil_txt(hasil, username_aktif):
     """
     Simpan hasil tes ke file TXT
     """
+    folder_user = os.path.join(BASE_DIR, "data", "hasil", username_aktif)
+    
+    if not os.path.exists(folder_user):
+        os.makedirs(folder_user)
+
     filename = f"{hasil['test_id']}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.txt"
-    filepath = os.path.join(HASIL_DIR, filename)
+    filepath = os.path.join(folder_user, filename)
 
     with open(filepath, "w", encoding="utf-8") as f:
         GARIS = "=" * 60
@@ -135,6 +140,7 @@ def simpan_hasil_txt(hasil):
         f.write("HASIL TES".center(60))
         f.write(GARIS + "\n")
 
+        f.write(f"User       : {username_aktif}\n")
         f.write(f"Tanggal    : {hasil['tanggal']}\n")
         f.write(f"Test ID    : {hasil['test_id']}\n")
         f.write(f"Total Skor : {hasil['total_skor']} / {hasil['skor_maks']}\n")
@@ -148,7 +154,7 @@ def simpan_hasil_txt(hasil):
     return filepath
 
 
-def tampilkan_hasil(hasil, simpan=True):
+def tampilkan_hasil(hasil, username_aktif, simpan=True):
     print("\n" + "=" * 60)
     print("HASIL TES".center(60))
     print("=" * 60)
@@ -161,15 +167,20 @@ def tampilkan_hasil(hasil, simpan=True):
     print("=" * 60)
 
     if simpan:
-        path = simpan_hasil_txt(hasil)
+        path = simpan_hasil_txt(hasil,username_aktif)
         print(f"\n💾 Hasil disimpan di: {path}")
 
-def riwayat_hasil():
+def riwayat_hasil(username_aktif):
     """
     Menampilkan daftar file hasil dan mengembalikan isi file yang dipilih
     """
+    folder_user = os.path.join(BASE_DIR, "data", "hasil", username_aktif)
+    if not os.path.exists(folder_user) or not os.listdir(folder_user):
+        print(f"\n📭 Belum ada riwayat hasil untuk user: {username_aktif}")
+        return None
+
     files = sorted(
-        [f for f in os.listdir(HASIL_DIR) if f.endswith(".txt")],
+        [f for f in os.listdir(folder_user) if f.endswith(".txt")],
         reverse=True
     )
 
@@ -177,13 +188,13 @@ def riwayat_hasil():
         print("\n📭 Belum ada riwayat hasil.")
         return None
 
-    print("\n📊 RIWAYAT HASIL TES")
+    print(f"\n📊 RIWAYAT HASIL TES : {username_aktif}")
     print("=" * 50)
 
     ringkasan_list = []
 
     for i, file in enumerate(files, 1):
-        filepath = os.path.join(HASIL_DIR, file)
+        filepath = os.path.join(folder_user, file)
         data = baca_ringkasan_hasil(filepath)
 
         ringkasan_list.append(filepath)

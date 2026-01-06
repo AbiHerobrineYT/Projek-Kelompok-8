@@ -35,11 +35,11 @@ def main(username_aktif):
             hasil = jalankan_kuisioner(jenis_tes)
 
             if hasil:
-                tampilkan_hasil(hasil)
+                tampilkan_hasil(hasil,username_aktif)
                 input("\nTekan Enter untuk kembali ke menu...")
 
         elif pilihan == '2':
-            isi = riwayat_hasil()
+            isi = riwayat_hasil(username_aktif)
 
             if isi:
                 print(f'\n{isi}')
