@@ -1,0 +1,65 @@
+{
+  "id": "Kecemasan",
+  "nama": "Tes Kecemasan & Kenyamanan Emosional",
+  "deskripsi": "Penilaian tingkat kecemasan dan kenyamanan emosional dalam kondisi saat ini.",
+  "instruksi": "Pilih seberapa sering Anda merasakan hal berikut dalam 7 hari terakhir. Skala 1 = Tidak Pernah, 4 = Sangat Sering.",
+  "skala": {
+    "1": "Tidak Pernah",
+    "2": "Jarang",
+    "3": "Sering",
+    "4": "Sangat Sering"
+  },
+  "pertanyaan": [
+    { "id": 1, "teks": "Saya merasa tenang", "reverse": false },
+    { "id": 2, "teks": "Saya merasa aman", "reverse": false },
+    { "id": 3, "teks": "Saya merasa tegang", "reverse": true },
+    { "id": 4, "teks": "Saya merasa kuatir", "reverse": true },
+    { "id": 5, "teks": "Saya merasa nyaman", "reverse": false },
+    { "id": 6, "teks": "Saya merasa terganggu", "reverse": true },
+    { "id": 7, "teks": "Saya kuatir akan mengalami ketidakberuntungan", "reverse": true },
+    { "id": 8, "teks": "Saya merasa puas", "reverse": false },
+    { "id": 9, "teks": "Saya merasa takut", "reverse": true },
+    { "id": 10, "teks": "Saya merasa tidak nyaman", "reverse": true },
+    { "id": 11, "teks": "Saya merasa percaya diri", "reverse": false },
+    { "id": 12, "teks": "Saya merasa gugup", "reverse": true },
+    { "id": 13, "teks": "Saya merasa gelisah", "reverse": true },
+    { "id": 14, "teks": "Saya merasa bimbang", "reverse": true },
+    { "id": 16, "teks": "Saya merasa kebutuhan-kebutuhan saya terpenuhi", "reverse": false },
+    { "id": 17, "teks": "Saya merasa cemas", "reverse": true },
+    { "id": 18, "teks": "Saya merasa bingung", "reverse": true },
+    { "id": 19, "teks": "Saya merasa mantap", "reverse": false },
+    { "id": 20, "teks": "Saya merasa senang", "reverse": false }
+  ],
+  "scoring": {
+    "ranges": [
+      {
+        "min": 20,
+        "max": 39,
+        "level": "Kecemasan Tinggi",
+        "kategori": "kritis",
+        "deskripsi": "Tingkat kecemasan Anda tinggi dan dapat mengganggu aktivitas sehari-hari. Pertimbangkan dukungan profesional atau konseling."
+      },
+      {
+        "min": 40,
+        "max": 59,
+        "level": "Kecemasan Sedang",
+        "kategori": "moderat",
+        "deskripsi": "Anda menunjukkan tanda kecemasan moderat. Perbaiki pola tidur, aktivitas relaksasi, dan komunikasi dengan orang terdekat."
+      },
+      {
+        "min": 60,
+        "max": 75,
+        "level": "Kondisi Stabil",
+        "kategori": "baik",
+        "deskripsi": "Kondisi emosional cukup stabil, meski beberapa situasi masih bisa memicu kecemasan ringan. Jaga keseimbangan aktivitas harian."
+      },
+      {
+        "min": 76,
+        "max": 80,
+        "level": "Sehat & Tenang",
+        "kategori": "sangat_baik",
+        "deskripsi": "Anda berada dalam kondisi emosional yang sehat dan tenang. Pertahankan pola hidup positif."
+      }
+    ]
+  }
+}

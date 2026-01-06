@@ -1,0 +1,38 @@
+test_id,question_id,teks,reverse
+keluarga,1,Seberapa baik pasangan Anda memenuhi kebutuhan Anda?,false
+keluarga,2,Secara umum seberapa puas Anda dengan hubungan Anda?,false
+keluarga,3,Seberapa baik hubungan Anda dibandingkan dengan kebanyakan hubungan lainnya?,false
+keluarga,4,Seberapa sering Anda berharap tidak pernah masuk ke dalam hubungan ini?,true
+keluarga,5,Sejauh mana hubungan Anda memenuhi harapan awal Anda?,false
+keluarga,6,Seberapa besar Anda mencintai pasangan Anda?,false
+keluarga,7,Seberapa banyak masalah yang ada dalam hubungan Anda?,true
+
+depresi,1,Merasa sedih atau putus asa,false
+depresi,2,Kurang tertarik atau bergairah melakukan apapun,false
+depresi,3,Sulit tidur,false
+depresi,4,Mudah lelah,false
+depresi,5,Nafsu makan menurun,false
+depresi,6,Merasa gagal,false
+depresi,7,Sulit berkonsentrasi,false
+depresi,8,Bergerak atau bicara lebih lambat,false
+depresi,9,Pikiran menyakiti diri,false
+
+kecemasan,1,Saya merasa tegang atau gelisah,true
+kecemasan,2,Saya merasa khawatir berlebihan,true
+kecemasan,3,Saya sulit untuk rileks,true
+kecemasan,4,Saya merasa takut tanpa alasan,true
+
+stress,1,Saya merasa sulit mengendalikan hal penting,true
+stress,2,Saya merasa stres,true
+stress,3,Saya merasa kewalahan,true
+stress,4,Saya merasa marah karena hal kecil,true
+
+trauma,1,Mimpi buruk tentang kejadian traumatis,true
+trauma,2,Menghindari pengingat trauma,true
+trauma,3,Merasa tegang atau waspada,true
+trauma,4,Mudah terkejut,true
+
+burnout,1,Saya merasa kelelahan emosional,true
+burnout,2,Saya merasa frustrasi dengan pekerjaan,true
+burnout,3,Saya merasa kehilangan motivasi,true
+burnout,4,Saya merasa pekerjaan terlalu menekan,true

@@ -1,0 +1,98 @@
+{
+  "id": "Depresi",
+  "nama": "Tes Gejala Depresi (PHQ-9 Adaptasi)",
+  "deskripsi": "Penilaian tingkat gejala depresi berdasarkan skala PHQ-9",
+  "instruksi": "Jawab setiap pertanyaan berdasarkan apa yang Anda rasakan dalam 2 minggu terakhir. Skala 0 = Tidak Pernah, 3 = Hampir Setiap Hari.",
+  "skala": {
+    "0": "Tidak Pernah",
+    "1": "Beberapa Hari",
+    "2": "Lebih dari Setengah Hari",
+    "3": "Hampir Setiap Hari"
+  },
+  "pertanyaan": [
+    {
+      "id": 1,
+      "teks": "Kurang tertarik atau bergairah dalam melakukan apa pun.",
+      "reverse": false
+    },
+    {
+      "id": 2,
+      "teks": "Merasa murung, muram, atau putus asa.",
+      "reverse": false
+    },
+    {
+      "id": 3,
+      "teks": "Sulit tidur atau mudah terbangun, atau terlalu banyak tidur.",
+      "reverse": false
+    },
+    {
+      "id": 4,
+      "teks": "Merasa lelah atau kurang bertenaga.",
+      "reverse": false
+    },
+    {
+      "id": 5,
+      "teks": "Kurang nafsu makan atau terlalu banyak makan.",
+      "reverse": false
+    },
+    {
+      "id": 6,
+      "teks": "Kurang percaya diri — atau merasa bahwa Anda gagal atau mengecewakan diri atau keluarga.",
+      "reverse": false
+    },
+    {
+      "id": 7,
+      "teks": "Sulit berkonsentrasi pada sesuatu, misalnya membaca atau menonton televisi.",
+      "reverse": false
+    },
+    {
+      "id": 8,
+      "teks": "Bergerak atau berbicara sangat lambat sehingga orang lain memperhatikannya. Atau merasa resah/gelisah sehingga lebih sering bergerak dari biasanya.",
+      "reverse": false
+    },
+    {
+      "id": 9,
+      "teks": "Merasa lebih baik mati atau ingin melukai diri sendiri dengan cara apa pun.",
+      "reverse": false
+    }
+  ],
+  "scoring": {
+    "ranges": [
+      {
+        "min": 0,
+        "max": 4,
+        "level": "Minimal",
+        "kategori": "normal",
+        "deskripsi": "Gejala depresi sangat ringan atau tidak signifikan. Tetap jaga kesehatan mental Anda."
+      },
+      {
+        "min": 5,
+        "max": 9,
+        "level": "Ringan",
+        "kategori": "ringan",
+        "deskripsi": "Ada tanda-tanda depresi ringan. Istirahat cukup, komunikasi dengan orang terdekat, dan perhatikan perubahan mood."
+      },
+      {
+        "min": 10,
+        "max": 14,
+        "level": "Sedang",
+        "kategori": "moderat",
+        "deskripsi": "Gejala depresi tingkat sedang. Pertimbangkan untuk konsultasi dengan konselor atau profesional."
+      },
+      {
+        "min": 15,
+        "max": 19,
+        "level": "Sedang Berat",
+        "kategori": "serius",
+        "deskripsi": "Gejala cukup mengganggu aktivitas sehari-hari. Konsultasi profesional sangat disarankan."
+      },
+      {
+        "min": 20,
+        "max": 27,
+        "level": "Berat",
+        "kategori": "kritis",
+        "deskripsi": "Tanda depresi berat. Dukungan profesional sangat dibutuhkan. Hubungi layanan kesehatan bila merasa tidak aman."
+      }
+    ]
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "id": "Trauma",
+  "nama": "Tes Gejala Trauma (PTSD Screening)",
+  "deskripsi": "Penilaian tingkat gejala trauma berdasarkan pengalaman traumatis yang pernah Anda alami.",
+  "instruksi": "Jawab berdasarkan seberapa sering gejala ini Anda alami dalam 1 bulan terakhir. Skala 0 = Tidak Pernah, 4 = Sangat Sering.",
+  "skala": {
+    "0": "Tidak Pernah",
+    "1": "Jarang",
+    "2": "Kadang-kadang",
+    "3": "Sering",
+    "4": "Sangat Sering"
+  },
+  "pertanyaan": [
+    {
+      "id": 1,
+      "teks": "Memiliki mimpi buruk yang mengulang kembali bagian dari kejadian atau secara jelas berkaitan dengan kejadian traumatis tersebut?",
+      "reverse": true
+    },
+    {
+      "id": 2,
+      "teks": "Memiliki bayangan atau ingatan kuat yang tiba-tiba muncul sehingga membuat Anda merasa kejadian traumatis tersebut terjadi lagi?",
+      "reverse": true
+    },
+    {
+      "id": 3,
+      "teks": "Menghindari hal-hal internal (pikiran, perasaan, sensasi fisik) yang mengingatkan Anda pada kejadian traumatis tersebut?",
+      "reverse": true
+    },
+    {
+      "id": 4,
+      "teks": "Menghindari hal-hal eksternal (orang, tempat, pembicaraan, benda, kegiatan, atau situasi) yang mengingatkan Anda pada kejadian traumatis tersebut?",
+      "reverse": true
+    },
+    {
+      "id": 5,
+      "teks": "Menjadi sangat waspada, siaga, atau berjaga-jaga?",
+      "reverse": true
+    },
+    {
+      "id": 6,
+      "teks": "Merasa gelisah atau mudah terkejut?",
+      "reverse": true
+    },
+    {
+      "id": 7,
+      "teks": "Gejala-gejala ini memengaruhi hubungan sosial atau kehidupan pergaulan Anda?",
+      "reverse": true
+    },
+    {
+      "id": 8,
+      "teks": "Gejala-gejala ini memengaruhi pekerjaan atau kemampuan bekerja Anda?",
+      "reverse": true
+    },
+    {
+      "id": 9,
+      "teks": "Gejala-gejala ini memengaruhi bagian penting lain dalam hidup Anda seperti pengasuhan anak, sekolah/kuliah, atau aktivitas penting lainnya?",
+      "reverse": true
+    }
+  ],
+  "scoring": {
+    "ranges": [
+      {
+        "min": 0,
+        "max": 12,
+        "level": "Sangat Rendah",
+        "kategori": "normal",
+        "deskripsi": "Gejala trauma sangat minimal atau tidak signifikan."
+      },
+      {
+        "min": 13,
+        "max": 24,
+        "level": "Ringan",
+        "kategori": "ringan",
+        "deskripsi": "Ada beberapa tanda trauma ringan. Pemantauan dan dukungan emosional diperlukan."
+      },
+      {
+        "min": 25,
+        "max": 32,
+        "level": "Sedang",
+        "kategori": "moderat",
+        "deskripsi": "Gejala trauma cukup terasa. Konseling atau terapi sangat direkomendasikan."
+      },
+      {
+        "min": 33,
+        "max": 36,
+        "level": "Tinggi",
+        "kategori": "serius",
+        "deskripsi": "Gejala trauma cukup berat dan memengaruhi kehidupan Anda. Pertimbangkan mencari bantuan profesional."
+      }
+    ]
+  }
+}

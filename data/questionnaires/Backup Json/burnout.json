@@ -1,0 +1,69 @@
+{
+  "id": "burnout_kerja",
+  "nama": "Tes Burnout Kerja",
+  "deskripsi": "Penilaian tingkat burnout yang muncul akibat tekanan dan beban pekerjaan.",
+  "instruksi": "Jawab berdasarkan seberapa sering Anda merasakan hal berikut dalam 1 bulan terakhir. Skala 0 = Tidak Pernah, 4 = Sangat Sering.",
+  "skala": {
+    "0": "Tidak Pernah",
+    "1": "Jarang",
+    "2": "Kadang-kadang",
+    "3": "Sering",
+    "4": "Sangat Sering"
+  },
+  "pertanyaan": [
+    { "id": 1, "teks": "Saya merasakan emosi saya terkuras karena pekerjaan.", "reverse": true },
+    { "id": 2, "teks": "Saya merasakan kelelahan fisik yang amat sangat di akhir hari kerja.", "reverse": true },
+    { "id": 3, "teks": "Saya merasa lesu ketika bangun pagi karena harus menjalani hari di tempat kerja.", "reverse": true },
+    { "id": 4, "teks": "Saya sulit memahami tindakan yang dilakukan rekan-rekan kerja saya.", "reverse": true },
+    { "id": 5, "teks": "Saya merasa bahwa saya memperlakukan beberapa rekan kerja seolah-olah mereka adalah objek.", "reverse": true },
+    { "id": 6, "teks": "Bekerja bersama orang lain seharian penuh membuat saya stres.", "reverse": true },
+    { "id": 7, "teks": "Saya gagal mengatasi masalah orang lain.", "reverse": true },
+    { "id": 8, "teks": "Saya merasa lelah (burnout) karena pekerjaan saya.", "reverse": true },
+    { "id": 9, "teks": "Saya merasa bahwa saya tidak mampu mempengaruhi orang lain secara positif melalui pekerjaan saya.", "reverse": true },
+    { "id": 10, "teks": "Saya menjadi lebih tidak berperasaan kepada orang-orang sejak saya mulai bekerja di tempat ini.", "reverse": true },
+    { "id": 11, "teks": "Saya khawatir pekerjaan saya membuat saya lebih sulit secara emosional.", "reverse": true },
+    { "id": 12, "teks": "Saya merasa tidak memiliki energi.", "reverse": true },
+    { "id": 13, "teks": "Saya merasa frustrasi dengan pekerjaan saya.", "reverse": true },
+    { "id": 14, "teks": "Saya merasa bahwa saya bekerja terlalu keras.", "reverse": true },
+    { "id": 15, "teks": "Saya tidak terlalu tertarik dengan apa yang terjadi pada rekan-rekan saya.", "reverse": true },
+    { "id": 16, "teks": "Berhubungan langsung dengan orang-orang di tempat kerja terlalu membuat saya stres.", "reverse": true },
+    { "id": 17, "teks": "Saya merasa sulit untuk membangun suasana santai di lingkungan kerja saya.", "reverse": true },
+    { "id": 18, "teks": "Saya merasa kehilangan energi ketika bekerja sama dengan rekan kerja saya.", "reverse": true },
+    { "id": 19, "teks": "Dalam pekerjaan saya, saya belum mencapai banyak keberhasilan yang bermanfaat.", "reverse": true },
+    { "id": 20, "teks": "Saya merasa seperti kehabisan akal.", "reverse": true },
+    { "id": 21, "teks": "Saya tidak mampu menghadapi masalah emosional dengan santai dalam pekerjaan saya.", "reverse": true },
+    { "id": 22, "teks": "Saya merasa rekan kerja saya menyalahkan saya atas beberapa masalah mereka.", "reverse": true }
+  ],
+  "scoring": {
+    "ranges": [
+      {
+        "min": 0,
+        "max": 30,
+        "level": "Burnout Rendah",
+        "kategori": "rendah",
+        "deskripsi": "Anda mengalami burnout yang rendah. Kondisi masih dalam batas wajar."
+      },
+      {
+        "min": 31,
+        "max": 55,
+        "level": "Burnout Sedang",
+        "kategori": "moderat",
+        "deskripsi": "Anda mengalami burnout tingkat sedang. Perlu perhatian pada pola kerja dan kesehatan mental."
+      },
+      {
+        "min": 56,
+        "max": 80,
+        "level": "Burnout Tinggi",
+        "kategori": "tinggi",
+        "deskripsi": "Burnout Anda tinggi dan berpotensi mengganggu performa serta kesejahteraan Anda. Pertimbangkan konseling atau perubahan pola kerja."
+      },
+      {
+        "min": 81,
+        "max": 88,
+        "level": "Burnout Sangat Tinggi",
+        "kategori": "kritis",
+        "deskripsi": "Burnout Anda berada pada tingkat sangat tinggi. Butuh tindakan segera untuk menjaga kesehatan mental dan fisik."
+      }
+    ]
+  }
+}

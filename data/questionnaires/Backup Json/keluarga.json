@@ -1,0 +1,82 @@
+{
+  "id": "keluarga",
+  "nama": "Tes Keluarga & Hubungan",
+  "deskripsi": "Relationship Assessment Scale (RAS) - Evaluasi kualitas hubungan dengan pasangan/keluarga",
+  "instruksi": "Jawab pertanyaan berikut berdasarkan kondisi hubungan Anda saat ini. Skala 1 = Sangat Buruk/Tidak Pernah, 5 = Sangat Baik/Selalu",
+  "skala": {
+    "1": "Sangat Buruk / Tidak Sama Sekali",
+    "2": "Buruk / Jarang",
+    "3": "Cukup / Kadang-kadang",
+    "4": "Baik / Sering",
+    "5": "Sangat Baik / Selalu"
+  },
+  "pertanyaan": [
+    {
+      "id": 1,
+      "teks": "Seberapa baik pasangan Anda memenuhi kebutuhan Anda?",
+      "reverse": false
+    },
+    {
+      "id": 2,
+      "teks": "Secara umum, seberapa puas Anda dengan hubungan Anda?",
+      "reverse": false
+    },
+    {
+      "id": 3,
+      "teks": "Seberapa baik hubungan Anda dibandingkan dengan kebanyakan hubungan lainnya?",
+      "reverse": false
+    },
+    {
+      "id": 4,
+      "teks": "Seberapa sering Anda berharap tidak pernah masuk ke dalam hubungan ini?",
+      "reverse": true
+    },
+    {
+      "id": 5,
+      "teks": "Sejauh mana hubungan Anda memenuhi harapan awal Anda?",
+      "reverse": false
+    },
+    {
+      "id": 6,
+      "teks": "Seberapa besar Anda mencintai pasangan Anda?",
+      "reverse": false
+    },
+    {
+      "id": 7,
+      "teks": "Seberapa banyak masalah yang ada dalam hubungan Anda?",
+      "reverse": true
+    }
+  ],
+  "scoring": {
+    "ranges": [
+      {
+        "min": 7,
+        "max": 14,
+        "level": "Sangat Tidak Sehat",
+        "kategori": "kritis",
+        "deskripsi": "Hubungan Anda menunjukkan tanda-tanda serius yang memerlukan perhatian segera. Pertimbangkan untuk konseling pasangan."
+      },
+      {
+        "min": 15,
+        "max": 21,
+        "level": "Tidak Sehat",
+        "kategori": "perlu_perhatian",
+        "deskripsi": "Hubungan Anda mengalami banyak tantangan. Komunikasi terbuka dan bantuan profesional sangat disarankan."
+      },
+      {
+        "min": 22,
+        "max": 28,
+        "level": "Cukup Sehat",
+        "kategori": "moderat",
+        "deskripsi": "Hubungan Anda cukup baik namun masih ada area yang bisa ditingkatkan. Fokus pada komunikasi dan quality time."
+      },
+      {
+        "min": 29,
+        "max": 35,
+        "level": "Sehat",
+        "kategori": "baik",
+        "deskripsi": "Hubungan Anda dalam kondisi baik. Terus jaga komunikasi dan saling mendukung untuk mempertahankan kualitas hubungan."
+      }
+    ]
+  }
+}
