@@ -1,0 +1,11 @@
+============================================================
+                         HASIL TES                          
+============================================================
+Tanggal    : 2026-01-06 11:29:46
+Test ID    : keluarga
+Total Skor : 13
+Level      : Rendah
+Kategori   : kritis
+Deskripsi  :
+Kualitas hubungan rendah dan perlu perhatian
+============================================================
