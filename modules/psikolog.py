@@ -23,27 +23,42 @@ def data_psikolog():
         print("Error: File data/psikolog.csv tidak ditemukan!")
         return []
 
-file_path_booking = os.path.join('data', 'riwayat-booking.csv')
-header_booking = ['id_booking','nama','spesialis','rating','tanggal','jam','keluhan','tanggal_booking']
 
-def save_booking_psikolog(data_booking):
 
-    file_exists = os.path.isfile(file_path_booking)
-    try:
-        with open(file_path_booking, mode='a', newline='', encoding='utf-8') as f:
-            writer = csv.DictWriter(f, fieldnames=header_booking)
+def save_booking_struk(data_booking):
+    folder_user = os.path.join('data', data_booking['nama_pasien'])
 
-            if not file_exists:
-                writer.writeheader()
+    os.makedirs(folder_user, exist_ok=True)
+    nama_file = f"booking_{data_booking['id_booking']}.txt"
+    lokasi_file = os.path.join(folder_user, nama_file)
 
-            writer.writerow(data_booking)
-            return True
+    with open(lokasi_file, mode='w', encoding='utf-8') as f:
+        GARIS = "=" * 60
 
-    except Exception as e:
-        print("Data booking gagal disimpan")
-        return False
+        f.write(GARIS + "\n")
+        f.write("DETAIL BOOKING".center(60))
+        f.write(GARIS + "\n")
 
-def list_psikolog():
+        struk = (
+            f"ID BOOKING      : {data_booking['id_booking']}\n"
+            f"TANGGAL DICETAK : {data_booking['tanggal_booking']}\n"
+            f"----------------------------------------\n"
+            f"PASIEN          : {data_booking['nama_pasien']}\n" 
+            f"----------------------------------------\n"
+            f"PSIKOLOG        : {data_booking['nama']}\n"
+            f"SPESIALIS       : {data_booking['spesialis']}\n"
+            f"RATING          : {data_booking['rating']}\n"
+            f"----------------------------------------\n"
+            f"JADWAL TEMU     : {data_booking['tanggal']}\n"
+            f"PUKUL           : {data_booking['jam']} WIB\n"
+            f"----------------------------------------\n"
+            f"CATATAN KELUHAN :\n"
+            f"{data_booking['keluhan']}\n"
+        )
+        f.write(struk)
+        return True, nama_file
+
+def list_psikolog(username_aktif):
     list_psikolog = data_psikolog()
 
     if not list_psikolog:
@@ -119,15 +134,63 @@ def list_psikolog():
         'nama' : pilihan_psikolog['nama'],
         'spesialis' : pilihan_psikolog['spesialis'],
         'rating' : pilihan_psikolog['rating'],
+        'nama_pasien' : username_aktif,
         'tanggal' : tanggal,
         'jam' : jam_booking,
         'keluhan' : keluhan,
         'tanggal_booking' : datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")}
+    
+    status, nama_file_dibuat = save_booking_struk(data_booking)
 
-    if save_booking_psikolog(data_booking):
-        print("\n" + "="*40)
-        print(f"✅ BOOKING BERHASIL DISIMPAN!")
-        print(f"ID: {id_booking} | Tanggal: {tanggal}")
-        print("="*40)
+    if status : 
+        print("\n" + "="*50)
+        print(f"✅ BOOKING BERHASIL! STRUK TELAH DICETAK.")
+        print(f"📄 Nama File: data/psikolog/{nama_file_dibuat}")
+        print(f"🆔 ID       : {id_booking}")
+        print("="*50)
     else:
-        print("\n❌ Terjadi kesalahan sistem saat menyimpan.")
+        print("\n❌ Terjadi kesalahan sistem saat membuat file.")
+
+def lihat_riwayat_booking(username_aktif):
+
+    folder_user = os.path.join('data', username_aktif)
+
+    if not os.path.exists(folder_user):
+        print(f"\n[!] Belum ada riwayat booking untuk user: {username_aktif}")
+        return
+    
+    print(f"\n===== DAFTAR RIWAYAT BOOKING ({username_aktif}) =====")
+    files = [f for f in os.listdir(folder_user) if f.endswith('.txt')]
+    
+    for i, nama_file in enumerate(files, 1):
+        print(f"{i}. {nama_file}")
+    
+    print("-" * 40)
+    pilihan = input("Pilih nomor file untuk lihat detail (atau Enter untuk kembali): ")
+    
+    if pilihan.isdigit():
+        idx = int(pilihan) - 1
+        if 0 <= idx < len(files):
+            file_path = os.path.join(folder_user, files[idx])
+            print("\n" + "*" * 50)
+            with open(file_path, 'r', encoding='utf-8') as f:
+                print(f.read())
+            print("*" * 50)
+            input("Tekan Enter untuk lanjut...")
+
+    
+
+def menu_psikolog(username_aktif):
+    while True:
+        print(f"[1] List Psikolog")
+        print(f"[2] Lihat Riwayat Booking")
+        print(f"[3] Kembali")
+        user_input = input("Pilih menu (1-3) : ")
+        if user_input == '1':
+            list_psikolog(username_aktif)
+        elif user_input == '2':
+            lihat_riwayat_booking(username_aktif)
+        elif user_input == '3':
+            return
+        else:
+            print(f"Masukkan angka yang valid (1-3)")

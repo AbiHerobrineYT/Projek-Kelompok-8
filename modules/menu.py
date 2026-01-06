@@ -1,8 +1,8 @@
-def menu_utama():
+def menu_utama(username_aktif):
     while True:
             print("================RUANG TEDUH==============") # Judul aplikasi
 
-            print("Halo! Apa yang ingin kamu lakukan hari ini?\n")
+            print(f"Halo {username_aktif}! Apa yang ingin kamu lakukan hari ini?\n")
 
             print("[1] 📝 Mulai Tes Kesehatan Mental")
             print("[2] 📊 Lihat Riwayat Hasil Saya")
@@ -21,4 +21,4 @@ def menu_utama():
             if user_input in ['1', '2', '3', '4', '5']:
                 return user_input
             else:
-                input("Pilihan tidak valid, bro. Tekan Enter untuk coba lagi...")
+                input("Pilihan tidak valid. Tekan Enter untuk coba lagi...")

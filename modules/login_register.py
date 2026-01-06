@@ -116,8 +116,9 @@ def menu_auth():
         pilihan = input("Pilih menu: ")
 
         if pilihan == "1":
-            if login():
-                return True
+            data_user = login()
+            if data_user:
+                return data_user
         elif pilihan == "2":
             register()
         elif pilihan == "3":
