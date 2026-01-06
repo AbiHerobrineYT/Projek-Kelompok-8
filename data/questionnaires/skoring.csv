@@ -1,12 +1,12 @@
 test_id,min,max,level,kategori,deskripsi
-keluarga,7,13,Rendah,perlu_perhatian,Kualitas hubungan rendah dan perlu perhatian
+keluarga,7,13,Rendah,kritis,Kualitas hubungan rendah dan perlu perhatian
 keluarga,14,20,Sedang,moderat,Kualitas hubungan cukup baik namun masih perlu ditingkatkan
 keluarga,21,28,Tinggi,baik,Kualitas hubungan baik dan sehat
 
-depresi,0,4,Minimal,normal,Gejala depresi sangat ringan
-depresi,5,9,Ringan,ringan,Gejala depresi ringan
-depresi,10,14,Sedang,moderat,Gejala depresi sedang dan perlu perhatian
-depresi,15,27,Berat,kritis,Gejala depresi berat dan disarankan bantuan profesional
+depresi,0,9,Ringan,baik,Gejala depresi ringan
+depresi,10,18,Sedang,moderat,Gejala depresi sedang dan perlu perhatian
+depresi,19,27,Berat,kritis,Gejala depresi berat dan disarankan bantuan profesional
+
 
 kecemasan,4,7,Rendah,baik,Tingkat kecemasan rendah
 kecemasan,8,11,Sedang,moderat,Tingkat kecemasan sedang
