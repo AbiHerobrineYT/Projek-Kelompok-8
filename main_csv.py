@@ -13,7 +13,7 @@ from modules.article_menu import menu_artikel  # Tambah import ini
 
 def main(username_aktif):
     while True:
-        pilihan = menu_utama(username_aktif)
+        pilihan = menu_utama(username_aktif=None)
 
         if pilihan == '1':
             pilihan_kuisioner = tampilkan_menu_kuisioner()
