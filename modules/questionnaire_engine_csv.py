@@ -159,19 +159,20 @@ def simpan_hasil_txt(hasil, username_aktif):
     """
     Simpan hasil tes ke file TXT
     """
-    folder_user = os.path.join(BASE_DIR, "data", "hasil", username_aktif)
-    
-    if not os.path.exists(folder_user):
-        os.makedirs(folder_user)
-
     filename = f"{hasil['test_id']}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.txt"
-    filepath = os.path.join(folder_user, filename)
+    
+    # Path dengan folder username
+    user_hasil_dir = os.path.join(HASIL_DIR, username_aktif)
+    if not os.path.exists(user_hasil_dir):
+        os.makedirs(user_hasil_dir)
+    
+    filepath = os.path.join(user_hasil_dir, filename)
 
     with open(filepath, "w", encoding="utf-8") as f:
         GARIS = "=" * 60
 
         f.write(GARIS + "\n")
-        f.write("HASIL TES".center(60))
+        f.write("HASIL TES".center(60) + "\n")
         f.write(GARIS + "\n")
 
         f.write(f"User       : {username_aktif}\n")
@@ -179,18 +180,24 @@ def simpan_hasil_txt(hasil, username_aktif):
         f.write(f"Test ID    : {hasil['test_id']}\n")
         f.write(f"Total Skor : {hasil['total_skor']} / {hasil['skor_maks']}\n")
         f.write(f"Level      : {hasil['analisis']['level']}\n")
-        f.write(f"Kategori   : {hasil['analisis'].get('kategori', '-')}\n")
+        f.write(f"Kategori   : {hasil['analisis']['kategori']}\n")
         f.write("Deskripsi  :\n")
-        f.write(f"{hasil['analisis']['deskripsi']}\n")
+        f.write(hasil["analisis"]["deskripsi"] + "\n")
 
         # Tambahkan To-Do List
         if hasil.get("todo_list"):
-            f.write("\n" + GARIS + "\n")
+            f.write(GARIS + "\n")
             f.write("REKOMENDASI AKTIVITAS".center(60) + "\n")
             f.write(GARIS + "\n")
             
             for item in hasil["todo_list"]:
                 f.write(f"{item['prioritas']}. {item['aktivitas']}\n")
+            
+            f.write(GARIS + "\n")
+            
+            # ← TAMBAHAN BARU: Status dan Progress
+            f.write(f"Status     : Belum Tuntas\n")
+            f.write(f"Progress   : 0%\n")
 
         f.write(GARIS + "\n")
 
