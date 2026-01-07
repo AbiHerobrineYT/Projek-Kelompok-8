@@ -72,7 +72,7 @@ def load_todo_list(test_id, kategori):
 
 
 # Kuisoner
-def jalankan_kuisioner(test_id):
+def jalankan_kuisioner(test_id, username=None):
     data = load_questionnaire(test_id)
 
     print("\n" + "=" * 70)
@@ -121,6 +121,10 @@ def jalankan_kuisioner(test_id):
     
     # Load to-do list berdasarkan kategori hasil
     todo_list = load_todo_list(test_id, hasil["level"])
+
+    # Simpan to-do list ke CSV user jika username tersedia
+    if username and todo_list:
+        simpan_todo_ke_csv(username, test_id, todo_list)
 
     jumlah_pertanyaan = len(data["pertanyaan"])
     skor_maks = jumlah_pertanyaan * max_nilai
@@ -293,3 +297,42 @@ def baca_ringkasan_hasil(filepath):
 
     return ringkasan
 
+def simpan_todo_ke_csv(username, test_id, todo_list):
+    """
+    Menyimpan to-do list ke file CSV user
+    """
+    import csv  # ← Tambah import ini
+    
+    # Path folder user
+    user_todo_dir = os.path.join(BASE_DIR, "data", "to_do", username)
+    
+    # Buat folder jika belum ada
+    if not os.path.exists(user_todo_dir):
+        os.makedirs(user_todo_dir)
+    
+    # Path file CSV
+    csv_path = os.path.join(user_todo_dir, "to_do_list.csv")
+    
+    # Siapkan data
+    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    
+    # Cek apakah file sudah ada
+    file_exists = os.path.exists(csv_path)
+    
+    # Tulis ke CSV dengan csv.writer (handle koma otomatis)
+    with open(csv_path, 'a', encoding='utf-8', newline='') as f:
+        writer = csv.writer(f)  # ← Pakai csv.writer
+        
+        # Header jika file baru
+        if not file_exists:
+            writer.writerow(["tanggal", "test_id", "prioritas", "aktivitas", "status"])
+        
+        # Tulis setiap aktivitas
+        for item in todo_list:
+            writer.writerow([
+                timestamp,
+                test_id,
+                item['prioritas'],
+                item['aktivitas'],  # ← Otomatis di-quote jika ada koma
+                'pending'
+            ])
