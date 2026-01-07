@@ -9,7 +9,7 @@ from modules.article_menu import menu_artikel  # Tambah import ini
 
 def main():
     while True:
-        pilihan = menu_utama()
+        pilihan = menu_utama(username_aktif=None)
 
         if pilihan == '1':
             pilihan_kuisioner = tampilkan_menu_kuisioner()
