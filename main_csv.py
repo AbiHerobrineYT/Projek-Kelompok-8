@@ -58,8 +58,11 @@ def main(username_aktif):
             menu_psikolog(username_aktif)
 
         elif pilihan == '5':
-            print("[5] 📰 Artikel & Tips Mental Health COMING SOON") 
-            input("\nTekan Enter untuk kembali ke menu...")
+            hasil_artikel = menu_artikel()
+
+            if hasil_artikel == 'back':
+                continue
+
 
         elif pilihan == '6':
             tampilkan_tentang_kami()
