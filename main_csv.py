@@ -1,51 +1,13 @@
 import sys
 import os
-import pandas as pd
 from modules.menu import menu_utama
 from modules.about import tampilkan_tentang_kami
 from modules.questionnaire_menu import tampilkan_menu_kuisioner
 from modules.questionnaire_engine_csv import jalankan_kuisioner, tampilkan_hasil, riwayat_hasil
 from modules.login_register import menu_auth    
 from modules.psikolog import list_psikolog,menu_psikolog
+from modules.to_do import tampilkan_todo_list
 
-def tampilkan_todo_list(username):
-    """
-    Menampilkan to-do list user dari CSV
-    """
-    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-    csv_path = os.path.join(BASE_DIR, "data", "to_do", username, "to_do_list.csv")
-    
-    if not os.path.exists(csv_path):
-        print("\n📭 Anda belum memiliki to-do list.")
-        print("💡 Selesaikan tes terlebih dahulu untuk mendapatkan rekomendasi aktivitas.")
-        return
-    
-    # Baca CSV
-    df = pd.read_csv(csv_path)
-    
-    if df.empty:
-        print("\n📭 To-do list Anda kosong.")
-        return
-    
-    print("\n" + "=" * 70)
-    print("📋 TO-DO LIST SAYA".center(70))
-    print("=" * 70)
-    
-    # Tampilkan berdasarkan test_id
-    for test_id in df['test_id'].unique():
-        test_data = df[df['test_id'] == test_id]
-        pending = test_data[test_data['status'] == 'pending']
-        
-        if not pending.empty:
-            print(f"\n🔹 {test_id.upper()}")
-            print("-" * 70)
-            
-            for idx, row in pending.iterrows():
-                checkbox = "☐" if row['status'] == 'pending' else "☑"
-                print(f"{checkbox} [{row['prioritas']}] {row['aktivitas']}")
-                print(f"   Ditambahkan: {row['tanggal']}")
-    
-    print("=" * 70)
 
 def main(username_aktif):
     while True:
