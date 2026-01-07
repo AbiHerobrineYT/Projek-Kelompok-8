@@ -1,0 +1,97 @@
+tes,kategori,prioritas,aktivitas
+
+depresi,Rendah,1,Berjalan kaki ringan 20-30 menit di area terbuka
+depresi,Rendah,2,Mendengarkan musik favorit atau podcast motivasi
+depresi,Rendah,3,Merapikan kamar atau ruang kecil di rumah
+depresi,Rendah,4,"Melakukan hobi ringan (menggambar, mewarnai, merajut)"
+depresi,Rendah,5,Minum air putih yang cukup dan makan makanan bergizi
+depresi,Sedang,1,Mencatat perasaan harian dalam jurnal emosi
+depresi,Sedang,2,Melakukan meditasi atau latihan pernapasan dalam 10-15 menit
+depresi,Sedang,3,Menghubungi atau mengobrol dengan teman atau keluarga
+depresi,Sedang,4,Menetapkan satu tujuan kecil dan menyelesaikannya hari ini
+depresi,Sedang,5,Membatasi waktu penggunaan media sosial maksimal 1 jam
+depresi,Tinggi,1,Menjadwalkan konsultasi dengan psikolog atau psikiater
+depresi,Tinggi,2,Bercerita dan berbagi perasaan dengan orang terdekat yang dipercaya
+depresi,Tinggi,3,Melakukan aktivitas yang dulu disukai meski hanya 15 menit
+depresi,Tinggi,4,Mengikuti sesi terapi perilaku kognitif (CBT) jika tersedia
+depresi,Tinggi,5,"Membuat rutinitas harian sederhana (waktu bangun, makan, tidur)"
+
+keluarga,Rendah,1,Makan malam bersama keluarga tanpa gangguan gadget
+keluarga,Rendah,2,Melakukan aktivitas bersama seperti menonton film atau bermain board game
+keluarga,Rendah,3,Memberikan apresiasi dan pujian kepada anggota keluarga
+keluarga,Rendah,4,Menciptakan tradisi keluarga sederhana (misalnya piknik akhir pekan)
+keluarga,Rendah,5,Mendengarkan cerita dan keluh kesah anggota keluarga dengan penuh perhatian
+keluarga,Sedang,1,Berdiskusi terbuka tentang masalah keluarga tanpa menyalahkan
+keluarga,Sedang,2,Menetapkan aturan dan batasan yang disepakati bersama
+keluarga,Sedang,3,Menghabiskan quality time dengan setiap anggota keluarga secara individual
+keluarga,Sedang,4,Berlatih empati dengan memahami perspektif anggota keluarga lain
+keluarga,Sedang,5,Melakukan hobi atau olahraga bersama untuk mengurangi stres keluarga
+keluarga,Tinggi,1,Mengikuti konseling keluarga dengan psikolog atau terapis
+keluarga,Tinggi,2,Membuat kesepakatan dan komitmen bersama untuk menyelesaikan konflik
+keluarga,Tinggi,3,Belajar teknik komunikasi efektif dan penyelesaian masalah dari ahli
+keluarga,Tinggi,4,Mengidentifikasi dan mengubah pola perilaku destruktif dalam keluarga
+keluarga,Tinggi,5,Melakukan terapi keluarga terstruktur untuk masalah yang kompleks
+
+kecemasan,Rendah,1,"Latihan pernapasan dalam 4-7-8 (tarik 4 detik, tahan 7 detik, buang 8 detik)"
+kecemasan,Rendah,2,Berjalan santai atau olahraga ringan selama 15-20 menit
+kecemasan,Rendah,3,Mendengarkan musik yang menenangkan atau suara alam
+kecemasan,Rendah,4,Melakukan aktivitas yang disukai untuk mengalihkan pikiran
+kecemasan,Rendah,5,Mengurangi konsumsi kafein dan gula berlebihan
+kecemasan,Sedang,1,Praktik meditasi mindfulness selama 10-15 menit setiap hari
+kecemasan,Sedang,2,Melakukan relaksasi otot progresif dari kaki hingga kepala
+kecemasan,Sedang,3,Menulis jurnal untuk mengidentifikasi pemicu kecemasan
+kecemasan,Sedang,4,Berlatih teknik grounding 5-4-3-2-1 (gunakan panca indera)
+kecemasan,Sedang,5,Mencari dukungan dari teman atau keluarga untuk bercerita
+kecemasan,Tinggi,1,Berkonsultasi dengan psikolog untuk terapi kognitif perilaku (CBT)
+kecemasan,Tinggi,2,Mengikuti terapi eksposur dengan bimbingan profesional
+kecemasan,Tinggi,3,Bergabung dengan support group atau kelompok dukungan
+kecemasan,Tinggi,4,Berkonsultasi dengan psikiater untuk evaluasi pengobatan jika diperlukan
+kecemasan,Tinggi,5,Menerapkan strategi coping yang dipelajari dari terapis secara konsisten
+
+stress,Rendah,1,Mengambil istirahat singkat setiap 1-2 jam saat bekerja
+stress,Rendah,2,Melakukan peregangan atau stretching ringan di tempat kerja
+stress,Rendah,3,Mendengarkan musik atau podcast saat perjalanan pulang kerja
+stress,Rendah,4,Bermain dengan hewan peliharaan atau berinteraksi dengan alam
+stress,Rendah,5,Tertawa dengan menonton video lucu atau komedi
+stress,Sedang,1,Membuat daftar prioritas dan mengatur waktu dengan time blocking
+stress,Sedang,2,"Melakukan olahraga rutin 3-4 kali seminggu (jogging, yoga, berenang)"
+stress,Sedang,3,Praktik mindfulness atau meditasi 15 menit setiap hari
+stress,Sedang,4,Berbicara dengan rekan kerja atau teman untuk sharing pengalaman
+stress,Sedang,5,Menetapkan batasan kerja dan waktu pribadi dengan jelas
+stress,Tinggi,1,Berkonsultasi dengan atasan untuk mengurangi beban kerja
+stress,Tinggi,2,Mengikuti pelatihan manajemen stress atau workshop kesehatan mental
+stress,Tinggi,3,Mencari bantuan profesional (psikolog) untuk terapi problem-focused coping
+stress,Tinggi,4,Mengambil cuti untuk pemulihan kesehatan mental dan fisik
+stress,Tinggi,5,Menerapkan teknik relaksasi dan coping mechanism yang dipelajari dari ahli
+
+trauma,Rendah,1,Praktik teknik relaksasi seperti pernapasan dalam dan meditasi
+trauma,Rendah,2,Berolahraga ringan atau yoga untuk melepaskan ketegangan
+trauma,Rendah,3,Menciptakan rutinitas harian yang terstruktur dan aman
+trauma,Rendah,4,Menghindari alkohol dan zat adiktif yang memperburuk kondisi
+trauma,Rendah,5,Menulis perasaan dalam jurnal untuk memproses emosi
+trauma,Sedang,1,Berbicara dengan orang terdekat atau keluarga tentang perasaan
+trauma,Sedang,2,Bergabung dengan kelompok dukungan untuk korban trauma
+trauma,Sedang,3,Melakukan aktivitas positif yang membawa kebahagiaan
+trauma,Sedang,4,Belajar teknik grounding untuk mengatasi flashback
+trauma,Sedang,5,Menghindari pemicu trauma sambil membangun rasa aman
+trauma,Tinggi,1,"Mengikuti terapi trauma (CBT, EMDR, atau terapi eksposur) dengan psikolog"
+trauma,Tinggi,2,Berkonsultasi dengan psikiater untuk evaluasi PTSD dan pengobatan
+trauma,Tinggi,3,Menjalani trauma healing terstruktur dengan terapis berlisensi
+trauma,Tinggi,4,Melakukan terapi perilaku kognitif untuk mengubah pikiran negatif
+trauma,Tinggi,5,Mengikuti terapi kelompok untuk korban PTSD dengan ahli
+
+burnout,Rendah,1,Tidur cukup 7-8 jam setiap malam dengan kualitas yang baik
+burnout,Rendah,2,Makan makanan bergizi seimbang dan hindari fast food
+burnout,Rendah,3,Melakukan hobi atau aktivitas yang menyenangkan di luar pekerjaan
+burnout,Rendah,4,Berjalan kaki atau olahraga ringan 20-30 menit setiap hari
+burnout,Rendah,5,Mengurangi waktu layar dan media sosial sebelum tidur
+burnout,Sedang,1,Menetapkan batasan kerja dan belajar mengatakan tidak pada tugas berlebihan
+burnout,Sedang,2,Membuat jadwal kerja realistis dengan teknik time management
+burnout,Sedang,3,Praktik mindfulness atau meditasi untuk mengelola pikiran negatif
+burnout,Sedang,4,Berbicara dengan rekan kerja atau teman untuk dukungan emosional
+burnout,Sedang,5,Melakukan aktivitas sosial di luar lingkungan kerja
+burnout,Tinggi,1,Berbicara dengan atasan untuk mendiskusikan beban kerja dan solusi
+burnout,Tinggi,2,Mengambil cuti untuk istirahat dan pemulihan mental
+burnout,Tinggi,3,Berkonsultasi dengan psikolog untuk terapi dan strategi mengatasi burnout
+burnout,Tinggi,4,Mengevaluasi work-life balance dan membuat perubahan signifikan
+burnout,Tinggi,5,Mempertimbangkan perubahan pekerjaan jika lingkungan toksik berkelanjutan

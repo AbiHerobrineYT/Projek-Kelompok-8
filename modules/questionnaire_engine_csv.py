@@ -2,9 +2,7 @@ import pandas as pd
 import os
 from datetime import datetime
 
-# =========================
-# PATH AMAN
-# =========================
+# Bikin Folder
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_DIR = os.path.join(BASE_DIR, "data", "questionnaires")
 HASIL_DIR = os.path.join(BASE_DIR, "data", "hasil")
@@ -13,22 +11,20 @@ if not os.path.exists(HASIL_DIR):
     os.makedirs(HASIL_DIR)
 
 
-# =========================
-# LOAD DATA CSV
-# =========================
+# Load Data CSV
 def load_questionnaire(test_id):
     tests = pd.read_csv(os.path.join(DATA_DIR, "tests.csv"))
     pertanyaan = pd.read_csv(os.path.join(DATA_DIR, "pertanyaan.csv"))
     skala_df = pd.read_csv(os.path.join(DATA_DIR, "skala.csv"))
     skoring = pd.read_csv(os.path.join(DATA_DIR, "skoring.csv"))
 
-    # INFO TES
+    # Info Tes
     info = tests[tests["test_id"] == test_id]
     if info.empty:
         raise ValueError(f"Tes '{test_id}' tidak ditemukan di tests.csv")
     info = info.iloc[0]
 
-    # FILTER DATA
+    # Filtering
     pertanyaan = pertanyaan[pertanyaan["test_id"] == test_id]
     skoring = skoring[skoring["test_id"] == test_id]
     skala_df = skala_df[skala_df["test_id"] == test_id]
@@ -48,11 +44,35 @@ def load_questionnaire(test_id):
     }
 
 
+# =========================
+# LOAD TO-DO LIST
+# =========================
+def load_todo_list(test_id, kategori):
+    """
+    Memuat aktivitas rekomendasi berdasarkan test_id dan kategori
+    """
+    try:
+        todo_path = os.path.join(DATA_DIR, "to_do_list.csv")
+        if not os.path.exists(todo_path):
+            return []
+        
+        todo_df = pd.read_csv(todo_path)
+        
+        # Filter berdasarkan tes dan kategori
+        aktivitas = todo_df[
+            (todo_df["tes"] == test_id) & 
+            (todo_df["kategori"] == kategori)
+        ].sort_values("prioritas")
+        
+        return aktivitas.to_dict("records")
+    
+    except Exception as e:
+        print(f"⚠️ Gagal memuat to-do list: {e}")
+        return []
 
-# =========================
-# JALANKAN KUISIONER
-# =========================
-def jalankan_kuisioner(test_id):
+
+# Kuisoner
+def jalankan_kuisioner(test_id, username=None):
     data = load_questionnaire(test_id)
 
     print("\n" + "=" * 70)
@@ -98,18 +118,30 @@ def jalankan_kuisioner(test_id):
                 print("❌ Input tidak valid")
 
     hasil = analisis_skor(total_skor, data["skoring"])
+    
+    # Load to-do list berdasarkan kategori hasil
+    todo_list = load_todo_list(test_id, hasil["level"])
+
+    # Simpan to-do list ke CSV user jika username tersedia
+    if username and todo_list:
+        simpan_todo_ke_csv(username, test_id, todo_list)
+
+    jumlah_pertanyaan = len(data["pertanyaan"])
+    skor_maks = jumlah_pertanyaan * max_nilai
+
+    hasil_analisis = analisis_skor(total_skor, data["skoring"])
 
     return {
         "test_id": test_id,
         "tanggal": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
         "total_skor": total_skor,
-        "analisis": hasil
+        "skor_maks": skor_maks,
+        "analisis": hasil,
+        "todo_list": todo_list
     }
 
 
-# =========================
-# ANALISIS SKOR
-# =========================
+# Analisis skor
 def analisis_skor(total_skor, skoring):
     for r in skoring:
         if r["min"] <= total_skor <= r["max"]:
@@ -122,16 +154,19 @@ def analisis_skor(total_skor, skoring):
     }
 
 
-# =========================
-# TAMPILKAN HASIL
-# =========================
-
-def simpan_hasil_txt(hasil):
+# Menampilkan dan Penyimpanan Hasil
+def simpan_hasil_txt(hasil, username_aktif):
     """
     Simpan hasil tes ke file TXT
     """
     filename = f"{hasil['test_id']}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.txt"
-    filepath = os.path.join(HASIL_DIR, filename)
+    
+    # Path dengan folder username
+    user_hasil_dir = os.path.join(HASIL_DIR, username_aktif)
+    if not os.path.exists(user_hasil_dir):
+        os.makedirs(user_hasil_dir)
+    
+    filepath = os.path.join(user_hasil_dir, filename)
 
     with open(filepath, "w", encoding="utf-8") as f:
         GARIS = "=" * 60
@@ -140,39 +175,73 @@ def simpan_hasil_txt(hasil):
         f.write("HASIL TES".center(60) + "\n")
         f.write(GARIS + "\n")
 
+        f.write(f"User       : {username_aktif}\n")
         f.write(f"Tanggal    : {hasil['tanggal']}\n")
         f.write(f"Test ID    : {hasil['test_id']}\n")
-        f.write(f"Total Skor : {hasil['total_skor']}\n")
+        f.write(f"Total Skor : {hasil['total_skor']} / {hasil['skor_maks']}\n")
         f.write(f"Level      : {hasil['analisis']['level']}\n")
-        f.write(f"Kategori   : {hasil['analisis'].get('kategori', '-')}\n")
+        f.write(f"Kategori   : {hasil['analisis']['kategori']}\n")
         f.write("Deskripsi  :\n")
         f.write(hasil["analisis"]["deskripsi"] + "\n")
+
+        # Tambahkan To-Do List
+        if hasil.get("todo_list"):
+            f.write(GARIS + "\n")
+            f.write("REKOMENDASI AKTIVITAS".center(60) + "\n")
+            f.write(GARIS + "\n")
+            
+            for item in hasil["todo_list"]:
+                f.write(f"{item['prioritas']}. {item['aktivitas']}\n")
+            
+            f.write(GARIS + "\n")
+            
+            # ← TAMBAHAN BARU: Status dan Progress
+            f.write(f"Status     : Belum Tuntas\n")
+            f.write(f"Progress   : 0%\n")
 
         f.write(GARIS + "\n")
 
     return filepath
 
 
-def tampilkan_hasil(hasil, simpan=True):
+def tampilkan_hasil(hasil, username_aktif, simpan=True):
     print("\n" + "=" * 60)
-    print("HASIL TES".center(60) + '\n')
+    print("HASIL TES".center(60))
     print("=" * 60)
-    print("Tanggal    :", hasil["tanggal"])
-    print("Total Skor :", hasil["total_skor"])
-    print("Level      :", hasil["analisis"]["level"])
-    print("Deskripsi  :", hasil["analisis"]["deskripsi"])
+    print(f"Tanggal    : {hasil['tanggal']}")
+    print(f"Total Skor : {hasil['total_skor']} / {hasil['skor_maks']}")
+    print(f"Level      : {hasil['analisis']['level']}")
+    print(f"Kategori   : {hasil['analisis']['kategori']}")
+    print("Deskripsi  :")
+    print(hasil['analisis']['deskripsi'])
     print("=" * 60)
+    
+    # Tampilkan To-Do List
+    if hasil.get("todo_list"):
+        print("\n" + "=" * 60)
+        print("📋 REKOMENDASI AKTIVITAS".center(60))
+        print("=" * 60)
+        
+        for item in hasil["todo_list"]:
+            print(f"{item['prioritas']}. {item['aktivitas']}")
+        
+        print("=" * 60)
 
     if simpan:
-        path = simpan_hasil_txt(hasil)
+        path = simpan_hasil_txt(hasil,username_aktif)
         print(f"\n💾 Hasil disimpan di: {path}")
 
-def riwayat_hasil():
+def riwayat_hasil(username_aktif):
     """
     Menampilkan daftar file hasil dan mengembalikan isi file yang dipilih
     """
+    folder_user = os.path.join(BASE_DIR, "data", "hasil", username_aktif)
+    if not os.path.exists(folder_user) or not os.listdir(folder_user):
+        print(f"\n📭 Belum ada riwayat hasil untuk user: {username_aktif}")
+        return None
+
     files = sorted(
-        [f for f in os.listdir(HASIL_DIR) if f.endswith(".txt")],
+        [f for f in os.listdir(folder_user) if f.endswith(".txt")],
         reverse=True
     )
 
@@ -180,25 +249,97 @@ def riwayat_hasil():
         print("\n📭 Belum ada riwayat hasil.")
         return None
 
-    print("\n📊 RIWAYAT HASIL TES")
+    print(f"\n📊 RIWAYAT HASIL TES : {username_aktif}")
     print("=" * 50)
 
-    for i, file in enumerate(files, 1):
-        print(f"{i}. {file}")
+    ringkasan_list = []
 
-    print("0. Kembali")
+    for i, file in enumerate(files, 1):
+        filepath = os.path.join(folder_user, file)
+        data = baca_ringkasan_hasil(filepath)
+
+        ringkasan_list.append(filepath)
+
+        print(f"\n[{i}] {data.get('test_id', '-')}"
+              f" | {data.get('tanggal', '-')[:16]}")
+
+        print(f"   Skor  : {data.get('total_skor', '-')}")
+        print(f"   Level : {data.get('level', '-')}")
+
+    print("\n[0] Kembali")
+    print("=" * 60)
 
     while True:
-        pilih = input("\nPilih nomor hasil: ").strip()
+        pilih = input("Pilih nomor hasil: ").strip()
 
-        if pilih == '0':
+        if pilih == "0":
             return None
 
-        if pilih.isdigit() and 1 <= int(pilih) <= len(files):
-            filepath = os.path.join(HASIL_DIR, files[int(pilih) - 1])
-            with open(filepath, "r", encoding="utf-8") as f:
+        if pilih.isdigit() and 1 <= int(pilih) <= len(ringkasan_list):
+            with open(ringkasan_list[int(pilih) - 1], "r", encoding="utf-8") as f:
                 return f.read()
 
         print("❌ Pilihan tidak valid")
 
+def baca_ringkasan_hasil(filepath):
+    ringkasan = {}
+
+    with open(filepath, "r", encoding="utf-8") as f:
+        for line in f:
+            if ":" not in line:
+                continue
+
+            key, value = line.split(":", 1)
+            key = key.strip().lower()
+            value = value.strip()
+
+            if key == "tanggal":
+                ringkasan["tanggal"] = value
+            elif key == "test id":
+                ringkasan["test_id"] = value
+            elif key == "total skor":
+                ringkasan["total_skor"] = value
+            elif key == "level":
+                ringkasan["level"] = value
+
+    return ringkasan
+
+def simpan_todo_ke_csv(username, test_id, todo_list):
+    """
+    Menyimpan to-do list ke file CSV user
+    """
+    import csv  # ← Tambah import ini
     
+    # Path folder user
+    user_todo_dir = os.path.join(BASE_DIR, "data", "to_do", username)
+    
+    # Buat folder jika belum ada
+    if not os.path.exists(user_todo_dir):
+        os.makedirs(user_todo_dir)
+    
+    # Path file CSV
+    csv_path = os.path.join(user_todo_dir, "to_do_list.csv")
+    
+    # Siapkan data
+    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    
+    # Cek apakah file sudah ada
+    file_exists = os.path.exists(csv_path)
+    
+    # Tulis ke CSV dengan csv.writer (handle koma otomatis)
+    with open(csv_path, 'a', encoding='utf-8', newline='') as f:
+        writer = csv.writer(f)  # ← Pakai csv.writer
+        
+        # Header jika file baru
+        if not file_exists:
+            writer.writerow(["tanggal", "test_id", "prioritas", "aktivitas", "status"])
+        
+        # Tulis setiap aktivitas
+        for item in todo_list:
+            writer.writerow([
+                timestamp,
+                test_id,
+                item['prioritas'],
+                item['aktivitas'],  # ← Otomatis di-quote jika ada koma
+                'pending'
+            ])

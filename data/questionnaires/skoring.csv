@@ -1,7 +1,7 @@
 test_id,min,max,level,kategori,deskripsi
-keluarga,0,7,Rendah,kritis,Hubungan Anda menunjukkan tanda-tanda serius yang memerlukan perhatian segera. Pertimbangkan untuk konseling pasangan.
+keluarga,0,7,Tinggi,kritis,Hubungan Anda menunjukkan tanda-tanda serius yang memerlukan perhatian segera. Pertimbangkan untuk konseling pasangan.
 keluarga,8,14,Sedang,moderat,Hubungan Anda cukup baik namun masih ada area yang bisa ditingkatkan. Fokus pada komunikasi dan quality time.
-keluarga,15,21,Tinggi,baik,Hubungan Anda dalam kondisi baik. Terus jaga komunikasi dan saling mendukung untuk mempertahankan kualitas hubungan.
+keluarga,15,21,Rendah,baik,Hubungan Anda dalam kondisi baik. Terus jaga komunikasi dan saling mendukung untuk mempertahankan kualitas hubungan.
 
 depresi,0,9,Rendah,baik,Gejala depresi ringan
 depresi,10,18,Sedang,moderat,Gejala depresi sedang dan perlu perhatian
