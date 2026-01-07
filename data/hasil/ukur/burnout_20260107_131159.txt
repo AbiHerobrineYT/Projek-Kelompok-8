@@ -1,0 +1,20 @@
+============================================================
+                         HASIL TES                          ============================================================
+User       : ukur
+Tanggal    : 2026-01-07 13:11:59
+Test ID    : burnout
+Total Skor : 66 / 66
+Level      : Tinggi
+Kategori   : kritis
+Deskripsi  :
+Tingkat kelelahan sangat tinggi dan berisiko berdampak serius pada kesehatan mental. disarankan segera mencari bantuan atau konsultasi dengan tenaga profesional
+
+============================================================
+                   REKOMENDASI AKTIVITAS                    
+============================================================
+1. Berbicara dengan atasan untuk mendiskusikan beban kerja dan solusi
+2. Mengambil cuti untuk istirahat dan pemulihan mental
+3. Berkonsultasi dengan psikolog untuk terapi dan strategi mengatasi burnout
+4. Mengevaluasi work-life balance dan membuat perubahan signifikan
+5. Mempertimbangkan perubahan pekerjaan jika lingkungan toksik berkelanjutan
+============================================================

@@ -1,0 +1,20 @@
+============================================================
+                         HASIL TES                          ============================================================
+User       : ukur
+Tanggal    : 2026-01-07 13:09:15
+Test ID    : kecemasan
+Total Skor : 12 / 12
+Level      : Tinggi
+Kategori   : kritis
+Deskripsi  :
+Tingkat kecemasan tinggi dan berpotensi mengganggu fungsi harian disarankan segera berkonsultasi dengan tenaga kesehatan mental
+
+============================================================
+                   REKOMENDASI AKTIVITAS                    
+============================================================
+1. Berkonsultasi dengan psikolog untuk terapi kognitif perilaku (CBT)
+2. Mengikuti terapi eksposur dengan bimbingan profesional
+3. Bergabung dengan support group atau kelompok dukungan
+4. Berkonsultasi dengan psikiater untuk evaluasi pengobatan jika diperlukan
+5. Menerapkan strategi coping yang dipelajari dari terapis secara konsisten
+============================================================

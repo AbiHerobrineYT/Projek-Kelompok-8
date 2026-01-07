@@ -1,11 +1,51 @@
 import sys
 import os
+import pandas as pd
 from modules.menu import menu_utama
 from modules.about import tampilkan_tentang_kami
 from modules.questionnaire_menu import tampilkan_menu_kuisioner
 from modules.questionnaire_engine_csv import jalankan_kuisioner, tampilkan_hasil, riwayat_hasil
 from modules.login_register import menu_auth    
 from modules.psikolog import list_psikolog,menu_psikolog
+
+def tampilkan_todo_list(username):
+    """
+    Menampilkan to-do list user dari CSV
+    """
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+    csv_path = os.path.join(BASE_DIR, "data", "to_do", username, "to_do_list.csv")
+    
+    if not os.path.exists(csv_path):
+        print("\n📭 Anda belum memiliki to-do list.")
+        print("💡 Selesaikan tes terlebih dahulu untuk mendapatkan rekomendasi aktivitas.")
+        return
+    
+    # Baca CSV
+    df = pd.read_csv(csv_path)
+    
+    if df.empty:
+        print("\n📭 To-do list Anda kosong.")
+        return
+    
+    print("\n" + "=" * 70)
+    print("📋 TO-DO LIST SAYA".center(70))
+    print("=" * 70)
+    
+    # Tampilkan berdasarkan test_id
+    for test_id in df['test_id'].unique():
+        test_data = df[df['test_id'] == test_id]
+        pending = test_data[test_data['status'] == 'pending']
+        
+        if not pending.empty:
+            print(f"\n🔹 {test_id.upper()}")
+            print("-" * 70)
+            
+            for idx, row in pending.iterrows():
+                checkbox = "☐" if row['status'] == 'pending' else "☑"
+                print(f"{checkbox} [{row['prioritas']}] {row['aktivitas']}")
+                print(f"   Ditambahkan: {row['tanggal']}")
+    
+    print("=" * 70)
 
 def main(username_aktif):
     while True:
@@ -23,7 +63,7 @@ def main(username_aktif):
                 '3': 'kecemasan',
                 '4': 'stress',
                 '5': 'trauma',
-                '6': 'burnout_kerja'
+                '6': 'burnout'
             }
 
             jenis_tes = mapping_tes.get(pilihan_kuisioner)
@@ -32,7 +72,7 @@ def main(username_aktif):
                 print("\nPilihan tidak valid.")
                 continue
 
-            hasil = jalankan_kuisioner(jenis_tes)
+            hasil = jalankan_kuisioner(jenis_tes, username_aktif)
 
             if hasil:
                 tampilkan_hasil(hasil,username_aktif)
@@ -47,7 +87,7 @@ def main(username_aktif):
             input("\nTekan Enter untuk kembali ke menu...")
 
         elif pilihan == '3':
-            print("\n📋 To-Do List & Self Care (Coming Soon)")
+            tampilkan_todo_list(username_aktif)
             input("\nTekan Enter untuk kembali ke menu...")
 
         elif pilihan == '4':

@@ -1,0 +1,20 @@
+============================================================
+                         HASIL TES                          ============================================================
+User       : ukur
+Tanggal    : 2026-01-07 14:17:08
+Test ID    : keluarga
+Total Skor : 6 / 21
+Level      : Tinggi
+Kategori   : kritis
+Deskripsi  :
+Hubungan Anda menunjukkan tanda-tanda serius yang memerlukan perhatian segera. Pertimbangkan untuk konseling pasangan.
+
+============================================================
+                   REKOMENDASI AKTIVITAS                    
+============================================================
+1. Mengikuti konseling keluarga dengan psikolog atau terapis
+2. Membuat kesepakatan dan komitmen bersama untuk menyelesaikan konflik
+3. Belajar teknik komunikasi efektif dan penyelesaian masalah dari ahli
+4. Mengidentifikasi dan mengubah pola perilaku destruktif dalam keluarga
+5. Melakukan terapi keluarga terstruktur untuk masalah yang kompleks
+============================================================
