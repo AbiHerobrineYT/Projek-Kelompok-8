@@ -44,6 +44,32 @@ def load_questionnaire(test_id):
     }
 
 
+# =========================
+# LOAD TO-DO LIST
+# =========================
+def load_todo_list(test_id, kategori):
+    """
+    Memuat aktivitas rekomendasi berdasarkan test_id dan kategori
+    """
+    try:
+        todo_path = os.path.join(DATA_DIR, "to_do_list.csv")
+        if not os.path.exists(todo_path):
+            return []
+        
+        todo_df = pd.read_csv(todo_path)
+        
+        # Filter berdasarkan tes dan kategori
+        aktivitas = todo_df[
+            (todo_df["tes"] == test_id) & 
+            (todo_df["kategori"] == kategori)
+        ].sort_values("prioritas")
+        
+        return aktivitas.to_dict("records")
+    
+    except Exception as e:
+        print(f"⚠️ Gagal memuat to-do list: {e}")
+        return []
+
 
 # Kuisoner
 def jalankan_kuisioner(test_id):
@@ -92,6 +118,9 @@ def jalankan_kuisioner(test_id):
                 print("❌ Input tidak valid")
 
     hasil = analisis_skor(total_skor, data["skoring"])
+    
+    # Load to-do list berdasarkan kategori hasil
+    todo_list = load_todo_list(test_id, hasil["level"])
 
     jumlah_pertanyaan = len(data["pertanyaan"])
     skor_maks = jumlah_pertanyaan * max_nilai
@@ -103,7 +132,8 @@ def jalankan_kuisioner(test_id):
         "tanggal": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
         "total_skor": total_skor,
         "skor_maks": skor_maks,
-        "analisis": hasil
+        "analisis": hasil,
+        "todo_list": todo_list
     }
 
 
@@ -149,6 +179,15 @@ def simpan_hasil_txt(hasil, username_aktif):
         f.write("Deskripsi  :\n")
         f.write(f"{hasil['analisis']['deskripsi']}\n")
 
+        # Tambahkan To-Do List
+        if hasil.get("todo_list"):
+            f.write("\n" + GARIS + "\n")
+            f.write("REKOMENDASI AKTIVITAS".center(60) + "\n")
+            f.write(GARIS + "\n")
+            
+            for item in hasil["todo_list"]:
+                f.write(f"{item['prioritas']}. {item['aktivitas']}\n")
+
         f.write(GARIS + "\n")
 
     return filepath
@@ -165,6 +204,17 @@ def tampilkan_hasil(hasil, username_aktif, simpan=True):
     print("Deskripsi  :")
     print(hasil['analisis']['deskripsi'])
     print("=" * 60)
+    
+    # Tampilkan To-Do List
+    if hasil.get("todo_list"):
+        print("\n" + "=" * 60)
+        print("📋 REKOMENDASI AKTIVITAS".center(60))
+        print("=" * 60)
+        
+        for item in hasil["todo_list"]:
+            print(f"{item['prioritas']}. {item['aktivitas']}")
+        
+        print("=" * 60)
 
     if simpan:
         path = simpan_hasil_txt(hasil,username_aktif)
