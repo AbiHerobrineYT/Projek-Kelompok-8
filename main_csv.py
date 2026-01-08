@@ -14,7 +14,7 @@ from modules.artikel import menu_artikel
 
 def main(username_aktif):
     while True:
-        pilihan = menu_utama(username_aktif=None)
+        pilihan = menu_utama(username_aktif)
 
         if pilihan == '1':
             pilihan_kuisioner = tampilkan_menu_kuisioner()

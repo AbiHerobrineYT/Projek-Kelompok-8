@@ -15,7 +15,6 @@ if not os.path.exists(HASIL_DIR):
 def load_questionnaire(test_id):
     tests = pd.read_csv(os.path.join(DATA_DIR, "tests.csv"))
     pertanyaan = pd.read_csv(os.path.join(DATA_DIR, "pertanyaan.csv"))
-    skala_df = pd.read_csv(os.path.join(DATA_DIR, "skala.csv"))
     skoring = pd.read_csv(os.path.join(DATA_DIR, "skoring.csv"))
 
     # Info Tes
@@ -27,19 +26,13 @@ def load_questionnaire(test_id):
     # Filtering
     pertanyaan = pertanyaan[pertanyaan["test_id"] == test_id]
     skoring = skoring[skoring["test_id"] == test_id]
-    skala_df = skala_df[skala_df["test_id"] == test_id]
 
-    if skala_df.empty:
-        raise ValueError(f"Skala untuk tes '{test_id}' tidak ditemukan di skala.csv")
-
-    skala_dict = dict(zip(skala_df["value"], skala_df["label"]))
 
     return {
         "nama": info["nama"],
         "deskripsi": info["deskripsi"],
         "instruksi": info["instruksi"],
         "pertanyaan": pertanyaan.to_dict("records"),
-        "skala": skala_dict,
         "skoring": skoring.to_dict("records")
     }
 
@@ -72,7 +65,7 @@ def load_todo_list(test_id, kategori):
 
 
 # Kuisoner
-def jalankan_kuisioner(test_id, username=None):
+def jalankan_kuisioner(test_id, username):
     data = load_questionnaire(test_id)
 
     print("\n" + "=" * 70)
@@ -83,39 +76,25 @@ def jalankan_kuisioner(test_id, username=None):
 
     total_skor = 0
 
-    skala_keys = sorted(data["skala"].keys())
-    min_nilai = skala_keys[0]
-    max_nilai = skala_keys[-1]
-
-    tampil_offset = 1 if min_nilai == 0 else 0
-
     for i, p in enumerate(data["pertanyaan"], 1):
         print(f"\n{i}. {p['teks']}")
 
-        pilihan_map = {}
-
-        for idx, nilai in enumerate(skala_keys, start=1):
-            tampil = idx if tampil_offset else nilai
-            pilihan_map[str(tampil)] = nilai
-            print(f"  [{tampil}] {data['skala'][nilai]}")
+        print("[1] Tidak Pernah")
+        print("[2] Jarang")
+        print("[3] kadang-kadang")
+        print("[4] Sering")
 
         while True:
-            jawab = input(
-                f"Jawaban ({min(pilihan_map)} - {max(pilihan_map)}): "
-            ).strip()
+            try:
+                jawab = int(input("Jawaban (1 - 4) : "))
+                if jawab in [1,2,3,4]:
+                    total_skor += jawab
+                    break
+                else:
+                    print("❌ Pilih angka 1-4!")
+            except ValueError:
+                print("❌ Masukkan input yang valid!")
 
-            if jawab in pilihan_map:
-                nilai = pilihan_map[jawab]
-
-                is_reverse = str(p["reverse"]).lower() == "true"
-
-                # Reverse semua skala
-                skor = (max_nilai - nilai) if is_reverse else nilai
-
-                total_skor += skor
-                break
-            else:
-                print("❌ Input tidak valid")
 
     hasil = analisis_skor(total_skor, data["skoring"])
     
@@ -127,7 +106,7 @@ def jalankan_kuisioner(test_id, username=None):
         simpan_todo_ke_csv(username, test_id, todo_list)
 
     jumlah_pertanyaan = len(data["pertanyaan"])
-    skor_maks = jumlah_pertanyaan * max_nilai
+    skor_maks = jumlah_pertanyaan * 4
 
     hasil_analisis = analisis_skor(total_skor, data["skoring"])
 

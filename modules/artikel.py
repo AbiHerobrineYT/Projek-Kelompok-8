@@ -1,6 +1,7 @@
 import os
 import csv
 from modules.menu import menu_utama
+
 def menu_artikel(username_aktif):
     print("================ARTIKEL KESEHATAN MENTAL==============") # Judul aplikasi
     print(f"Halo {username_aktif}! Apa yang ingin baca hari ini?\n")
@@ -59,13 +60,14 @@ def list_artikel(jenis_artikel,username_aktif):
     
 
     while True:
-        input_user = int(input(f"Pilih artikel yang ingin dibaca (1-{len(data_artikel)})"))
+        input_user = int(input(f"Pilih artikel yang ingin dibaca (1-{len(data_artikel)}) : "))
 
         id_artikel = data_artikel[input_user-1]['id_artikel']
         lokasi_file_txt = os.path.join('data', 'artikel', jenis_artikel, f"{id_artikel}.txt")
         
         if 1 <= input_user <= len(data_artikel):
             with open(lokasi_file_txt, mode='r', encoding='utf-8') as f:
+                print("\n")
                 print(f.read())
                 print("\n")
                 print("[1] Kembali ke menu artikel")
@@ -80,4 +82,5 @@ def list_artikel(jenis_artikel,username_aktif):
                     else:
                         print("Masukkan Opsi yang valid\n")
         else:
-            print()
+            print("Masukkan opsi yang valid!")
+        
