@@ -2,64 +2,68 @@ import os
 import pandas as pd
 
 def tampilkan_todo_list(username):
-    """
-    Menampilkan to-do list user dari CSV dengan navigasi dan checklist interaktif
-    """
-    BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    csv_path = os.path.join(BASE_DIR, "data", "to_do", username, "to_do_list.csv")
+    FOLDER_DATA = "data/to_do"
+    csv_path = f"{FOLDER_DATA}/{username}/to_do_list.csv"
+
     
     if not os.path.exists(csv_path):
         print("\n📭 Anda belum memiliki to-do list.")
         print("💡 Selesaikan tes terlebih dahulu untuk mendapatkan rekomendasi aktivitas.")
         return
     
-    # Baca CSV
     df = pd.read_csv(csv_path)
     
-    if df.empty:
+    if len(df) == 0:
         print("\n📭 To-do list Anda kosong.")
         return
-    
-    # Kelompokkan berdasarkan tanggal + test_id (setiap batch tes)
+
+
     df['batch_id'] = df['tanggal'] + '_' + df['test_id']
-    batches = df.groupby('batch_id')
-    batch_list = sorted(batches.groups.keys(), reverse=True)  # ← Tambah sorted + reverse
+    batch_list = sorted(df['batch_id'].unique(), reverse=True)
+
     
     if not batch_list:
         print("\n📭 To-do list Anda kosong.")
         return
     
-    # Mulai dari batch terbaru
     current_index = 0
     
-    while True:
-        os.system('cls' if os.name == 'nt' else 'clear')  # Clear screen
-        
+    while True:        
         batch_id = batch_list[current_index]
         batch_data = df[df['batch_id'] == batch_id].copy()
         batch_data = batch_data.reset_index(drop=True)
         
-        # Tampilkan header
         print("\n" + "=" * 70)
         print("📋 TO-DO LIST SAYA".center(70))
         print("=" * 70)
         
-        # Info batch
-        tanggal = batch_data.iloc[0]['tanggal']
-        test_id = batch_data.iloc[0]['test_id']
+        baris_pertama = batch_data.iloc[0]
+
+        tanggal = baris_pertama['tanggal']
+        test_id = baris_pertama['test_id']
+
         
         print(f"\n🔹 {test_id.upper()} - {tanggal}")
         print(f"📄 Halaman {current_index + 1} dari {len(batch_list)}")
         print("-" * 70)
         
-        # Tampilkan aktivitas dengan nomor
-        for idx, row in batch_data.iterrows():
-            checkbox = "☑" if row['status'] == 'done' else "☐"
-            print(f"{idx + 1}. {checkbox} [Prioritas {row['prioritas']}] {row['aktivitas']}")
+        for index, data in batch_data.iterrows():
+
+            if data['status'] == 'done':
+                checkbox = "☑"
+            else:
+                checkbox = "☐"
+
+            nomor = index + 1
+
+            prioritas = data['prioritas']
+            aktivitas = data['aktivitas']
+
+            print(nomor, ".", checkbox, "[Prioritas", prioritas, "]", aktivitas)
+
         
         print("\n" + "=" * 70)
         
-        # Menu navigasi
         print("\n🎯 Pilihan:")
         print("  [1-5] Tandai aktivitas selesai")
         
@@ -73,7 +77,6 @@ def tampilkan_todo_list(username):
         
         pilihan = input("\nPilihan Anda: ").strip().lower()
         
-        # Proses pilihan
         if pilihan == '0':
             break
         
@@ -84,27 +87,25 @@ def tampilkan_todo_list(username):
             current_index -= 1
         
         elif pilihan.isdigit() and 1 <= int(pilihan) <= len(batch_data):
-            # Tandai aktivitas selesai
             aktivitas_index = int(pilihan) - 1
             row_data = batch_data.iloc[aktivitas_index]
             
-            # Update status di dataframe asli
             df_index = df[(df['batch_id'] == batch_id) & 
                          (df['prioritas'] == row_data['prioritas'])].index[0]
             
-            if df.loc[df_index, 'status'] == 'pending':
+            status_sekarang = df.loc[df_index, 'status']
+
+            if status_sekarang == 'pending':
                 df.loc[df_index, 'status'] = 'done'
-                df.drop(columns=['batch_id']).to_csv(csv_path, index=False)
-                
-                # ← TAMBAHAN: Update progress di file hasil
+                data_simpan = df.drop(columns=['batch_id'])
+                data_simpan.to_csv(csv_path, index=False)
                 update_progress_hasil(username, batch_id, csv_path)
-                
                 print("\n✅ Aktivitas berhasil ditandai selesai!")
+
             else:
                 df.loc[df_index, 'status'] = 'pending'
                 df.drop(columns=['batch_id']).to_csv(csv_path, index=False)
                 
-                # ← TAMBAHAN: Update progress di file hasil
                 update_progress_hasil(username, batch_id, csv_path)
                 
                 print("\n↩️ Aktivitas dikembalikan ke pending!")
@@ -116,15 +117,10 @@ def tampilkan_todo_list(username):
             input("Tekan Enter untuk melanjutkan...")
 
 def update_progress_hasil(username, batch_id, csv_path):
-    """
-    Update status dan progress di file hasil TXT berdasarkan checklist
-    """
     BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     
-    # Baca CSV untuk hitung progress
     df = pd.read_csv(csv_path)
     
-    # ← TAMBAH LAGI batch_id karena sudah di-drop saat save
     df['batch_id'] = df['tanggal'] + '_' + df['test_id']
     
     batch_data = df[df['batch_id'] == batch_id]
@@ -134,15 +130,12 @@ def update_progress_hasil(username, batch_id, csv_path):
     progress = int((done_count / total_aktivitas) * 100)
     status = "Tuntas" if progress == 100 else "Belum Tuntas"
     
-    # Ambil info untuk cari file hasil
-    tanggal_raw = batch_data.iloc[0]['tanggal']  # Format: "2026-01-07 20:30:12"
+    tanggal_raw = batch_data.iloc[0]['tanggal']
     test_id = batch_data.iloc[0]['test_id']
     
-    # Parse tanggal untuk format filename
     tanggal_obj = pd.to_datetime(tanggal_raw)
     file_timestamp = tanggal_obj.strftime('%Y%m%d_%H%M%S')
     
-    # Cari file hasil
     hasil_dir = os.path.join(BASE_DIR, "data", "hasil", username)
     target_file = f"{test_id}_{file_timestamp}.txt"
     filepath = os.path.join(hasil_dir, target_file)
@@ -151,11 +144,9 @@ def update_progress_hasil(username, batch_id, csv_path):
         print(f"⚠️ File hasil tidak ditemukan: {target_file}")
         return
     
-    # Baca file
     with open(filepath, 'r', encoding='utf-8') as f:
         lines = f.readlines()
     
-    # Update baris Status dan Progress
     updated_lines = []
     for line in lines:
         if line.startswith("Status     :"):
@@ -165,6 +156,5 @@ def update_progress_hasil(username, batch_id, csv_path):
         else:
             updated_lines.append(line)
     
-    # Tulis ulang file
     with open(filepath, 'w', encoding='utf-8') as f:
         f.writelines(updated_lines)

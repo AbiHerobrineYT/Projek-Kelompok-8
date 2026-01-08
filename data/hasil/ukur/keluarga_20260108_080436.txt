@@ -18,6 +18,6 @@ Hubungan Anda menunjukkan tanda-tanda serius yang memerlukan perhatian segera. P
 4. Mengidentifikasi dan mengubah pola perilaku destruktif dalam keluarga
 5. Melakukan terapi keluarga terstruktur untuk masalah yang kompleks
 ============================================================
-Status     : Belum Tuntas
-Progress   : 0%
+Status     : Tuntas
+Progress   : 100%
 ============================================================

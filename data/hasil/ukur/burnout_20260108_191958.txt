@@ -2,22 +2,22 @@
                          HASIL TES                          
 ============================================================
 User       : ukur
-Tanggal    : 2026-01-08 08:06:50
-Test ID    : depresi
-Total Skor : 0 / 27
+Tanggal    : 2026-01-08 19:19:58
+Test ID    : burnout
+Total Skor : 10 / 40
 Level      : Rendah
-Kategori   : baik
+Kategori   : Aman & Terjaga
 Deskripsi  :
-Gejala depresi ringan
+Anda masih memiliki keterikatan yang baik dengan pekerjaan Anda.
 ============================================================
                    REKOMENDASI AKTIVITAS                    
 ============================================================
-1. Berjalan kaki ringan 20-30 menit di area terbuka
-2. Mendengarkan musik favorit atau podcast motivasi
-3. Merapikan kamar atau ruang kecil di rumah
-4. Melakukan hobi ringan (menggambar, mewarnai, merajut)
-5. Minum air putih yang cukup dan makan makanan bergizi
+1. Tidur cukup 7-8 jam setiap malam dengan kualitas yang baik
+2. Makan makanan bergizi seimbang dan hindari fast food
+3. Melakukan hobi atau aktivitas yang menyenangkan di luar pekerjaan
+4. Berjalan kaki atau olahraga ringan 20-30 menit setiap hari
+5. Mengurangi waktu layar dan media sosial sebelum tidur
 ============================================================
 Status     : Belum Tuntas
-Progress   : 80%
+Progress   : 40%
 ============================================================
