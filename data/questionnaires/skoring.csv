@@ -1,25 +1,38 @@
 test_id,min,max,level,kategori,deskripsi
-keluarga,0,9,Tinggi,kritis,Hubungan Anda menunjukkan tanda-tanda serius yang memerlukan perhatian segera. Pertimbangkan untuk konseling pasangan.
-keluarga,10,18,Sedang,moderat,Hubungan Anda cukup baik namun masih ada area yang bisa ditingkatkan. Fokus pada komunikasi dan quality time.
-keluarga,19,28,Rendah,baik,Hubungan Anda dalam kondisi baik. Terus jaga komunikasi dan saling mendukung untuk mempertahankan kualitas hubungan.
+keluarga,7,14,Rendah,Kurang Harmonis,Hubungan memerlukan perhatian dan komunikasi lebih dalam.
+keluarga,15,21,Sedang,Cukup Harmonis,"Hubungan berjalan baik, namun masih ada ruang untuk berkembang."
+keluarga,22,28,Tinggi,Sangat Harmonis,Hubungan Anda sangat sehat dan memuaskan.
 
-depresi,0,9,Rendah,baik,Gejala depresi ringan
-depresi,10,18,Sedang,moderat,Gejala depresi sedang dan perlu perhatian
-depresi,19,27,Berat,kritis,Gejala depresi berat dan disarankan bantuan profesional
+depresi,9,14,Rendah,Normal/Minimal,Suasana hati Anda relatif stabil. Tetap jaga pola hidup sehat.
+depresi,15,21,Sedang,Depresi Ringan,Anda mengalami beberapa gejala. Cobalah teknik relaksasi atau bercerita ke teman.
+depresi,22,28,Tinggi,Depresi Sedang,Gejala mulai mengganggu aktivitas. Disarankan berkonsultasi dengan profesional.
+depresi,29,36,Sangat Tinggi,Depresi Berat,Sangat disarankan untuk segera menghubungi psikolog atau tenaga medis.
 
-kecemasan,0,4,Rendah,baik,Kondisi emosional relatif stabil dan kecemasan masih dalam batas wajar
-kecemasan,5,8,Sedang,moderat,Gejala kecemasan mulai terasa dan dapat memengaruhi aktivitas sehari-hari
-kecemasan,9,12,Tinggi,kritis,Tingkat kecemasan tinggi dan berpotensi mengganggu fungsi harian disarankan segera berkonsultasi dengan tenaga kesehatan mental
+kecemasan,7,11,Rendah,Kecemasan Minimal,Anda dalam kondisi cukup tenang. Kecemasan yang muncul masih dalam batas wajar.
+kecemasan,12,17,Sedang,Kecemasan Ringan,Anda mulai merasa tidak tenang. Cobalah latihan pernapasan (box breathing) secara rutin.
+kecemasan,18,23,Tinggi,Kecemasan Sedang,Kecemasan mulai mengganggu fokus Anda. Disarankan untuk membatasi kafein dan beristirahat.
+kecemasan,24,28,Sangat Tinggi,Kecemasan Berat,Kecemasan Anda sangat intens. Sangat disarankan untuk berkonsultasi dengan profesional.
 
-stress,0,10,Rendah,baik,Anda berada dalam kondisi stres yang relatif rendah. Tetap jaga keseimbangan hidup.
-stress,11,20,Sedang,moderat,Anda mengalami stres sedang. Perlu perhatian pada manajemen stres dan pola hidup sehat.
-stress,21,30,Tinggi,kritis,Tingkat stres Anda tinggi dan dapat mengganggu aktivitas. Pertimbangkan mencari dukungan profesional atau konselor.
+stress,10,20,Rendah,baik,Anda berada dalam kondisi stres yang relatif rendah. Tetap jaga keseimbangan hidup.
+stress,21,30,Sedang,moderat,Anda mengalami stres sedang. Perlu perhatian pada manajemen stres dan pola hidup sehat.
+stress,31,30,Tinggi,kritis,Tingkat stres Anda tinggi dan dapat mengganggu aktivitas. Pertimbangkan mencari dukungan profesional atau konselor.
 
-trauma,0,9,Rendah,baik,Respons terhadap pengalaman traumatis masih ringan dan belum mengganggu keseharian secara signifikan
-trauma,10,18,Sedang,moderat,Gejala trauma mulai terasa dan dapat memengaruhi emosi pikiran atau aktivitas sehari-hari
-trauma,19,27,Tinggi,kritis,Gejala trauma berat dan berisiko mengganggu fungsi harian. sangat disarankan untuk mendapatkan pendampingan dari tenaga kesehatan mental
+trauma,9,15,Rendah,Normal/Resiliensi Baik,"Anda mungkin memiliki kenangan buruk, namun dampaknya terhadap hidup Anda masih terkontrol."
+trauma,16,23,Sedang,Gejala Trauma Ringan,Ingatan masa lalu mulai mengganggu kenyamanan Anda. Cobalah teknik grounding untuk tetap merasa aman.
+trauma,24,30,Tinggi,Gejala Trauma Signifikan,Dampak kejadian masa lalu sangat memengaruhi keseharian. Sangat disarankan untuk memulai terapi bicara.
+trauma,31,36,Sangat Tinggi,Indikasi PTSD Berat,Kondisi Anda memerlukan penanganan khusus dari psikolog/psikiater spesialis trauma.
 
-burnout,0,22,Rendah,baik,Tingkat kelelahan kerja masih terkendali dan belum berdampak signifikan pada produktivitas maupun kesejahteraan
-burnout,23,44,Sedang,moderat,Tanda-tanda kelelahan mulai muncul dan dapat memengaruhi motivasi fokus serta kinerja sehari-hari
-burnout,45,66,Tinggi,kritis,Tingkat kelelahan sangat tinggi dan berisiko berdampak serius pada kesehatan mental. disarankan segera mencari bantuan atau konsultasi dengan tenaga profesional
+burnout,10,17,Rendah,Aman & Terjaga,Anda masih memiliki keterikatan yang baik dengan pekerjaan Anda.
+burnout,18,25,Sedang,Risiko Burnout,Anda mulai kelelahan. Perlu mengatur ulang prioritas dan waktu istirahat.
+burnout,26,33,Tinggi,Fase Burnout,Kelelahan emosional Anda cukup tinggi. Segera ambil cuti atau ubah ritme kerja.
+burnout,34,40,Sangat Tinggi,Burnout Akut,Kondisi ini berbahaya bagi kesehatan mental dan fisik. Segera konsultasikan ke profesional.
 
+mood,7,12,Rendah,Stabil,Emosi Anda berada dalam rentang yang stabil dan terkendali.
+mood,13,18,Sedang,Fluktuatif,Mood Anda cukup naik-turun. Perlu memperhatikan pola tidur dan stres harian.
+mood,19,24,Tinggi,Tidak Stabil,Perubahan mood mulai mengganggu konsentrasi dan hubungan sosial Anda.
+mood,25,28,Sangat Tinggi,Disregulasi Emosi,Suasana hati Anda sangat tidak stabil. Disarankan konsultasi untuk evaluasi lebih lanjut.
+
+kecanduan,8,14,Rendah,Terkendali,Anda memiliki kontrol yang baik atas kebiasaan Anda.
+kecanduan,15,21,Sedang,Risiko Kecanduan,Kebiasaan ini mulai menyita waktu Anda. Mulailah membuat batasan waktu yang ketat.
+kecanduan,22,27,Tinggi,Kecanduan Kuat,Kebiasaan ini sudah mengganggu fungsi hidup sehari-hari. Perlu bantuan orang lain untuk berhenti.
+kecanduan,28,32,Sangat Tinggi,Adiksi Berat,Anda telah kehilangan kendali. Sangat disarankan untuk menjalani program rehabilitasi atau konseling.

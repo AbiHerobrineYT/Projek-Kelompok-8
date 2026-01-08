@@ -28,7 +28,9 @@ def main(username_aktif):
                 '3': 'kecemasan',
                 '4': 'stress',
                 '5': 'trauma',
-                '6': 'burnout'
+                '6': 'burnout',
+                '7': 'mood',
+                '8': 'kecanduan'
             }
 
             jenis_tes = mapping_tes.get(pilihan_kuisioner)

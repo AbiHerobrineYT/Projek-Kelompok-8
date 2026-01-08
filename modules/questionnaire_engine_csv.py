@@ -193,7 +193,7 @@ def tampilkan_hasil(hasil, username_aktif, simpan=True):
     print(f"Kategori   : {hasil['analisis']['kategori']}")
     print("Deskripsi  :")
     print(hasil['analisis']['deskripsi'])
-    print("=" * 60)
+    print("")
     
     # Tampilkan To-Do List
     if hasil.get("todo_list"):

@@ -95,3 +95,35 @@ burnout,Tinggi,2,Mengambil cuti untuk istirahat dan pemulihan mental
 burnout,Tinggi,3,Berkonsultasi dengan psikolog untuk terapi dan strategi mengatasi burnout
 burnout,Tinggi,4,Mengevaluasi work-life balance dan membuat perubahan signifikan
 burnout,Tinggi,5,Mempertimbangkan perubahan pekerjaan jika lingkungan toksik berkelanjutan
+
+mood,Rendah,1,Menjaga jadwal tidur yang konsisten (bangun dan tidur di jam yang sama).
+mood,Rendah,2,Mencatat 3 hal positif yang terjadi hari ini dalam jurnal harian.
+mood,Rendah,3,Mengurangi konsumsi kafein dan gula yang dapat memicu lonjakan energi/mood.
+mood,Rendah,4,Melakukan teknik pernapasan dalam (deep breathing) saat mulai merasa tidak tenang.
+mood,Rendah,5,Terpapar sinar matahari pagi selama 10-15 menit untuk meningkatkan serotonin.
+mood,Sedang,1,Menggunakan aplikasi Mood Tracker untuk mengidentifikasi pemicu perubahan emosi.
+mood,Sedang,2,Menerapkan teknik grounding 5-4-3-2-1 saat emosi mulai terasa fluktuatif.
+mood,Sedang,3,"Melakukan aktivitas kreatif (menggambar, menulis, musik) sebagai penyaluran emosi."
+mood,Sedang,4,Membatasi paparan berita atau konten media sosial yang memicu perasaan negatif.
+mood,Sedang,5,Berjalan santai di alam terbuka (nature walk) untuk menenangkan pikiran.
+mood,Tinggi,1,"Mempraktikkan teknik STOP (Stop, Take a breath, Observe, Proceed) saat emosi meledak."
+mood,Tinggi,2,Bercerita kepada orang kepercayaan tentang perasaan yang sedang dialami.
+mood,Tinggi,3,Berkonsultasi dengan profesional (Psikolog) untuk evaluasi disregulasi emosi.
+mood,Tinggi,4,Menghindari pengambilan keputusan besar saat suasana hati sedang sangat buruk/sangat senang.
+mood,Tinggi,5,Mengevaluasi faktor biologis (hormonal/fisik) ke dokter jika mood tidak stabil dalam waktu lama.
+
+kecanduan,Rendah,1,"Menetapkan jadwal ""bebas gadget/kebiasaan"" selama 1 jam sebelum tidur."
+kecanduan,Rendah,2,Mencari aktivitas pengganti (membaca buku/olahraga) saat rasa ingin muncul.
+kecanduan,Rendah,3,Mematikan notifikasi non-esensial yang memicu keinginan untuk mengecek perangkat.
+kecanduan,Rendah,4,Menjauhkan benda atau aplikasi yang berkaitan dengan kebiasaan dari pandangan mata.
+kecanduan,Rendah,5,"Membuat daftar alasan ""Mengapa saya ingin mengurangi kebiasaan ini"" sebagai pengingat."
+kecanduan,Sedang,1,"Menerapkan aturan ""Tunggu 10 Menit"" saat keinginan (urge) muncul sebelum melakukannya."
+kecanduan,Sedang,2,Menghapus aplikasi atau memblokir akses ke sumber kecanduan secara sementara.
+kecanduan,Sedang,3,Memberitahu teman atau keluarga tentang rencana Anda agar mereka bisa membantu mengawasi.
+kecanduan,Sedang,4,Mengikuti komunitas atau grup pendukung dengan hobi yang lebih positif.
+kecanduan,Sedang,5,Memberikan reward kecil (non-kecanduan) jika berhasil melewati satu hari tanpa kebiasaan tersebut.
+kecanduan,Tinggi,1,Mengidentifikasi pemicu utama (stres/bosan) dan mencari solusi akar masalahnya.
+kecanduan,Tinggi,2,Melakukan digital detox atau isolasi mandiri dari pemicu kecanduan selama beberapa hari.
+kecanduan,Tinggi,3,Berkonsultasi dengan konselor adiksi untuk mendapatkan strategi pemulihan terstruktur.
+kecanduan,Tinggi,4,Menghindari lingkungan atau lingkaran pertemanan yang mendukung kebiasaan buruk tersebut.
+kecanduan,Tinggi,5,Mengikuti terapi perilaku kognitif (CBT) untuk mengubah pola pikir terhadap kecanduan.

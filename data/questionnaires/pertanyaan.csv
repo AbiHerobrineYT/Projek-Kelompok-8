@@ -1,67 +1,75 @@
-test_id,question_id,teks,reverse
-keluarga,1,Seberapa baik pasangan Anda memenuhi kebutuhan Anda?,false
-keluarga,2,Secara umum seberapa puas Anda dengan hubungan Anda?,false
-keluarga,3,Seberapa baik hubungan Anda dibandingkan dengan kebanyakan hubungan lainnya?,false
-keluarga,4,Seberapa sering Anda berharap tidak pernah masuk ke dalam hubungan ini?,true
-keluarga,5,Sejauh mana hubungan Anda memenuhi harapan awal Anda?,false
-keluarga,6,Seberapa besar Anda mencintai pasangan Anda?,false
-keluarga,7,Seberapa banyak masalah yang ada dalam hubungan Anda?,true
+test_id,question_id,teks
+keluarga,1,Seberapa sering pasangan Anda berhasil memenuhi kebutuhan Anda?
+keluarga,2,Seberapa sering Anda merasa puas dengan hubungan yang dijalani?
+keluarga,3,Seberapa sering Anda merasa hubungan Anda lebih baik dari hubungan orang lain?
+keluarga,4,Seberapa sering Anda menyesal atau berharap tidak pernah masuk ke hubungan ini?
+keluarga,5,Seberapa sering hubungan Anda berjalan sesuai dengan harapan awal Anda?
+keluarga,6,Seberapa sering Anda merasakan perasaan cinta yang kuat terhadap pasangan?
+keluarga,7,Seberapa sering Anda menghadapi masalah atau konflik dalam hubungan?
 
-depresi,1,Merasa sedih atau putus asa,false
-depresi,2,Kurang tertarik atau bergairah melakukan apapun,false
-depresi,3,Sulit tidur,false
-depresi,4,Mudah lelah,false
-depresi,5,Nafsu makan menurun,false
-depresi,6,Merasa gagal,false
-depresi,7,Sulit berkonsentrasi,false
-depresi,8,Bergerak atau bicara lebih lambat,false
-depresi,9,Pikiran menyakiti diri,false
+depresi,1,"Seberapa sering Anda merasa sedih, hampa, atau putus asa?"
+depresi,2,Seberapa sering Anda merasa kurang tertarik atau tidak bergairah melakukan aktivitas?
+depresi,3,Seberapa sering Anda mengalami kesulitan tidur atau tidur terlalu banyak?
+depresi,4,Seberapa sering Anda merasa lelah atau kekurangan energi meski tidak beraktivitas berat?
+depresi,5,Seberapa sering Anda mengalami perubahan nafsu makan (menurun atau meningkat tajam)?
+depresi,6,Seberapa sering Anda merasa gagal atau mengecewakan diri sendiri dan keluarga?
+depresi,7,"Seberapa sering Anda sulit berkonsentrasi, seperti saat membaca atau menonton TV?"
+depresi,8,"Seberapa sering Anda bicara/bergerak lebih lambat, atau justru merasa sangat gelisah?"
+depresi,9,Seberapa sering muncul pikiran untuk menyakiti diri sendiri atau merasa lebih baik mati?
 
-kecemasan,1,Saya merasa tegang atau gelisah,true
-kecemasan,2,Saya merasa khawatir berlebihan,true
-kecemasan,3,Saya sulit untuk rileks,true
-kecemasan,4,Saya merasa takut tanpa alasan,true
+kecemasan,1,"Seberapa sering Anda merasa tegang, gelisah, atau tidak tenang?"
+kecemasan,2,Seberapa sering Anda merasa khawatir secara berlebihan terhadap berbagai hal?
+kecemasan,3,Seberapa sering Anda merasa sulit untuk bersantai atau merasa rileks?
+kecemasan,4,Seberapa sering Anda merasa takut seolah-olah sesuatu yang buruk akan terjadi?
+kecemasan,5,Seberapa sering Anda merasa mudah tersinggung atau merasa jengkel?
+kecemasan,6,Seberapa sering Anda merasakan gejala fisik seperti jantung berdebar atau tangan gemetar?
+kecemasan,7,Seberapa sering Anda merasa sulit mengendalikan rasa cemas Anda?
 
-stress,1,Seberapa sering Anda merasa kesal karena memperoleh hal-hal yang tidak diharapkan terjadi?,true
-stress,2,Seberapa sering Anda merasa bahwa Anda tidak dapat mengendalikan hal-hal penting dalam hidup Anda?,true
-stress,3,Seberapa sering Anda merasa gugup dan stres?,true
-stress,4,Seberapa sering Anda merasa tidak percaya diri mengenai kemampuan Anda untuk mengatasi masalah pribadi?,true
-stress,5,Seberapa sering Anda merasa bahwa hal-hal dalam hidup Anda tidak berjalan sesuai dengan yang Anda harapkan?,true
-stress,6,Seberapa sering Anda menemukan bahwa Anda tidak dapat mengatasi hal-hal yang harus Anda lakukan?,true
-stress,7,Seberapa sering Anda gagal dalam mengendalikan gangguan dalam hidup Anda?,true
-stress,8,Seberapa sering Anda merasa bahwa Anda belum dapat menguasai hal-hal dalam hidup Anda?,true
-stress,9,Seberapa sering Anda merasa marah karena hal-hal yang terjadi di luar kendali Anda?,true
-stress,10,Seberapa sering Anda merasa bahwa kendala sangat besar hingga Anda tidak bisa mengatasinya?,true
+stress,1,Seberapa sering Anda merasa kesal karena memperoleh hal-hal yang tidak diharapkan terjadi?
+stress,2,Seberapa sering Anda merasa bahwa Anda tidak dapat mengendalikan hal-hal penting dalam hidup Anda?
+stress,3,Seberapa sering Anda merasa gugup dan stres?
+stress,4,Seberapa sering Anda merasa tidak percaya diri mengenai kemampuan Anda untuk mengatasi masalah pribadi?
+stress,5,Seberapa sering Anda merasa bahwa hal-hal dalam hidup Anda tidak berjalan sesuai dengan yang Anda harapkan?
+stress,6,Seberapa sering Anda menemukan bahwa Anda tidak dapat mengatasi hal-hal yang harus Anda lakukan?
+stress,7,Seberapa sering Anda gagal dalam mengendalikan gangguan dalam hidup Anda?
+stress,8,Seberapa sering Anda merasa bahwa Anda belum dapat menguasai hal-hal dalam hidup Anda?
+stress,9,Seberapa sering Anda merasa marah karena hal-hal yang terjadi di luar kendali Anda?
+stress,10,Seberapa sering Anda merasa bahwa kendala sangat besar hingga Anda tidak bisa mengatasinya?
 
-trauma,1,Memiliki mimpi buruk yang mengulang kembali bagian dari kejadian atau secara jelas berkaitan dengan kejadian traumatis tersebut?,true
-trauma,2,Memiliki bayangan atau ingatan kuat yang tiba-tiba muncul sehingga membuat Anda merasa kejadian traumatis tersebut terjadi lagi?,true
-trauma,3,Menghindari hal-hal internal (pikiran atau perasaan atau sensasi fisik) yang mengingatkan Anda pada kejadian traumatis tersebut?,true
-trauma,4,Menghindari hal-hal eksternal (orang atau tempat atau pembicaraan atau benda atau kegiatan atau situasi) yang mengingatkan Anda pada kejadian traumatis tersebut?,true
-trauma,5,Menjadi sangat waspada atau siaga atau berjaga-jaga?,true
-trauma,6,Merasa gelisah atau mudah terkejut?,true
-trauma,7,Gejala-gejala ini memengaruhi hubungan sosial atau kehidupan pergaulan Anda?,true
-trauma,8,Gejala-gejala ini memengaruhi pekerjaan atau kemampuan bekerja Anda?,true
-trauma,9,Gejala-gejala ini memengaruhi bagian penting lain dalam hidup Anda seperti pengasuhan anak atau sekolah/kuliah atau aktivitas penting lainnya?,true
+trauma,1,Seberapa sering Anda mengalami mimpi buruk yang mengulang kembali kejadian traumatis tersebut?
+trauma,2,Seberapa sering muncul ingatan kuat yang tiba-tiba sehingga Anda merasa kejadian itu terjadi lagi?
+trauma,3,Seberapa sering Anda berusaha menghindari pikiran atau sensasi fisik yang mengingatkan pada kejadian itu?
+trauma,4,"Seberapa sering Anda menghindari orang, tempat, atau situasi yang mengingatkan pada kejadian tersebut?"
+trauma,5,"Seberapa sering Anda merasa sangat waspada, siaga, atau terus-menerus berjaga-jaga?"
+trauma,6,"Seberapa sering Anda merasa gelisah, mudah terkejut, atau merasa kaget secara berlebihan?"
+trauma,7,Seberapa sering gejala ini mengganggu hubungan sosial atau kehidupan pergaulan Anda?
+trauma,8,Seberapa sering gejala ini menghambat produktivitas atau kemampuan Anda dalam bekerja?
+trauma,9,"Seberapa sering gejala ini memengaruhi aktivitas penting lainnya (kuliah, sekolah, atau pengasuhan)?"
 
-burnout,1,Saya merasakan emosi saya terkuras karena pekerjaan.,true
-burnout,2,Saya merasakan kelelahan fisik yang amat sangat di akhir hari kerja.,true
-burnout,3,Saya merasa lesu ketika bangun pagi karena harus menjalani hari di tempat kerja.,true
-burnout,4,Saya sulit memahami tindakan yang dilakukan rekan-rekan kerja saya.,true
-burnout,5,Saya merasa bahwa saya memperlakukan beberapa rekan kerja seolah-olah mereka adalah objek.,true
-burnout,6,Bekerja bersama orang lain seharian penuh membuat saya stres.,true
-burnout,7,Saya gagal mengatasi masalah orang lain.,true
-burnout,8,Saya merasa lelah (burnout) karena pekerjaan saya.,true
-burnout,9,Saya merasa bahwa saya tidak mampu mempengaruhi orang lain secara positif melalui pekerjaan saya.,true
-burnout,10,Saya menjadi lebih tidak berperasaan kepada orang-orang sejak saya mulai bekerja di tempat ini.,true
-burnout,11,Saya khawatir pekerjaan saya membuat saya lebih sulit secara emosional.,true
-burnout,12,Saya merasa tidak memiliki energi.,true
-burnout,13,Saya merasa frustrasi dengan pekerjaan saya.,true
-burnout,14,Saya merasa bahwa saya bekerja terlalu keras.,true
-burnout,15,Saya tidak terlalu tertarik dengan apa yang terjadi pada rekan-rekan saya.,true
-burnout,16,Berhubungan langsung dengan orang-orang di tempat kerja terlalu membuat saya stres.,true
-burnout,17,Saya merasa sulit untuk membangun suasana santai di lingkungan kerja saya.,true
-burnout,18,Saya merasa kehilangan energi ketika bekerja sama dengan rekan kerja saya.,true
-burnout,19,Dalam pekerjaan saya saya belum mencapai banyak keberhasilan yang bermanfaat.,true
-burnout,20,Saya merasa seperti kehabisan akal.,true
-burnout,21,Saya tidak mampu menghadapi masalah emosional dengan santai dalam pekerjaan saya.,true
-burnout,22,Saya merasa rekan kerja saya menyalahkan saya atas beberapa masalah mereka.,true
+burnout,1,Seberapa sering Anda merasa emosi Anda terkuras karena pekerjaan?
+burnout,2,Seberapa sering Anda merasa lelah secara fisik dan mental saat bangun pagi?
+burnout,3,Seberapa sering Anda merasa bekerja terlalu keras melampaui batas energi Anda?
+burnout,4,Seberapa sering Anda merasa frustrasi atau muak dengan pekerjaan saat ini?
+burnout,5,Seberapa sering Anda merasa tidak peduli atau bersikap sinis terhadap rekan kerja?
+burnout,6,Seberapa sering Anda merasa ingin menjauh dari orang-orang di tempat kerja?
+burnout,7,Seberapa sering Anda merasa kehilangan semangat dalam mencapai target kerja?
+burnout,8,Seberapa sering Anda merasa pekerjaan Anda tidak memberikan dampak positif bagi orang lain?
+burnout,9,Seberapa sering Anda merasa gagal mengatasi masalah emosional di tempat kerja?
+burnout,10,Seberapa sering Anda merasa sudah tidak sanggup lagi menghadapi tekanan pekerjaan?
+
+mood,1,Seberapa sering suasana hati (mood) Anda berubah-ubah secara tiba-tiba?
+mood,2,Seberapa sering Anda merasa sangat bersemangat hingga sulit untuk diam?
+mood,3,Seberapa sering Anda merasa sangat sedih tanpa alasan yang jelas?
+mood,4,Seberapa sering Anda merasa mudah tersinggung oleh hal-hal kecil?
+mood,5,Seberapa sering Anda merasa pikiran Anda berjalan terlalu cepat sehingga sulit fokus?
+mood,6,Seberapa sering Anda merasa emosi Anda sulit dikendalikan (misal: tiba-tiba marah/menangis)?
+mood,7,Seberapa sering Anda merasa hampa atau mati rasa secara emosional?
+
+kecanduan,1,Seberapa sering Anda menghabiskan waktu lebih lama dari yang direncanakan pada kebiasaan tersebut?
+kecanduan,2,Seberapa sering Anda merasa gagal saat mencoba mengurangi atau menghentikan kebiasaan tersebut?
+kecanduan,3,Seberapa sering Anda merasa gelisah atau mudah marah jika dilarang melakukan kebiasaan tersebut?
+kecanduan,4,Seberapa sering Anda mengabaikan tugas (sekolah/kerja) demi melakukan kebiasaan tersebut?
+kecanduan,5,Seberapa sering Anda tetap melakukan kebiasaan tersebut meski tahu itu berdampak buruk bagi kesehatan/hubungan?
+kecanduan,6,Seberapa sering Anda berbohong kepada orang lain untuk menyembunyikan seberapa sering Anda melakukannya?
+kecanduan,7,Seberapa sering Anda merasa pikiran Anda terus-menerus tertuju pada kebiasaan tersebut saat sedang melakukan hal lain?
+kecanduan,8,Seberapa sering Anda merasa kebiasaan tersebut adalah satu-satunya cara untuk melarikan diri dari masalah?
