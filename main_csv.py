@@ -1,10 +1,11 @@
 import sys
 import os
-from tabulate import tabulate
+# from tabulate import tabulate
 from modules.menu import menu_utama
 from modules.about import tampilkan_tentang_kami
 from modules.questionnaire_menu import tampilkan_menu_kuisioner
-from modules.questionnaire_engine_csv import jalankan_kuisioner, tampilkan_hasil, riwayat_hasil
+from modules.questionnaire_engine_csv import jalankan_kuisioner, tampilkan_hasil
+from modules.riwayat import riwayat_hasil
 from modules.login_register import menu_auth    
 from modules.psikolog import list_psikolog,menu_psikolog
 from modules.to_do import tampilkan_todo_list

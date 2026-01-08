@@ -81,5 +81,3 @@ def list_artikel(jenis_artikel,username_aktif):
                         print("Masukkan Opsi yang valid\n")
         else:
             print()
-
-menu_artikel('Him')
