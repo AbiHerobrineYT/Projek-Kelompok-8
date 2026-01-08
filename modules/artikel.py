@@ -10,17 +10,19 @@ def menu_artikel(username_aktif):
     print("[3] Kecemasan")
     print("[4] Stres") 
     print("[5] Trauma")  
-    print("[6] Burnout Kerja")
-    print("[7] Kembali")
+    print("[6] Burnout")
+    print("[7] Mood")
+    print("[8] Kecanduan")
+    print("[9] Kembali")
     print("\n" + "-"*40)
 
     while True:
-        pilihan = input("\nMasukkan pilihan (1-7): ").strip()
+        pilihan = input("\nMasukkan pilihan (1-9): ").strip()
 
-        if pilihan in ['1','2','3','4','5','6']:
+        if pilihan in ['1','2','3','4','5','6','7','8']:
             list_artikel(pilihan,username_aktif)
 
-        elif pilihan == '7':
+        elif pilihan == '9':
             return 
 
         else:
@@ -31,7 +33,12 @@ def list_artikel(jenis_artikel,username_aktif):
     kategori_artikel = {
         '1' : 'Hubungan',
         '2' : 'Depresi',
-        '3' : 'Kecemasan'
+        '3' : 'Kecemasan',
+        '4' : 'Stres',
+        '5' : 'Trauma',
+        '6' : 'Burnout',
+        '7' : 'Mood',
+        '8' : 'Kecanduan'
     }
     
     if jenis_artikel in kategori_artikel:
@@ -60,7 +67,18 @@ def list_artikel(jenis_artikel,username_aktif):
     
 
     while True:
-        input_user = int(input(f"Pilih artikel yang ingin dibaca (1-{len(data_artikel)}) : "))
+        input_user = input(f"Pilih artikel yang ingin dibaca (1-{len(data_artikel)}) : ").strip()
+
+        if not input_user.isdigit():
+            print("Masukkan angka yang valid.")
+            continue
+
+        input_user = int(input_user)
+
+        if not (1 <= input_user <= len(data_artikel)):
+            print("Pilihan di luar jangkauan.")
+            continue
+
 
         id_artikel = data_artikel[input_user-1]['id_artikel']
         lokasi_file_txt = os.path.join('data', 'artikel', jenis_artikel, f"{id_artikel}.txt")
