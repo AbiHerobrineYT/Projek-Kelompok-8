@@ -1,11 +1,4 @@
-<<<<<<< HEAD
-import os
-
 def menu_utama(username_aktif):
-    os.system('cls' if os.name == 'nt' else 'clear')
-=======
-def menu_utama(username_aktif):
->>>>>>> 690ed3e87cb9abc82f3d3a0427cabf706e542d92
     while True:
             print("================RUANG TEDUH==============") # Judul aplikasi
 

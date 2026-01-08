@@ -1,5 +1,6 @@
 import sys
 import os
+from tabulate import tabulate
 from modules.menu import menu_utama
 from modules.about import tampilkan_tentang_kami
 from modules.questionnaire_menu import tampilkan_menu_kuisioner
@@ -7,9 +8,8 @@ from modules.questionnaire_engine_csv import jalankan_kuisioner, tampilkan_hasil
 from modules.login_register import menu_auth    
 from modules.psikolog import list_psikolog,menu_psikolog
 from modules.to_do import tampilkan_todo_list
-
 from modules.login_register import menu_auth
-from modules.article_menu import menu_artikel  # Tambah import ini
+from modules.artikel import menu_artikel  
 
 def main(username_aktif):
     while True:
@@ -58,7 +58,7 @@ def main(username_aktif):
             menu_psikolog(username_aktif)
 
         elif pilihan == '5':
-            hasil_artikel = menu_artikel()
+            hasil_artikel = menu_artikel(username_aktif)
 
             if hasil_artikel == 'back':
                 continue
