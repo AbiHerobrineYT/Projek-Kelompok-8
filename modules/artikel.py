@@ -1,22 +1,22 @@
 import os
 import csv
-from modules.menu import menu_utama
 
 def menu_artikel(username_aktif):
-    print("================ARTIKEL KESEHATAN MENTAL==============") # Judul aplikasi
-    print(f"Halo {username_aktif}! Apa yang ingin baca hari ini?\n")
-    print("[1] Keluarga")
-    print("[2] Depresi")
-    print("[3] Kecemasan")
-    print("[4] Stres") 
-    print("[5] Trauma")  
-    print("[6] Burnout")
-    print("[7] Mood")
-    print("[8] Kecanduan")
-    print("[9] Kembali")
-    print("\n" + "-"*40)
-
+    
     while True:
+        print("================ARTIKEL KESEHATAN MENTAL==============") 
+        print(f"Halo {username_aktif}! Apa yang ingin baca hari ini?\n")
+        print("[1] Keluarga")
+        print("[2] Depresi")
+        print("[3] Kecemasan")
+        print("[4] Stres") 
+        print("[5] Trauma")  
+        print("[6] Burnout")
+        print("[7] Mood")
+        print("[8] Kecanduan")
+        print("[9] Kembali")
+        print("\n" + "-"*40)
+
         pilihan = input("\nMasukkan pilihan (1-9): ").strip()
 
         if pilihan in ['1','2','3','4','5','6','7','8']:
@@ -53,22 +53,27 @@ def list_artikel(jenis_artikel,username_aktif):
         for item in csv_reader:
             data_artikel.append(item)
     
-    print("\n======== LIST ARTIKEL ========")
-    print(f"{'no':<4} {'kategori':<10} {'judul':<50} {'tanggal':<10}")
-    print(f"="*90)
-
-    for i,p in enumerate(data_artikel,1):
-        kategori = p['kategori']
-        judul = p['judul']
-        tanggal = p['tanggal']
-        print(f"{i:<4} {kategori:<10} {judul:<50} {tanggal:<10}")
-
-    print("=" * 90)
     
-
     while True:
+        print("\n======== LIST ARTIKEL ========")
+        print(f"{'no':<4} {'kategori':<10} {'judul':<50} {'tanggal':<10}")
+        print(f"="*90)
+
+        for i,p in enumerate(data_artikel,1):
+            kategori = p['kategori']
+            judul = p['judul']
+            tanggal = p['tanggal']
+            print(f"{i:<4} {kategori:<10} {judul:<50} {tanggal:<10}")
+
+        print("=" * 90)
+        print('')
+
+        print("Ketik '0' atau tekan Enter kosong untuk kembali ke Menu Kategori.")
         input_user = input(f"Pilih artikel yang ingin dibaca (1-{len(data_artikel)}) : ").strip()
 
+        if not input_user or input_user == '0':
+            return
+        
         if not input_user.isdigit():
             print("Masukkan angka yang valid.")
             continue
@@ -76,7 +81,7 @@ def list_artikel(jenis_artikel,username_aktif):
         input_user = int(input_user)
 
         if not (1 <= input_user <= len(data_artikel)):
-            print("Pilihan di luar jangkauan.")
+            print(f"Artikel yang anda pilih tidak dalam list artikel, mohon pilih (1-{len(data_artikel)}).")
             continue
 
 
@@ -88,17 +93,4 @@ def list_artikel(jenis_artikel,username_aktif):
                 print("\n")
                 print(f.read())
                 print("\n")
-                print("[1] Kembali ke menu artikel")
-                print("[2] Kembali ke menu awal")
-
-                while True:
-                    input_user = int(input("Pilih opsi : "))
-                    if input_user == 1:
-                        menu_artikel(username_aktif)
-                    elif input_user == 2:
-                        menu_utama(username_aktif)
-                    else:
-                        print("Masukkan Opsi yang valid\n")
-        else:
-            print("Masukkan opsi yang valid!")
-        
+                input("Tekan Enter untuk selesai membaca...")
