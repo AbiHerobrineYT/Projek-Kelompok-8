@@ -180,35 +180,16 @@ def simpan_hasil_txt(hasil, username_aktif):
 
         f.write(GARIS + "\n")
 
-    return filepath
+    tampilkan_hasil(filepath)
 
 
-def tampilkan_hasil(hasil, username_aktif, simpan=True):
-    print("\n" + "=" * 60)
-    print("HASIL TES".center(60))
-    print("=" * 60)
-    print(f"Tanggal    : {hasil['tanggal']}")
-    print(f"Total Skor : {hasil['total_skor']} / {hasil['skor_maks']}")
-    print(f"Level      : {hasil['analisis']['level']}")
-    print(f"Kategori   : {hasil['analisis']['kategori']}")
-    print("Deskripsi  :")
-    print(hasil['analisis']['deskripsi'])
-    print("")
-    
-    # Tampilkan To-Do List
-    if hasil.get("todo_list"):
-        print("\n" + "=" * 60)
-        print("📋 REKOMENDASI AKTIVITAS".center(60))
-        print("=" * 60)
-        
-        for item in hasil["todo_list"]:
-            print(f"{item['prioritas']}. {item['aktivitas']}")
-        
-        print("=" * 60)
+def tampilkan_hasil(filepath):
+    #Biar lebih kebayang tinggal print txt yang udah disimpen
+    with open(filepath, 'r', encoding='utf-8') as csvfile:
+        print(csvfile.read())
+        print(" ")
+        print(f"\n💾 Hasil disimpan di: {filepath}")
 
-    if simpan:
-        path = simpan_hasil_txt(hasil,username_aktif)
-        print(f"\n💾 Hasil disimpan di: {path}")
 
 def simpan_todo_ke_csv(username, test_id, todo_list):
     """

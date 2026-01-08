@@ -4,7 +4,7 @@ import os
 from modules.menu import menu_utama
 from modules.about import tampilkan_tentang_kami
 from modules.questionnaire_menu import tampilkan_menu_kuisioner
-from modules.questionnaire_engine_csv import jalankan_kuisioner, tampilkan_hasil
+from modules.questionnaire_engine_csv import jalankan_kuisioner, tampilkan_hasil, simpan_hasil_txt
 from modules.riwayat import riwayat_hasil
 from modules.login_register import menu_auth    
 from modules.psikolog import list_psikolog,menu_psikolog
@@ -42,7 +42,7 @@ def main(username_aktif):
             hasil = jalankan_kuisioner(jenis_tes, username_aktif)
 
             if hasil:
-                tampilkan_hasil(hasil,username_aktif)
+                simpan_hasil_txt(hasil,username_aktif)
                 input("\nTekan Enter untuk kembali ke menu...")
 
         elif pilihan == '2':
