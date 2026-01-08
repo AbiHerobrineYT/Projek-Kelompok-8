@@ -10,19 +10,12 @@ def data_psikolog():
 
     data_psikolog = []
 
-    try:
-        with open(lokasi_file, mode='r', encoding='utf-8') as csv_file:
-            csv_reader = csv.DictReader(csv_file)
-
-            for row in csv_reader:
-                data_psikolog.append(row)
-            
-        return data_psikolog
-    
-    except FileNotFoundError:
-        print("Error: File data/psikolog.csv tidak ditemukan!")
-        return []
-
+    with open(lokasi_file, mode='r', encoding='utf-8') as csv_file:
+        csv_reader = csv.DictReader(csv_file)
+        for row in csv_reader:
+            data_psikolog.append(row)
+        
+    return data_psikolog
 
 
 def save_booking_struk(data_booking):
@@ -47,7 +40,6 @@ def save_booking_struk(data_booking):
             f"----------------------------------------\n"
             f"PSIKOLOG        : {data_booking['nama']}\n"
             f"SPESIALIS       : {data_booking['spesialis']}\n"
-            f"RATING          : {data_booking['rating']}\n"
             f"----------------------------------------\n"
             f"JADWAL TEMU     : {data_booking['tanggal']}\n"
             f"PUKUL           : {data_booking['jam']} WIB\n"
@@ -56,7 +48,7 @@ def save_booking_struk(data_booking):
             f"{data_booking['keluhan']}\n"
         )
         f.write(struk)
-        return True, nama_file
+        return nama_file
 
 def list_psikolog(username_aktif):
     list_psikolog = data_psikolog()
@@ -75,39 +67,23 @@ def list_psikolog(username_aktif):
         print(f"{i:<4} {nama:<25} {spesialis:<25}")
     
     print("-" * 90)
-
-    #MILIH DULU MAU BOOKING ATAU KEMBALI KE MENU
-    while True: 
-        print("\n[1] Lanjut Pilih Psikolog")
-        print("[2] Kembali ke Menu Utama")
-    
-        opsi = input("Tentukan pilihanmu (1/2): ")
-        if opsi == '1':
-            break 
-        elif opsi == '2':
-            return
-        else:
-            print("Pilihan salah! Harap masukkan angka 1 atau 2.")
         
     while True:
-        input_user = input(f"Pilih nomor psikolog (1-{len(list_psikolog)}): ")
+        pilihan = int(input(f"Pilih nomor psikolog (1-{len(list_psikolog)}) atau '0 untuk kembali: "))
 
-        if input_user.strip() == "":
-            print("Input tidak boleh kosong!")
-            continue
-        if not input_user.isdigit():
-            print("Harus berupa angka!")
-            continue
+        if pilihan == 0:
+            return
 
-        pilihan = int(input_user)
-        if 1 <= pilihan <= len(list_psikolog):
+        if pilihan in [1,2,3,4]:
             pilihan_psikolog = list_psikolog[pilihan - 1]
             break
         else:
             print(f"Masukkan angka yang valid 1-{len(list_psikolog)}")
     
     print(f"\nKamu memilih : {pilihan_psikolog['nama']}")
+    booking_psikolog(username_aktif,pilihan_psikolog)
 
+def booking_psikolog(username_aktif,pilihan_psikolog):
     #MASUKIN TANGGAL BOOKING 
     while True:
         tanggal = input(f"Masukkan Tanggal (YYYY-MM-DD) : ")
@@ -140,23 +116,20 @@ def list_psikolog(username_aktif):
         'id_booking' : id_booking,
         'nama' : pilihan_psikolog['nama'],
         'spesialis' : pilihan_psikolog['spesialis'],
-        # 'rating' : pilihan_psikolog['rating'],
         'nama_pasien' : username_aktif,
         'tanggal' : tanggal,
         'jam' : jam_booking,
         'keluhan' : keluhan,
         'tanggal_booking' : datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")}
     
-    status, nama_file_dibuat = save_booking_struk(data_booking)
+    nama_file = save_booking_struk(data_booking)
 
-    if status : 
-        print("\n" + "="*50)
-        print(f"✅ BOOKING BERHASIL! STRUK TELAH DICETAK.")
-        print(f"📄 Nama File: data/psikolog/{nama_file_dibuat}")
-        print(f"🆔 ID       : {id_booking}")
-        print("="*50)
-    else:
-        print("\n❌ Terjadi kesalahan sistem saat membuat file.")
+    print("\n" + "="*50)
+    print(f"✅ BOOKING BERHASIL! STRUK TELAH DICETAK.")
+    print(f"📄 Nama File: data/psikolog/{nama_file}")
+    print(f"🆔 ID       : {id_booking}")
+    print("="*50)
+    
 
 def lihat_riwayat_booking(username_aktif):
 
@@ -173,19 +146,24 @@ def lihat_riwayat_booking(username_aktif):
         print(f"{i}. {nama_file}")
     
     print("-" * 40)
-    pilihan = input("Pilih nomor file untuk lihat detail (atau Enter untuk kembali): ")
     
-    if pilihan.isdigit():
-        idx = int(pilihan) - 1
-        if 0 <= idx < len(files):
-            file_path = os.path.join(folder_user, files[idx])
-            print("\n" + "*" * 50)
-            with open(file_path, 'r', encoding='utf-8') as f:
-                print(f.read())
-            print("*" * 50)
-            input("Tekan Enter untuk lanjut...")
+    while True:
+         opsi = input("Pilih nomor (atau Enter untuk kembali): ")   
+         
+         if not opsi:
+             return 
+        
+         if opsi.isdigit() and 1 <= int(opsi) <= len(files):
+             nama_file = files[int(opsi) - 1]
+             path_lengkap = os.path.join(folder_user, nama_file) 
+             print("\n" + "="*40)
+             with open(path_lengkap, 'r', encoding='utf-8') as f:
+                 print(f.read())
+             print("="*40)
 
-    
+             input("\nTekan Enter lanjut...")
+         else:
+             print("❌ Masukkan nomor yang valid!")
 
 def menu_psikolog(username_aktif):
     while True:

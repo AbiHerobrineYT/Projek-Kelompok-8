@@ -44,24 +44,21 @@ def load_todo_list(test_id, kategori):
     """
     Memuat aktivitas rekomendasi berdasarkan test_id dan kategori
     """
-    try:
-        todo_path = os.path.join(DATA_DIR, "to_do_list.csv")
-        if not os.path.exists(todo_path):
-            return []
-        
-        todo_df = pd.read_csv(todo_path)
-        
-        # Filter berdasarkan tes dan kategori
-        aktivitas = todo_df[
-            (todo_df["tes"] == test_id) & 
-            (todo_df["kategori"] == kategori)
-        ].sort_values("prioritas")
-        
-        return aktivitas.to_dict("records")
     
-    except Exception as e:
-        print(f"⚠️ Gagal memuat to-do list: {e}")
+    todo_path = os.path.join(DATA_DIR, "to_do_list.csv")
+    if not os.path.exists(todo_path):
         return []
+    
+    todo_df = pd.read_csv(todo_path)
+    
+    # Filter berdasarkan tes dan kategori
+    aktivitas = todo_df[
+        (todo_df["tes"] == test_id) & 
+        (todo_df["kategori"] == kategori)
+    ].sort_values("prioritas")
+    
+    return aktivitas.to_dict("records")
+    
 
 
 # Kuisoner
@@ -85,15 +82,14 @@ def jalankan_kuisioner(test_id, username):
         print("[4] Sering")
 
         while True:
-            try:
-                jawab = int(input("Jawaban (1 - 4) : "))
-                if jawab in [1,2,3,4]:
-                    total_skor += jawab
-                    break
-                else:
-                    print("❌ Pilih angka 1-4!")
-            except ValueError:
-                print("❌ Masukkan input yang valid!")
+            
+            jawab = int(input("Jawaban (1 - 4) : "))
+            if jawab in [1,2,3,4]:
+                total_skor += jawab
+                break
+            else:
+                print("❌ Pilih angka 1-4!")
+            
 
 
     hasil = analisis_skor(total_skor, data["skoring"])
