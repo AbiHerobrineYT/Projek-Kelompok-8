@@ -36,6 +36,8 @@ def riwayat_hasil(username_aktif):
 
         print(f"   Skor  : {data.get('total_skor', '-')}")
         print(f"   Level : {data.get('level', '-')}")
+        print(f"   Status : {data.get('status', '-')}")
+        print(f"   Progress : {data.get('progress', '-')}")
 
     print("\n[0] Kembali")
     print("=" * 60)
@@ -72,5 +74,9 @@ def baca_ringkasan_hasil(filepath):
                 ringkasan["total_skor"] = value
             elif key == "level":
                 ringkasan["level"] = value
+            elif key == "status":
+                ringkasan["status"] = value
+            elif key == "progress":
+                ringkasan["progress"] = value
 
     return ringkasan

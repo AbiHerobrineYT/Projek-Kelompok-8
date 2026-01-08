@@ -65,16 +65,14 @@ def list_psikolog(username_aktif):
         return
     
     print("\n===== DAFTAR REKOMENDASI PSIKOLOG =====")
-    print(f"{'No':<4} {'Nama':<25} {'Spesialis':<25} {'Rating':<8} {'Jadwal Tersedia'}")
+    print(f"{'No':<4} {'Nama':<25} {'Spesialis':<25}")
     print("-" * 90)
     
     for i, p in enumerate(list_psikolog, 1):
         nama = p['nama']
         spesialis = p['spesialis']
-        rating = p['rating'] + " ⭐"
-        jadwal = p['jadwal_tersedia']
         
-        print(f"{i:<4} {nama:<25} {spesialis:<25} {rating:<8} {jadwal}")
+        print(f"{i:<4} {nama:<25} {spesialis:<25}")
     
     print("-" * 90)
 
@@ -92,9 +90,18 @@ def list_psikolog(username_aktif):
             print("Pilihan salah! Harap masukkan angka 1 atau 2.")
         
     while True:
-        pilihan = int(input(f"Pilih nomor psikolog(1-{len(list_psikolog)}) : "))
-        if 1<= pilihan <= len(list_psikolog):
-            pilihan_psikolog = list_psikolog[pilihan-1]
+        input_user = input(f"Pilih nomor psikolog (1-{len(list_psikolog)}): ")
+
+        if input_user.strip() == "":
+            print("Input tidak boleh kosong!")
+            continue
+        if not input_user.isdigit():
+            print("Harus berupa angka!")
+            continue
+
+        pilihan = int(input_user)
+        if 1 <= pilihan <= len(list_psikolog):
+            pilihan_psikolog = list_psikolog[pilihan - 1]
             break
         else:
             print(f"Masukkan angka yang valid 1-{len(list_psikolog)}")
@@ -133,7 +140,7 @@ def list_psikolog(username_aktif):
         'id_booking' : id_booking,
         'nama' : pilihan_psikolog['nama'],
         'spesialis' : pilihan_psikolog['spesialis'],
-        'rating' : pilihan_psikolog['rating'],
+        # 'rating' : pilihan_psikolog['rating'],
         'nama_pasien' : username_aktif,
         'tanggal' : tanggal,
         'jam' : jam_booking,
