@@ -107,7 +107,6 @@ def register():
     while True:
         tanggal_lahir = titik_koma("Tanggal Lahir (DD/MM/YYYY)")
         try:
-            import datetime
             datetime.datetime.strptime(tanggal_lahir, "%d/%m/%Y")
             break
         except ValueError:

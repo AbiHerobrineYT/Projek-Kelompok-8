@@ -12,7 +12,7 @@ from modules.to_do import tampilkan_todo_list
 from modules.login_register import menu_auth
 from modules.artikel import menu_artikel  
 
-def main(username_aktif):
+def main(username_aktif, email_user):
     while True:
         pilihan = menu_utama(username_aktif)
 
@@ -58,7 +58,7 @@ def main(username_aktif):
             input("\nTekan Enter untuk kembali ke menu...")
 
         elif pilihan == '4':
-            menu_psikolog(username_aktif)
+            menu_psikolog(username_aktif, email_user)
 
         elif pilihan == '5':
             hasil_artikel = menu_artikel(username_aktif)
@@ -85,5 +85,6 @@ if __name__ == "__main__":
 
     if user_data: 
         username_sekarang = user_data['username']
+    email_user = user_data['email']
 
-        main(username_sekarang)
+    main(username_sekarang, email_user)

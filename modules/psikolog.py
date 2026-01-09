@@ -19,7 +19,9 @@ def data_psikolog():
 
 
 def save_booking_struk(data_booking):
-    folder_user = os.path.join('data', data_booking['nama_pasien'])
+    folder_user = os.path.join('data',
+                               'Booking',
+                                data_booking['nama_pasien'])
 
     os.makedirs(folder_user, exist_ok=True)
     nama_file = f"booking_{data_booking['id_booking']}.txt"
@@ -46,11 +48,19 @@ def save_booking_struk(data_booking):
             f"----------------------------------------\n"
             f"CATATAN KELUHAN :\n"
             f"{data_booking['keluhan']}\n"
+            f"----------------------------------------\n"
+            f"Detail mengenai teknis pelaksanaan sesi dan\n"
+            f"informasi administrasi telah kami kirimkan ke\n"
+            f"alamat email terdaftar:\n\n"
+            f"{data_booking['email_pasien']}\n\n"
+            f"Mohon periksa kotak masuk (Inbox) atau folder\n"
+            f"Spam Anda untuk mendapatkan panduan lebih\n"
+            f"lanjut dari Psikolog terkait.\n"
         )
         f.write(struk)
         return nama_file
 
-def list_psikolog(username_aktif):
+def list_psikolog(username_aktif, email_user):
     list_psikolog = data_psikolog()
 
     if not list_psikolog:
@@ -84,9 +94,9 @@ def list_psikolog(username_aktif):
             print(f"Masukkan angka yang valid 1-{len(list_psikolog)}")
     
     print(f"\nKamu memilih : {pilihan_psikolog['nama']}")
-    booking_psikolog(username_aktif,pilihan_psikolog)
+    booking_psikolog(username_aktif, email_user, pilihan_psikolog)
 
-def booking_psikolog(username_aktif,pilihan_psikolog):
+def booking_psikolog(username_aktif, email_user, pilihan_psikolog):
     #MASUKIN TANGGAL BOOKING 
     while True:
         tanggal = input(f"Masukkan Tanggal (YYYY-MM-DD) : ")
@@ -109,7 +119,7 @@ def booking_psikolog(username_aktif,pilihan_psikolog):
             else:
                 print("Maaf, jam operasional hanya 08.00 - 17.00")
         except ValueError:
-            print(f"Format salah. Gunakan HH:MM (Contoh: 09:30)")
+            print(f"Format salah. Gunakan HH.MM (Contoh: 09.30)")
 
     keluhan = input("Keluhan Anda : ")
 
@@ -126,6 +136,7 @@ def booking_psikolog(username_aktif,pilihan_psikolog):
         'nama' : pilihan_psikolog['nama'],
         'spesialis' : pilihan_psikolog['spesialis'],
         'nama_pasien' : username_aktif,
+        'email_pasien' : email_user,
         'tanggal' : tanggal,
         'jam' : jam_booking,
         'keluhan' : keluhan,
@@ -135,13 +146,13 @@ def booking_psikolog(username_aktif,pilihan_psikolog):
 
     print("\n" + "="*50)
     print(f"✅ BOOKING BERHASIL! STRUK TELAH DICETAK.")
-    print(f"📄 Nama File: data/psikolog/{nama_file}")
+    print(f"📄 Lokasi File: data/Booking/{username_aktif}/{nama_file}")
     print(f"🆔 ID       : {id_booking}")
     print("="*50)
     
 
 def lihat_riwayat_booking(username_aktif):
-    folder_user = os.path.join('data', username_aktif)
+    folder_user = os.path.join('data', 'Booking', username_aktif)
 
     if not os.path.exists(folder_user):
         print(f"\n[!] Belum ada riwayat booking untuk user: {username_aktif}")
@@ -171,14 +182,14 @@ def lihat_riwayat_booking(username_aktif):
          else:
              print("❌ Masukkan nomor yang valid!")
 
-def menu_psikolog(username_aktif):
+def menu_psikolog(username_aktif, email_user):
     while True:
         print(f"[1] List Psikolog")
         print(f"[2] Lihat Riwayat Booking")
         print(f"[3] Kembali")
         user_input = input("Pilih menu (1-3) : ")
         if user_input == '1':
-            list_psikolog(username_aktif)
+            list_psikolog(username_aktif, email_user)
         elif user_input == '2':
             lihat_riwayat_booking(username_aktif)
         elif user_input == '3':
