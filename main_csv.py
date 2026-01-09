@@ -85,6 +85,5 @@ if __name__ == "__main__":
 
     if user_data: 
         username_sekarang = user_data['username']
-    email_user = user_data['email']
-
-    main(username_sekarang, email_user)
+        email_user = user_data['email']
+        main(username_sekarang, email_user)

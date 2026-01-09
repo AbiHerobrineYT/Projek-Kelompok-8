@@ -107,7 +107,7 @@ def register():
     while True:
         tanggal_lahir = titik_koma("Tanggal Lahir (DD/MM/YYYY)")
         try:
-            datetime.datetime.strptime(tanggal_lahir, "%d/%m/%Y")
+            datetime.strptime(tanggal_lahir, "%d/%m/%Y")
             break
         except ValueError:
             print("❌ Format tanggal salah! Gunakan DD/MM/YYYY")
