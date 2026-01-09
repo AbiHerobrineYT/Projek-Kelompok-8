@@ -1,7 +1,9 @@
 test_id,min,max,level,kategori,deskripsi
-keluarga,7,14,Rendah,Kurang Harmonis,Hubungan memerlukan perhatian dan komunikasi lebih dalam.
-keluarga,15,21,Sedang,Cukup Harmonis,"Hubungan berjalan baik, namun masih ada ruang untuk berkembang."
-keluarga,22,28,Tinggi,Sangat Harmonis,Hubungan Anda sangat sehat dan memuaskan.
+
+keluarga,0,8,Rendah,Sangat Harmonis,"Keluarga berfungsi sangat baik. Komunikasi terbuka, suportif, dan minim konflik."
+keluarga,9,16,Sedang,Cukup Stabil,"Secara umum baik, namun terdapat konflik sesekali atau ketegangan yang perlu diselesaikan."
+keluarga,17,24,Tinggi,Kurang Harmonis,"Sering terjadi pertengkaran, komunikasi buruk, dan suasana rumah seringkali tegang. Perlu upaya perbaikan komunikasi."
+keluarga,25,32,Sangat Tinggi,Disfungsi / Toksik,"Kondisi kritis. Terdapat permusuhan intens atau lingkungan yang sangat tidak sehat. Sangat disarankan untuk menghubungi profesional (Psikolog)."
 
 depresi,9,14,Rendah,Normal/Minimal,Suasana hati Anda relatif stabil. Tetap jaga pola hidup sehat.
 depresi,15,21,Sedang,Depresi Ringan,Anda mengalami beberapa gejala. Cobalah teknik relaksasi atau bercerita ke teman.
@@ -13,10 +15,10 @@ kecemasan,12,17,Sedang,Kecemasan Ringan,Anda mulai merasa tidak tenang. Cobalah 
 kecemasan,18,23,Tinggi,Kecemasan Sedang,Kecemasan mulai mengganggu fokus Anda. Disarankan untuk membatasi kafein dan beristirahat.
 kecemasan,24,28,Sangat Tinggi,Kecemasan Berat,Kecemasan Anda sangat intens. Sangat disarankan untuk berkonsultasi dengan profesional.
 
-stress,10,20,Rendah,baik,Anda berada dalam kondisi stres yang relatif rendah. Tetap jaga keseimbangan hidup.
-stress,21,30,Sedang,moderat,Anda mengalami stres sedang. Perlu perhatian pada manajemen stres dan pola hidup sehat.
-stress,31,30,Tinggi,kritis,Tingkat stres Anda tinggi dan dapat mengganggu aktivitas. Pertimbangkan mencari dukungan profesional atau konselor.
-
+stress,10,17,Rendah,Stabil,"Anda berada dalam kondisi tenang dan seimbang. Pertahankan manajemen waktu dan pola hidup sehat ini."
+stress,18,25,Sedang,Cukup Tertekan,"Anda mengalami tekanan ringan yang mulai terasa. Luangkan waktu untuk istirahat atau hobi agar tidak menumpuk."
+stress,26,33,Tinggi,Stres Berat,"Tingkat stres cukup tinggi dan mulai mengganggu fokus atau emosi. Perlu teknik relaksasi aktif dan berbagi cerita dengan orang terdekat."
+stress,34,40,Sangat Tinggi,Kritis / Burnout,"Kondisi mental sangat terbebani dan berisiko burnout. Sangat disarankan untuk segera menghubungi profesional (Psikolog) untuk penanganan tepat."
 trauma,9,15,Rendah,Normal/Resiliensi Baik,"Anda mungkin memiliki kenangan buruk, namun dampaknya terhadap hidup Anda masih terkontrol."
 trauma,16,23,Sedang,Gejala Trauma Ringan,Ingatan masa lalu mulai mengganggu kenyamanan Anda. Cobalah teknik grounding untuk tetap merasa aman.
 trauma,24,30,Tinggi,Gejala Trauma Signifikan,Dampak kejadian masa lalu sangat memengaruhi keseharian. Sangat disarankan untuk memulai terapi bicara.
