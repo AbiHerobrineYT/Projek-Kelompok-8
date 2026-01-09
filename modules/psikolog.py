@@ -109,7 +109,7 @@ def booking_psikolog(username_aktif,pilihan_psikolog):
             else:
                 print("Maaf, jam operasional hanya 08.00 - 17.00")
         except ValueError:
-            print(f"Format salah. Gunakan HH:MM (Contoh: 09:30)")
+            print(f"Format salah. Gunakan HH.MM (Contoh: 09.30)")
 
     keluhan = input("Keluhan Anda : ")
 

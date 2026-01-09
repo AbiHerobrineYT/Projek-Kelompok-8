@@ -1,0 +1,11 @@
+tanggal,test_id,prioritas,aktivitas,status
+2026-01-09 16:43:15,keluarga,1,Berdiskusi terbuka tentang masalah keluarga tanpa menyalahkan,done
+2026-01-09 16:43:15,keluarga,2,Menetapkan aturan dan batasan yang disepakati bersama,pending
+2026-01-09 16:43:15,keluarga,3,Menghabiskan quality time dengan setiap anggota keluarga secara individual,pending
+2026-01-09 16:43:15,keluarga,4,Berlatih empati dengan memahami perspektif anggota keluarga lain,pending
+2026-01-09 16:43:15,keluarga,5,Melakukan hobi atau olahraga bersama untuk mengurangi stres keluarga,pending
+2026-01-09 16:43:44,stress,1,Membuat daftar prioritas dan mengatur waktu dengan time blocking,pending
+2026-01-09 16:43:44,stress,2,"Melakukan olahraga rutin 3-4 kali seminggu (jogging, yoga, berenang)",pending
+2026-01-09 16:43:44,stress,3,Praktik mindfulness atau meditasi 15 menit setiap hari,done
+2026-01-09 16:43:44,stress,4,Berbicara dengan rekan kerja atau teman untuk sharing pengalaman,pending
+2026-01-09 16:43:44,stress,5,Menetapkan batasan kerja dan waktu pribadi dengan jelas,pending
