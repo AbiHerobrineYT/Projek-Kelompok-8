@@ -1,0 +1,16 @@
+==================================================
+                  DETAIL BOOKING                  
+==================================================
+ID BOOKING      : B_1
+TANGGAL DICETAK : 2026-01-09 16:48:08
+----------------------------------------
+PASIEN          : RuangTeduh
+----------------------------------------
+PSIKOLOG        : Dr. Himagara Abimanyu M.Psi
+SPESIALIS       : Psikolog Klinis
+----------------------------------------
+JADWAL TEMU     : 2026-01-10
+PUKUL           : 09.00 WIB
+----------------------------------------
+CATATAN KELUHAN :
+Stress
