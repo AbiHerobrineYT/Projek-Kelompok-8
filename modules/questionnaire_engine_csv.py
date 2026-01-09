@@ -82,13 +82,24 @@ def jalankan_kuisioner(test_id, username):
         print("[4] Sering")
 
         while True:
-            
-            jawab = int(input("Jawaban (1 - 4) : "))
-            if jawab in [1,2,3,4]:
+            user_input = input("Jawaban (1 - 4) : ").strip()
+
+            if user_input == "":
+                print("❌ Jawaban tidak boleh kosong!")
+                continue
+
+            if not user_input.isdigit():
+                print("❌ Masukkan angka 1 - 4!")
+                continue
+
+            jawab = int(user_input)
+
+            if 1 <= jawab <= 4:
                 total_skor += jawab
                 break
             else:
-                print("❌ Pilih angka 1-4!")
+                print("❌ Pilih angka 1 - 4!")
+
             
 
 
