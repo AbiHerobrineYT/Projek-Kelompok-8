@@ -79,19 +79,28 @@ def list_psikolog(username_aktif, email_user):
     print("=" * 65)
         
     while True:
-        pilihan = input(f"Pilih nomor psikolog (1-{len(list_psikolog)}) atau '0 untuk kembali: ")
-        #mengatasi error saat user klik enter doang
-        if pilihan == '':
+        pilihan = input(
+            f"Pilih nomor psikolog (1-{len(list_psikolog)}) atau '0' untuk kembali: "
+        ).strip()
+
+        if pilihan == "":
             return
-        
+
+        if not pilihan.isdigit():
+            print(f"Masukkan angka yang valid 1-{len(list_psikolog)}")
+            continue
+
         pilihan = int(pilihan)
+
         if pilihan == 0:
             return
-        elif pilihan in [1,2,3,4]:
+
+        if 1 <= pilihan <= len(list_psikolog):
             pilihan_psikolog = list_psikolog[pilihan - 1]
             break
         else:
             print(f"Masukkan angka yang valid 1-{len(list_psikolog)}")
+
     
     print(f"\nKamu memilih : {pilihan_psikolog['nama']}")
     booking_psikolog(username_aktif, email_user, pilihan_psikolog)
@@ -121,7 +130,13 @@ def booking_psikolog(username_aktif, email_user, pilihan_psikolog):
         except ValueError:
             print(f"Format salah. Gunakan HH.MM (Contoh: 09.30)")
 
-    keluhan = input("Keluhan Anda : ")
+    while True:
+        keluhan = input("Keluhan Anda : ").strip()
+        
+        if keluhan:
+            break
+        else:
+            print("❌ Keluhan tidak boleh kosong!")
 
     folder_user = os.path.join('data', username_aktif)
 
