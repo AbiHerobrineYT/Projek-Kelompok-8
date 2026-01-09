@@ -100,9 +100,6 @@ def jalankan_kuisioner(test_id, username):
             else:
                 print("❌ Pilih angka 1 - 4!")
 
-            
-
-
     hasil = analisis_skor(total_skor, data["skoring"])
     
     # Load to-do list berdasarkan kategori hasil
