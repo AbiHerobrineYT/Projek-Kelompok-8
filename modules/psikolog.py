@@ -4,9 +4,9 @@ import csv
 import datetime
 import random
 
+lokasi_file = os.path.join('data','psikolog.csv')
 
 def data_psikolog():
-    lokasi_file = os.path.join('data','psikolog.csv')
 
     data_psikolog = []
 
@@ -26,14 +26,14 @@ def save_booking_struk(data_booking):
     lokasi_file = os.path.join(folder_user, nama_file)
 
     with open(lokasi_file, mode='w', encoding='utf-8') as f:
-        GARIS = "=" * 60
+        GARIS = "=" * 50
 
         f.write(GARIS + "\n")
-        f.write("DETAIL BOOKING".center(60))
+        f.write("DETAIL BOOKING".center(50) + "\n")
         f.write(GARIS + "\n")
 
         struk = (
-            f"ID BOOKING      : {data_booking['id_booking']}\n"
+            f"ID BOOKING      : B_{data_booking['id_booking']}\n"
             f"TANGGAL DICETAK : {data_booking['tanggal_booking']}\n"
             f"----------------------------------------\n"
             f"PASIEN          : {data_booking['nama_pasien']}\n" 
@@ -56,25 +56,28 @@ def list_psikolog(username_aktif):
     if not list_psikolog:
         return
     
-    print("\n===== DAFTAR REKOMENDASI PSIKOLOG =====")
-    print(f"{'No':<4} {'Nama':<25} {'Spesialis':<25}")
-    print("-" * 90)
+    print("\n================== DAFTAR REKOMENDASI PSIKOLOG ==================")
+    print(f"{'No':<4} {'Nama':<35} {'Spesialis':<25}")
+    print("=" * 65)
     
     for i, p in enumerate(list_psikolog, 1):
         nama = p['nama']
         spesialis = p['spesialis']
         
-        print(f"{i:<4} {nama:<25} {spesialis:<25}")
+        print(f"{i:<4} {nama:<35} {spesialis:<25}")
     
-    print("-" * 90)
+    print("=" * 65)
         
     while True:
-        pilihan = int(input(f"Pilih nomor psikolog (1-{len(list_psikolog)}) atau '0 untuk kembali: "))
-
+        pilihan = input(f"Pilih nomor psikolog (1-{len(list_psikolog)}) atau '0 untuk kembali: ")
+        #mengatasi error saat user klik enter doang
+        if pilihan == '':
+            return
+        
+        pilihan = int(pilihan)
         if pilihan == 0:
             return
-
-        if pilihan in [1,2,3,4]:
+        elif pilihan in [1,2,3,4]:
             pilihan_psikolog = list_psikolog[pilihan - 1]
             break
         else:
@@ -110,7 +113,10 @@ def booking_psikolog(username_aktif,pilihan_psikolog):
 
     keluhan = input("Keluhan Anda : ")
 
-    id_booking = f"B-{random.randint(1000, 9999)}"
+    folder_user = os.path.join('data', username_aktif)
+    nomor_urut = len(os.listdir(folder_user)) + 1
+    
+    id_booking = str(nomor_urut)
 
     data_booking = {
         'id_booking' : id_booking,
@@ -132,8 +138,8 @@ def booking_psikolog(username_aktif,pilihan_psikolog):
     
 
 def lihat_riwayat_booking(username_aktif):
-
     folder_user = os.path.join('data', username_aktif)
+    
 
     if not os.path.exists(folder_user):
         print(f"\n[!] Belum ada riwayat booking untuk user: {username_aktif}")
@@ -145,18 +151,16 @@ def lihat_riwayat_booking(username_aktif):
     for i, nama_file in enumerate(files, 1):
         print(f"{i}. {nama_file}")
     
-    print("-" * 40)
-    
     while True:
          opsi = input("Pilih nomor (atau Enter untuk kembali): ")   
-         
+         print(" ")
          if not opsi:
              return 
         
          if opsi.isdigit() and 1 <= int(opsi) <= len(files):
              nama_file = files[int(opsi) - 1]
              path_lengkap = os.path.join(folder_user, nama_file) 
-             print("\n" + "="*40)
+
              with open(path_lengkap, 'r', encoding='utf-8') as f:
                  print(f.read())
              print("="*40)
