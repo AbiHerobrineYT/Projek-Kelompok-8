@@ -1,5 +1,6 @@
 import pandas as pd
 import os
+from datetime import datetime
 
 user_file = "users.csv"
 
@@ -39,33 +40,93 @@ def init_user_file():
 def register():
     init_user_file()
     df = pd.read_csv(user_file, dtype=str)
-
-    print("\n📝 REGISTRASI AKUN")
-
-    nama_depan = titik_koma("Nama Depan")
-    nama_belakang = titik_koma("Nama Belakang")
-    username = titik_koma("Username")
-    email = titik_koma("Email")
-    no_telp = titik_koma("Nomor Telepon")
-    tanggal_lahir = titik_koma("Tanggal Lahir (DD/MM/YYYY)")
-    password = titik_koma("Password")
-    konfirmasi = titik_koma("Konfirmasi Password")
-
-    # Validasi dasar
-    if password != konfirmasi:
-        print("❌ Password dan konfirmasi tidak cocok!")
-        return False
-
     df["username"] = df["username"].str.strip()
     df["email"] = df["email"].str.strip()
 
-    if username in df["username"].values:
-        print("❌ Username sudah digunakan!")
-        return False
+    print("\n📝 REGISTRASI AKUN")
 
-    if email in df["email"].values:
-        print("❌ Email sudah terdaftar!")
-        return False
+    while True:
+        nama_depan = titik_koma("Nama Depan")
+        if not nama_depan:
+            print("❌ Nama depan tidak boleh kosong!")
+            continue
+
+        if any(char.isdigit() for char in nama_depan):
+            print("❌ Nama depan tidak boleh mengandung angka!")
+            continue
+        
+        break
+
+    while True:
+        nama_belakang = titik_koma("Nama Belakang")
+        if not nama_belakang:
+            print("❌ Nama belakang tidak boleh kosong!")
+            continue
+
+        if any(char.isdigit() for char in nama_belakang):
+            print("❌ Nama belakang tidak boleh mengandung angka!")
+            continue
+
+        break
+
+    while True:
+        username = titik_koma("Username")
+
+        if not username or " " in username:
+            print("❌ Username tidak boleh kosong atau mengandung spasi!")
+            continue
+
+        if username in df["username"].values:
+            print("❌ Username sudah digunakan!")
+            continue
+
+        break
+
+    while True:
+        email = titik_koma("Email")
+
+        if "@" not in email or "." not in email:
+            print("❌ Email tidak valid! Harus mengandung '@' dan '.'")
+            continue
+
+        if email in df["email"].values:
+            print("❌ Email sudah terdaftar!")
+            continue
+
+        break
+
+    while True:
+        no_telp = titik_koma("Nomor Telepon")
+
+        if not no_telp.isdigit() or len(no_telp) < 10:
+            print("❌ Nomor telepon harus angka dan minimal 10 digit!")
+            continue
+
+        break
+
+    while True:
+        tanggal_lahir = titik_koma("Tanggal Lahir (DD/MM/YYYY)")
+        try:
+            import datetime
+            datetime.datetime.strptime(tanggal_lahir, "%d/%m/%Y")
+            break
+        except ValueError:
+            print("❌ Format tanggal salah! Gunakan DD/MM/YYYY")
+
+    while True:
+        password = titik_koma("Password")
+        if len(password) < 6:
+            print("❌ Password minimal 6 karakter!")
+            continue
+        break
+
+    while True:
+        konfirmasi = titik_koma("Konfirmasi Password")
+        if konfirmasi != password:
+            print("❌ Password tidak cocok!")
+            continue
+        break
+
 
     df.loc[len(df)] = [
         username,
