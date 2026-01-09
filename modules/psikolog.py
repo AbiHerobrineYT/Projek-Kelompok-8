@@ -114,6 +114,9 @@ def booking_psikolog(username_aktif,pilihan_psikolog):
     keluhan = input("Keluhan Anda : ")
 
     folder_user = os.path.join('data', username_aktif)
+
+    os.makedirs(folder_user, exist_ok=True)
+    
     nomor_urut = len(os.listdir(folder_user)) + 1
     
     id_booking = str(nomor_urut)
@@ -139,7 +142,6 @@ def booking_psikolog(username_aktif,pilihan_psikolog):
 
 def lihat_riwayat_booking(username_aktif):
     folder_user = os.path.join('data', username_aktif)
-    
 
     if not os.path.exists(folder_user):
         print(f"\n[!] Belum ada riwayat booking untuk user: {username_aktif}")
