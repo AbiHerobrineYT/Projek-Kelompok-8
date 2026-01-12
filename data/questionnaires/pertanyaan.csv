@@ -1,11 +1,11 @@
 test_id,question_id,teks
-keluarga,1,Seberapa sering pasangan Anda berhasil memenuhi kebutuhan Anda?
-keluarga,2,Seberapa sering Anda merasa puas dengan hubungan yang dijalani?
-keluarga,3,Seberapa sering Anda merasa hubungan Anda lebih baik dari hubungan orang lain?
-keluarga,4,Seberapa sering Anda menyesal atau berharap tidak pernah masuk ke hubungan ini?
-keluarga,5,Seberapa sering hubungan Anda berjalan sesuai dengan harapan awal Anda?
-keluarga,6,Seberapa sering Anda merasakan perasaan cinta yang kuat terhadap pasangan?
-keluarga,7,Seberapa sering Anda menghadapi masalah atau konflik dalam hubungan?
+keluarga,1,Seberapa sering pasangan Anda berhasil memenuhi kebutuhan dan harapan Anda?
+keluarga,2,Seberapa sering Anda merasa puas dengan hubungan yang sedang dijalani?
+keluarga,3,Seberapa sering Anda merasa hubungan Anda lebih harmonis dibandingkan hubungan orang lain?
+keluarga,4,Seberapa sering Anda merasa bersyukur dan beruntung telah memilih pasangan Anda saat ini?
+keluarga,5,Seberapa sering hubungan Anda berjalan lancar sesuai dengan harapan awal Anda?
+keluarga,6,Seberapa sering Anda merasakan perasaan cinta dan kasih sayang yang kuat terhadap pasangan?
+keluarga,7,Seberapa sering Anda dan pasangan berhasil menjaga kedamaian saat berinteraksi?
 
 depresi,1,"Seberapa sering Anda merasa sedih, hampa, atau putus asa?"
 depresi,2,Seberapa sering Anda merasa kurang tertarik atau tidak bergairah melakukan aktivitas?
