@@ -107,8 +107,27 @@ def register():
     while True:
         tanggal_lahir = titik_koma("Tanggal Lahir (DD/MM/YYYY)")
         try:
-            datetime.strptime(tanggal_lahir, "%d/%m/%Y")
+            tgl_lahir = datetime.strptime(tanggal_lahir, "%d/%m/%Y")
+            hari_ini = datetime.today()
+            umur = hari_ini.year - tgl_lahir.year
+
+            if tgl_lahir > hari_ini:
+                print("❌ Tanggal lahir tidak boleh di masa depan!")
+                continue
+
+            if (hari_ini.month, hari_ini.day) < (tgl_lahir.month, tgl_lahir.day):
+                umur -= 1
+
+            if umur < 13:
+                print("❌ Pendaftaran gagal! Umur minimal 13 tahun.")
+                continue
+
+            if umur > 100:
+                print("❌ Umur tidak valid! Periksa kembali tanggal lahir.")
+                continue
+
             break
+
         except ValueError:
             print("❌ Format tanggal salah! Gunakan DD/MM/YYYY")
 
