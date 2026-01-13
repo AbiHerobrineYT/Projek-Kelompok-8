@@ -86,3 +86,5 @@ if __name__ == "__main__":
         username_sekarang = user_data['username']
         email_user = user_data['email']
         main(username_sekarang, email_user)
+
+#Test

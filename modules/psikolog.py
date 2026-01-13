@@ -104,9 +104,9 @@ def list_psikolog(username_aktif, email_user):
 
 def booking_psikolog(username_aktif, email_user, pilihan_psikolog):
     while True:
-        tanggal = input(f"Masukkan Tanggal (YYYY-MM-DD) : ")
+        tanggal = input(f"Masukkan Tanggal (DD/MM/YYYY) : ")
         try:
-            tanggal_obj = datetime.datetime.strptime(tanggal, "%Y-%m-%d").date()
+            tanggal_obj = datetime.datetime.strptime(tanggal, "%d/%m/%Y").date()
             if tanggal_obj == datetime.date.today():
                 print("Pemesanan Gagal. Jadwal konsultasi hanya dapat dipesan minimal H-1. Silakan pilih tanggal lain")
                 continue
@@ -136,6 +136,16 @@ def booking_psikolog(username_aktif, email_user, pilihan_psikolog):
         else:
             print("❌ Keluhan tidak boleh kosong!")
 
+    while True:
+        yakin = input("Apakah anda ingin melanjutkan ke pembayaran? (y/n) : ").strip().lower()
+        if yakin == "y":
+            break
+        elif yakin == "n":
+            print("Booking dibatalkan.")
+            return
+        else:
+            print("❌ Pilihan tidak valid!")
+
     folder_user = os.path.join('data', 'Booking', username_aktif)
 
     os.makedirs(folder_user, exist_ok=True)
@@ -153,7 +163,7 @@ def booking_psikolog(username_aktif, email_user, pilihan_psikolog):
         'tanggal' : tanggal,
         'jam' : jam_booking,
         'keluhan' : keluhan,
-        'tanggal_booking' : datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")}
+        'tanggal_booking' : datetime.datetime.now().strftime("%d/%m/%Y %H:%M:%S")}
     
     nama_file = save_booking_struk(data_booking)
 
