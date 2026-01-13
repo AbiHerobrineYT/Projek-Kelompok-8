@@ -137,7 +137,7 @@ def booking_psikolog(username_aktif, email_user, pilihan_psikolog):
             print("❌ Keluhan tidak boleh kosong!")
 
     while True:
-        yakin = input("Apakah anda ingin melanjutkan ke pembayaran? (y/n) : ").strip().lower()
+        yakin = input("Apakah Anda yakin ingin menyelesaikan booking ini? Pilih 'y' untuk Ya atau 'n' untuk membatalkan. : ").strip().lower()
         if yakin == "y":
             break
         elif yakin == "n":

@@ -55,15 +55,17 @@ def list_artikel(jenis_artikel,username_aktif):
     
     
     while True:
-        print("\n======== LIST ARTIKEL ========")
-        print(f"{'no':<4} {'kategori':<10} {'judul':<50} {'tanggal':<10}")
+        print(f"=" * 90)
+        print("LIST ARTIKEL".center(90))
+        print(f"=" * 90)
+        print(f"{'no':<4} {'kategori':<10} {'judul':<60} {'tanggal':<10}")
         print(f"="*90)
 
         for i,p in enumerate(data_artikel,1):
             kategori = p['kategori']
             judul = p['judul']
             tanggal = p['tanggal']
-            print(f"{i:<4} {kategori:<10} {judul:<50} {tanggal:<10}")
+            print(f"{i:<4} {kategori:<10} {judul:<60} {tanggal:<10}")
 
         print("=" * 90)
         print('')

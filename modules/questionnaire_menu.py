@@ -1,8 +1,5 @@
 def tampilkan_menu_kuisioner():
-    """
-    Menampilkan menu pilihan jenis kuisioner kesehatan mental
-    Returns: string pilihan user ('1'-'9')
-    """
+
     while True:
         print("\n" + "="*60)
         print("🧠 PILIH JENIS TES KESEHATAN MENTAL 🧠".center(60))
@@ -45,22 +42,3 @@ def tampilkan_menu_kuisioner():
         else:
             print("\n❌ Pilihan tidak valid!")
             input("Tekan Enter untuk coba lagi...")
-
-
-def get_nama_kuisioner(pilihan):
-    """
-    Mendapatkan nama lengkap kuisioner berdasarkan pilihan
-    Args: pilihan (string) - pilihan user ('1'-'8')
-    Returns: string nama kuisioner
-    """
-    nama_kuisioner = {
-        '1': 'Keluarga & Hubungan',
-        '2': 'Depresi',
-        '3': 'Kecemasan',
-        '4': 'Stres',
-        '5': 'Trauma',
-        '6': 'Burnout',
-        '7': 'Gangguan Mood',
-        '8': 'Kecanduan'
-    }
-    return nama_kuisioner.get(pilihan, 'Unknown')

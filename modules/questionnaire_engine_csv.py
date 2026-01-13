@@ -1,5 +1,6 @@
 import pandas as pd
 import os
+import csv
 from datetime import datetime
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -32,9 +33,6 @@ def load_questionnaire(test_id):
 
 
 def load_todo_list(test_id, kategori):
-    """
-    Memuat aktivitas rekomendasi berdasarkan test_id dan kategori
-    """
     
     todo_path = os.path.join(DATA_DIR, "to_do_list.csv")
     if not os.path.exists(todo_path):
@@ -121,9 +119,6 @@ def analisis_skor(total_skor, skoring):
 
 
 def simpan_hasil_txt(hasil, username_aktif):
-    """
-    Simpan hasil tes ke file TXT
-    """
     filename = f"{hasil['test_id']}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.txt"
     
     user_hasil_dir = os.path.join(HASIL_DIR, username_aktif)
@@ -173,11 +168,7 @@ def tampilkan_hasil(filepath):
         print(f"\n💾 Hasil disimpan di: {filepath}")
 
 
-def simpan_todo_ke_csv(username, test_id, todo_list):
-    """
-    Menyimpan to-do list ke file CSV user
-    """
-    import csv  
+def simpan_todo_ke_csv(username, test_id, todo_list):  
     
     user_todo_dir = os.path.join(BASE_DIR, "data", "to_do", username)
     
