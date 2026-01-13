@@ -1,0 +1,26 @@
+tanggal,test_id,prioritas,aktivitas,status
+2026-01-12 23:44:27,keluarga,1,Makan malam bersama keluarga tanpa gangguan gadget,pending
+2026-01-12 23:44:27,keluarga,2,Melakukan aktivitas bersama seperti menonton film atau bermain board game,pending
+2026-01-12 23:44:27,keluarga,3,Memberikan apresiasi dan pujian kepada anggota keluarga,pending
+2026-01-12 23:44:27,keluarga,4,Menciptakan tradisi keluarga sederhana (misalnya piknik akhir pekan),pending
+2026-01-12 23:44:27,keluarga,5,Mendengarkan cerita dan keluh kesah anggota keluarga dengan penuh perhatian,pending
+2026-01-12 23:52:24,kecemasan,1,Berkonsultasi dengan psikolog untuk terapi kognitif perilaku (CBT),pending
+2026-01-12 23:52:24,kecemasan,2,Mengikuti terapi eksposur dengan bimbingan profesional,pending
+2026-01-12 23:52:24,kecemasan,3,Bergabung dengan support group atau kelompok dukungan,pending
+2026-01-12 23:52:24,kecemasan,4,Berkonsultasi dengan psikiater untuk evaluasi pengobatan jika diperlukan,pending
+2026-01-12 23:52:24,kecemasan,5,Menerapkan strategi coping yang dipelajari dari terapis secara konsisten,pending
+2026-01-12 23:52:36,stress,1,Berkonsultasi dengan atasan untuk mengurangi beban kerja,pending
+2026-01-12 23:52:36,stress,2,Mengikuti pelatihan manajemen stress atau workshop kesehatan mental,pending
+2026-01-12 23:52:36,stress,3,Mencari bantuan profesional (psikolog) untuk terapi problem-focused coping,pending
+2026-01-12 23:52:36,stress,4,Mengambil cuti untuk pemulihan kesehatan mental dan fisik,pending
+2026-01-12 23:52:36,stress,5,Menerapkan teknik relaksasi dan coping mechanism yang dipelajari dari ahli,pending
+2026-01-12 23:52:58,trauma,1,Berbicara dengan orang terdekat atau keluarga tentang perasaan,pending
+2026-01-12 23:52:58,trauma,2,Bergabung dengan kelompok dukungan untuk korban trauma,pending
+2026-01-12 23:52:58,trauma,3,Melakukan aktivitas positif yang membawa kebahagiaan,pending
+2026-01-12 23:52:58,trauma,4,Belajar teknik grounding untuk mengatasi flashback,pending
+2026-01-12 23:52:58,trauma,5,Menghindari pemicu trauma sambil membangun rasa aman,pending
+2026-01-12 23:53:18,mood,1,"Mempraktikkan teknik STOP (Stop, Take a breath, Observe, Proceed) saat emosi meledak.",pending
+2026-01-12 23:53:18,mood,2,Bercerita kepada orang kepercayaan tentang perasaan yang sedang dialami.,pending
+2026-01-12 23:53:18,mood,3,Berkonsultasi dengan profesional (Psikolog) untuk evaluasi disregulasi emosi.,pending
+2026-01-12 23:53:18,mood,4,Menghindari pengambilan keputusan besar saat suasana hati sedang sangat buruk/sangat senang.,pending
+2026-01-12 23:53:18,mood,5,Mengevaluasi faktor biologis (hormonal/fisik) ke dokter jika mood tidak stabil dalam waktu lama.,pending

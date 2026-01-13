@@ -1,0 +1,26 @@
+==================================================
+                  DETAIL BOOKING                  
+==================================================
+ID BOOKING      : B_2
+TANGGAL DICETAK : 2026-01-13 00:21:52
+----------------------------------------
+PASIEN          : Him
+----------------------------------------
+PSIKOLOG        : Rafie Candra M.Psi
+SPESIALIS       : Psikolog Klinis
+----------------------------------------
+JADWAL TEMU     : 2027-10-10
+PUKUL           : 09.00 WIB
+----------------------------------------
+CATATAN KELUHAN :
+awfawf
+----------------------------------------
+Detail mengenai teknis pelaksanaan sesi dan
+informasi administrasi telah kami kirimkan ke
+alamat email terdaftar:
+
+himagarabi@student.upi.edu
+
+Mohon periksa kotak masuk (Inbox) atau folder
+Spam Anda untuk mendapatkan panduan lebih
+lanjut dari Psikolog terkait.

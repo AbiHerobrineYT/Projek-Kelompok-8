@@ -1,9 +1,9 @@
 test_id,min,max,level,kategori,deskripsi
 
-keluarga,0,8,Rendah,Sangat Harmonis,"Keluarga berfungsi sangat baik. Komunikasi terbuka, suportif, dan minim konflik."
-keluarga,9,16,Sedang,Cukup Stabil,"Secara umum baik, namun terdapat konflik sesekali atau ketegangan yang perlu diselesaikan."
-keluarga,17,24,Tinggi,Kurang Harmonis,"Sering terjadi pertengkaran, komunikasi buruk, dan suasana rumah seringkali tegang. Perlu upaya perbaikan komunikasi."
-keluarga,25,32,Sangat Tinggi,Disfungsi / Toksik,"Kondisi kritis. Terdapat permusuhan intens atau lingkungan yang sangat tidak sehat. Sangat disarankan untuk menghubungi profesional (Psikolog)."
+keluarga,7,12,Rendah,Sangat Harmonis,"Keluarga berfungsi sangat baik. Komunikasi terbuka, suportif, dan minim konflik."
+keluarga,13,18,Sedang,Cukup Stabil,"Secara umum baik, namun terdapat konflik sesekali atau ketegangan yang perlu diselesaikan."
+keluarga,19,24,Tinggi,Kurang Harmonis,"Sering terjadi pertengkaran, komunikasi buruk, dan suasana rumah seringkali tegang. Perlu upaya perbaikan komunikasi."
+keluarga,25,28,Sangat Tinggi,Disfungsi / Toksik,"Kondisi kritis. Terdapat permusuhan intens atau lingkungan yang sangat tidak sehat. Sangat disarankan untuk menghubungi profesional (Psikolog)."
 
 depresi,9,14,Rendah,Normal/Minimal,Suasana hati Anda relatif stabil. Tetap jaga pola hidup sehat.
 depresi,15,21,Sedang,Depresi Ringan,Anda mengalami beberapa gejala. Cobalah teknik relaksasi atau bercerita ke teman.

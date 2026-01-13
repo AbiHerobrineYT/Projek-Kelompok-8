@@ -19,9 +19,7 @@ def data_psikolog():
 
 
 def save_booking_struk(data_booking):
-    folder_user = os.path.join('data',
-                               'Booking',
-                                data_booking['nama_pasien'])
+    folder_user = os.path.join('data', 'Booking', data_booking['nama_pasien'])
 
     os.makedirs(folder_user, exist_ok=True)
     nama_file = f"booking_{data_booking['id_booking']}.txt"
@@ -80,8 +78,7 @@ def list_psikolog(username_aktif, email_user):
         
     while True:
         pilihan = input(
-            f"Pilih nomor psikolog (1-{len(list_psikolog)}) atau '0' untuk kembali: "
-        ).strip()
+            f"Pilih nomor psikolog (1-{len(list_psikolog)}) atau '0' untuk kembali: ").strip()
 
         if pilihan == "":
             return
@@ -111,6 +108,9 @@ def booking_psikolog(username_aktif, email_user, pilihan_psikolog):
         tanggal = input(f"Masukkan Tanggal (YYYY-MM-DD) : ")
         try:
             tanggal_obj = datetime.datetime.strptime(tanggal, "%Y-%m-%d").date()
+            if tanggal_obj == datetime.date.today():
+                print("Pemesanan Gagal. Jadwal konsultasi hanya dapat dipesan minimal H-1. Silakan pilih tanggal lain")
+                continue
             if tanggal_obj < datetime.date.today():
                 print("Maaf tanggal sudah terlewat")
                 continue
@@ -138,7 +138,7 @@ def booking_psikolog(username_aktif, email_user, pilihan_psikolog):
         else:
             print("❌ Keluhan tidak boleh kosong!")
 
-    folder_user = os.path.join('data', username_aktif)
+    folder_user = os.path.join('data', 'Booking', username_aktif)
 
     os.makedirs(folder_user, exist_ok=True)
     
@@ -168,33 +168,32 @@ def booking_psikolog(username_aktif, email_user, pilihan_psikolog):
 
 def lihat_riwayat_booking(username_aktif):
     folder_user = os.path.join('data', 'Booking', username_aktif)
-
     if not os.path.exists(folder_user):
         print(f"\n[!] Belum ada riwayat booking untuk user: {username_aktif}")
         return
     
-    print(f"\n===== DAFTAR RIWAYAT BOOKING ({username_aktif}) =====")
-    files = [f for f in os.listdir(folder_user) if f.endswith('.txt')]
-    
-    for i, nama_file in enumerate(files, 1):
-        print(f"{i}. {nama_file}")
-    
+    #print riwayat booking
     while True:
-         opsi = input("Pilih nomor (atau Enter untuk kembali): ")   
-         print(" ")
-         if not opsi:
-             return 
+        print(f"\n===== DAFTAR RIWAYAT BOOKING ({username_aktif}) =====")
+        files = [f for f in os.listdir(folder_user) if f.endswith('.txt')]
+    
+        for i, nama_file in enumerate(files, 1):
+            print(f"{i}. {nama_file}")
+
+        opsi = input("Pilih nomor (atau Enter untuk kembali): ")   
+        print(" ")
+
+        if not opsi:
+            return 
         
-         if opsi.isdigit() and 1 <= int(opsi) <= len(files):
-             nama_file = files[int(opsi) - 1]
-             path_lengkap = os.path.join(folder_user, nama_file) 
-
-             with open(path_lengkap, 'r', encoding='utf-8') as f:
-                 print(f.read())
-             print("="*40)
-
-             input("\nTekan Enter lanjut...")
-         else:
+        if opsi.isdigit() and 1 <= int(opsi) <= len(files):
+            nama_file = files[int(opsi) - 1]
+            path_lengkap = os.path.join(folder_user, nama_file) 
+            with open(path_lengkap, 'r', encoding='utf-8') as f:
+                print(f.read())
+            print("="*40)
+            input("\nTekan Enter lanjut...")
+        else:
              print("❌ Masukkan nomor yang valid!")
 
 def menu_psikolog(username_aktif, email_user):

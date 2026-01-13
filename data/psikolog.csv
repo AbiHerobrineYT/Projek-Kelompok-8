@@ -1,6 +1,6 @@
-id_psikolog,nama,spesialis,pengalaman_tahun,rating,jadwal_tersedia
-P001,Dr. Himagara Abimanyu M.Psi,Psikolog Klinis,8,4.8,Senin-Jumat (09:00 - 15:00)
-P002,Dr. Fursan Nahr M.Psi,Psikolog Anak & Remaja,5,4.9,Sabtu-Minggu (10:00 - 14:00)
-P003,Dwicky Chandra Rianto M.Psi,Psikolog Klinis,12,5.0,Selasa & Kamis (16:00 - 20:00)
-P004,Rafie Candra M.Psi,Psikolog Klinis,3,4.5,Senin-Rabu (18:00 - 21:00)
-P005,Siti Aminah M.Psi,Psikolog Umum,6,4.7,Jumat-Minggu (13:00 - 17:00)
+id_psikolog,nama,spesialis
+P001,Dr. Himagara Abimanyu M.Psi,Psikolog Klinis
+P002,Dr. Fursan Nahr M.Psi,Psikolog Anak & Remaja
+P003,Dwicky Chandra Rianto M.Psi,Psikolog Klinis
+P004,Rafie Candra M.Psi,Psikolog Klinis
+P005,Siti Aminah M.Psi,Psikolog Umum
