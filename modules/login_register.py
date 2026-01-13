@@ -51,8 +51,8 @@ def register():
             print("❌ Nama depan tidak boleh kosong!")
             continue
 
-        if any(char.isdigit() for char in nama_depan):
-            print("❌ Nama depan tidak boleh mengandung angka!")
+        if not nama_depan.replace(" ", "").isalpha():
+            print("❌ Nama depan hanya boleh huruf alfabet (tanpa angka & simbol)!")
             continue
         
         break
@@ -63,8 +63,8 @@ def register():
             print("❌ Nama belakang tidak boleh kosong!")
             continue
 
-        if any(char.isdigit() for char in nama_belakang):
-            print("❌ Nama belakang tidak boleh mengandung angka!")
+        if not nama_belakang.replace(" ", "").isalpha():
+            print("❌ Nama belakang hanya boleh huruf alfabet (tanpa angka & simbol)!")
             continue
 
         break
@@ -85,6 +85,10 @@ def register():
     while True:
         email = titik_koma("Email")
 
+        if " " in email:
+            print("❌ Email tidak boleh mengandung spasi!")
+            continue
+
         if "@" not in email or "." not in email:
             print("❌ Email tidak valid! Harus mengandung '@' dan '.'")
             continue
@@ -93,13 +97,29 @@ def register():
             print("❌ Email sudah terdaftar!")
             continue
 
+        if email.startswith("@") or email.endswith("@"):
+            print("❌ Email tidak boleh diawali atau diakhiri '@'!")
+            continue
+
+        if email.startswith(".") or email.endswith("."):
+            print("❌ Email tidak boleh diawali atau diakhiri '.'!")
+            continue
+
         break
 
     while True:
         no_telp = titik_koma("Nomor Telepon")
 
-        if not no_telp.isdigit() or len(no_telp) < 10:
-            print("❌ Nomor telepon harus angka dan minimal 10 digit!")
+        if not no_telp.isdigit():
+            print("❌ Nomor telepon hanya boleh angka!")
+            continue
+
+        if not no_telp.startswith("0"):
+            print("❌ Nomor telepon harus diawali dengan 0 (format Indonesia)!")
+            continue
+
+        if len(no_telp) < 10 or len(no_telp) > 13:
+            print("❌ Nomor telepon harus 10–13 digit!")
             continue
 
         break
