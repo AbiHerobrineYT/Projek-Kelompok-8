@@ -19,6 +19,7 @@ stress,10,17,Rendah,Stabil,"Anda berada dalam kondisi tenang dan seimbang. Perta
 stress,18,25,Sedang,Cukup Tertekan,"Anda mengalami tekanan ringan yang mulai terasa. Luangkan waktu untuk istirahat atau hobi agar tidak menumpuk."
 stress,26,33,Tinggi,Stres Berat,"Tingkat stres cukup tinggi dan mulai mengganggu fokus atau emosi. Perlu teknik relaksasi aktif dan berbagi cerita dengan orang terdekat."
 stress,34,40,Sangat Tinggi,Kritis / Burnout,"Kondisi mental sangat terbebani dan berisiko burnout. Sangat disarankan untuk segera menghubungi profesional (Psikolog) untuk penanganan tepat."
+
 trauma,9,15,Rendah,Normal/Resiliensi Baik,"Anda mungkin memiliki kenangan buruk, namun dampaknya terhadap hidup Anda masih terkontrol."
 trauma,16,23,Sedang,Gejala Trauma Ringan,Ingatan masa lalu mulai mengganggu kenyamanan Anda. Cobalah teknik grounding untuk tetap merasa aman.
 trauma,24,30,Tinggi,Gejala Trauma Signifikan,Dampak kejadian masa lalu sangat memengaruhi keseharian. Sangat disarankan untuk memulai terapi bicara.
