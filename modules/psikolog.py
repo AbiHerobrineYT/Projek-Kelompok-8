@@ -103,7 +103,6 @@ def list_psikolog(username_aktif, email_user):
     booking_psikolog(username_aktif, email_user, pilihan_psikolog)
 
 def booking_psikolog(username_aktif, email_user, pilihan_psikolog):
-    #MASUKIN TANGGAL BOOKING 
     while True:
         tanggal = input(f"Masukkan Tanggal (YYYY-MM-DD) : ")
         try:
@@ -118,7 +117,6 @@ def booking_psikolog(username_aktif, email_user, pilihan_psikolog):
         except ValueError:
             print("Masukkan tanggal yang valid!")
     
-    #MASUKAN JAM BOOKING
     while True:
         jam_booking = input(f"Masukkan jam booking (08.00 - 17.00) : ")
         try:
@@ -172,7 +170,6 @@ def lihat_riwayat_booking(username_aktif):
         print(f"\n[!] Belum ada riwayat booking untuk user: {username_aktif}")
         return
     
-    #print riwayat booking
     while True:
         print(f"\n===== DAFTAR RIWAYAT BOOKING ({username_aktif}) =====")
         files = [f for f in os.listdir(folder_user) if f.endswith('.txt')]

@@ -1,6 +1,6 @@
 def menu_utama(username_aktif):
     while True:
-            print("================RUANG TEDUH==============") # Judul aplikasi
+            print("================RUANG TEDUH==============")
 
             print(f"Halo {username_aktif}! Apa yang ingin kamu lakukan hari ini?\n")
 

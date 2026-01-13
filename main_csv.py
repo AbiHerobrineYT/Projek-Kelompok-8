@@ -1,6 +1,5 @@
 import sys
 import os
-# from tabulate import tabulate
 from modules.menu import menu_utama
 from modules.about import tampilkan_tentang_kami
 from modules.questionnaire_menu import tampilkan_menu_kuisioner
